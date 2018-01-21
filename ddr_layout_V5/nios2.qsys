@@ -61,7 +61,7 @@
       }
       datum megawizard_uipreferences
       {
-         value = "{}";
+         value = "{output_language=VERILOG, output_directory=E:\\altera\\13.0\\project\\ddr_layout_V5}";
          type = "String";
       }
    }
@@ -158,11 +158,11 @@
          type = "String";
       }
    }
-   element onchip_ram.s1
+   element pio_key.s1
    {
       datum baseAddress
       {
-         value = "285216768";
+         value = "96";
          type = "String";
       }
    }
@@ -171,22 +171,6 @@
       datum baseAddress
       {
          value = "64";
-         type = "String";
-      }
-   }
-   element uart_0.s1
-   {
-      datum baseAddress
-      {
-         value = "0";
-         type = "String";
-      }
-   }
-   element pio_key.s1
-   {
-      datum baseAddress
-      {
-         value = "96";
          type = "String";
       }
    }
@@ -208,6 +192,22 @@
       datum baseAddress
       {
          value = "67108864";
+         type = "String";
+      }
+   }
+   element onchip_ram.s1
+   {
+      datum baseAddress
+      {
+         value = "285216768";
+         type = "String";
+      }
+   }
+   element uart_0.s1
+   {
+      datum baseAddress
+      {
+         value = "0";
          type = "String";
       }
    }
@@ -274,7 +274,7 @@
  <parameter name="projectName" value="ddr_layout.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1515726146505" />
+ <parameter name="timeStamp" value="1516502737735" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
@@ -951,7 +951,7 @@
   <parameter name="RESPONSE_FIFO_DEPTH" value="64" />
   <parameter name="MASTER_SYNC_DEPTH" value="3" />
   <parameter name="SLAVE_SYNC_DEPTH" value="3" />
-  <parameter name="AUTO_M0_CLK_CLOCK_RATE" value="108000000" />
+  <parameter name="AUTO_M0_CLK_CLOCK_RATE" value="162000000" />
   <parameter name="AUTO_S0_CLK_CLOCK_RATE" value="108000000" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
  </module>
@@ -1234,15 +1234,6 @@
    kind="avalon"
    version="13.0"
    start="slow_peripheral_bridge.m0"
-   end="pio_led.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0070" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="13.0"
-   start="slow_peripheral_bridge.m0"
    end="pio_key.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0060" />
@@ -1385,11 +1376,6 @@
    start="ddr2.reset_request_n"
    end="cpu_ddr2_clock_bridge.s0_reset" />
  <connection kind="clock" version="13.0" start="altpll_0.c3" end="ddr2.refclk" />
- <connection
-   kind="clock"
-   version="13.0"
-   start="altpll_0.c2"
-   end="cpu_ddr2_clock_bridge.m0_clk" />
  <connection kind="clock" version="13.0" start="altpll_0.c2" end="nios2.clk" />
  <connection kind="clock" version="13.0" start="altpll_0.c2" end="onchip_ram.clk1" />
  <connection
@@ -1408,6 +1394,20 @@
    start="altpll_0.c2"
    end="cpu_ddr2_clock_bridge.s0_clk" />
  <connection kind="clock" version="13.0" start="altpll_0.c0" end="pio_key.clk" />
+ <connection
+   kind="avalon"
+   version="13.0"
+   start="slow_peripheral_bridge.m0"
+   end="pio_led.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0070" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="clock"
+   version="13.0"
+   start="ddr2.sysclk"
+   end="cpu_ddr2_clock_bridge.m0_clk" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>
