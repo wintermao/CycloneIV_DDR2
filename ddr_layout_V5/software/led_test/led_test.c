@@ -26,15 +26,14 @@
  */
 
 static void TestLEDs(void) {
-	volatile alt_u8 led;
 	static char ch;
 	static char entry[4];
+	static char led_msk[6]={PIO_LED0_MSK,PIO_LED1_MSK,PIO_LED2_MSK,PIO_LED3_MSK,PIO_LED4_MSK,PIO_LED5_MSK};
 	int i,j;
-	for(j=0;j<10;j++)
-	for(i=0,led = 0x1;i<6;i++){
-		IOWR_ALTERA_AVALON_PIO_DATA(PIO_LED_BASE, led);
-		printf("j=%d led=0x%x\n",j,led);
-		led=led<<1;
+	for(j=0;j<100;j++)
+	for(i=0;i<6;i++){
+		IOWR_ALTERA_AVALON_PIO_DATA(PIO_LED_BASE, led_msk[i]);
+		printf("j=%d led=0x%x\n",j,led_msk[i]);
 		usleep(50000);
 	}
 

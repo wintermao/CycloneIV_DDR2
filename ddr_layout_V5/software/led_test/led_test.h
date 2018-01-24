@@ -15,6 +15,12 @@
 
 /* LED Related Prototype */
 #ifdef PIO_LED_NAME
+#define PIO_LED0_MSK              (0x01)
+#define PIO_LED1_MSK              (0x02)
+#define PIO_LED2_MSK              (0x04)
+#define PIO_LED3_MSK              (0x10)
+#define PIO_LED4_MSK              (0x20)
+#define PIO_LED5_MSK              (0x08)
 static void TestLEDs( void );
 #endif
 
