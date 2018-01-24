@@ -5,7 +5,7 @@
 BSP_TYPE=hal
 BSP_DIR=.
 SOPC_DIR=../../
-SOPC_FILE=D:/altera/project/ddr_layout_V5/nios2.sopcinfo
+SOPC_FILE=E:/altera/13.0/project/ddr_layout_V5/nios2.sopcinfo
 NIOS2_BSP_ARGS=""
 CPU_NAME=
 
