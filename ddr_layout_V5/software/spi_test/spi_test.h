@@ -40,6 +40,8 @@ static void ButtonsHandle( void );
 #define PIO_KEY_SW3	0x08
 #endif
 
-
+#ifdef SPI_0_NAME
+static void rw_spi(void);
+#endif
 
 #endif /* SPI_TEST_H_ */

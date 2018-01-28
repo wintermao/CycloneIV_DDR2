@@ -17,6 +17,7 @@
 #include "spi_test.h"
 
 volatile int edge_capture=0;
+int triger=0;
 
 #ifdef PIO_KEY_NAME
 
@@ -118,18 +119,23 @@ static void ButtonsHandle( void )
 	  {
 		case PIO_KEY_SW0:
 			printf("\nButton 1 (SW0) Pressed. capture=0x%x\n",edge_capture);
+			triger=1;
 		  break;
 		case PIO_KEY_SW1:
 			printf("\nButton 2 (SW1) Pressed. capture=0x%x\n",edge_capture);
+			triger=2;
 		  break;
 		case PIO_KEY_SW2:
 			printf("\nButton 3 (SW2) Pressed. capture=0x%x\n",edge_capture);
+			triger=3;
 		  break;
 		case PIO_KEY_SW3:
 			printf("\nButton 4 (SW3) Pressed. capture=0x%x\n",edge_capture);
+			triger=4;
 		  break;
 		default:
 			printf("\nNo key. capture=0x%x\n",edge_capture);
+			triger=0;
 	  }
 	  edge_capture=0;
 	}
@@ -137,8 +143,44 @@ static void ButtonsHandle( void )
 
 #endif
 
+#ifdef SPI_0_NAME
+static void rw_spi(void)
+{
+	alt_u8 txbuff[2],rxbuff[2];
+	int result;
+
+	txbuff[0]=0x10;txbuff[1]=0x5a;
+	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,0,rxbuff,0);
+	printf("write 0x%02x%02x,return %d\n",txbuff[0],txbuff[1],result);
+
+	txbuff[0]=0x20;txbuff[1]=0x5a;
+	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,0,rxbuff,0);
+	printf("write 0x%02x%02x,return %d\n",txbuff[0],txbuff[1],result);
+
+	txbuff[0]=0x30;txbuff[1]=0x00;
+	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,2,rxbuff,0);
+	printf("write 0x%02x%02x,return %d 0x%02x%02x\n",txbuff[0],txbuff[1],result,rxbuff[0],rxbuff[1]);
+
+
+	txbuff[0]=0x30;txbuff[1]=0x01;
+	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,2,rxbuff,0);
+	printf("write 0x%02x%02x,return %d 0x%02x%02x\n",txbuff[0],txbuff[1],result,rxbuff[0],rxbuff[1]);
+
+	txbuff[0]=0x30;txbuff[1]=0x02;
+	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,2,rxbuff,0);
+	printf("write 0x%02x%02x,return %d 0x%02x%02x\n",txbuff[0],txbuff[1],result,rxbuff[0],rxbuff[1]);
+
+
+	txbuff[0]=0x30;txbuff[1]=0x03;
+	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,2,rxbuff,0);
+	printf("write 0x%02x%02x,return %d 0x%02x%02x\n",txbuff[0],txbuff[1],result,rxbuff[0],rxbuff[1]);
+
+}
+#endif
+
 int main()
 {
+	printf("Begin spi_test from Nios II!\n");
 #ifdef PIO_KEY_NAME
 	/* Initialize the Buttons/Switches (SW0-SW3) */
 	init_button_pio();
@@ -147,23 +189,15 @@ int main()
 	{
 #ifdef PIO_KEY_NAME
 		ButtonsHandle();
+
 #endif
+		if(triger!=0)
+		{
+#ifdef SPI_0_NAME
+			rw_spi();
+#endif
+			triger=0;
+		}
 	}
-	alt_u8 txbuff[2],rxbuff[2];
-	int result;
-	txbuff[0]=0x10;txbuff[1]=0x5a;
-	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,0,rxbuff,0);
-	printf("write 0x105a,returen 0x%x\n",result);
-
-	txbuff[0]=0x30;txbuff[1]=0x01;
-	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,2,rxbuff,0);
-	printf("write 0x3001,returen 0x%x 0x%x 0x%x\n",result,rxbuff[0],rxbuff[1]);
-
-	txbuff[0]=0x30;txbuff[1]=0x03;
-	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,2,rxbuff,0);
-	printf("write 0x3003,returen 0x%x 0x%x 0x%x\n",result,rxbuff[0],rxbuff[1]);
-
-  printf("Hello from Nios II!\n");
-
   return 0;
 }
