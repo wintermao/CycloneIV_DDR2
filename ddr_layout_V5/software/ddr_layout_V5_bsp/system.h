@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'nios2' in SOPC Builder design 'nios2'
- * SOPC Builder design path: E:/altera/13.0/project/ddr_layout_V5/nios2.sopcinfo
+ * SOPC Builder design path: D:/altera/project/ddr_layout_V5/nios2.sopcinfo
  *
- * Generated: Wed Jan 24 22:30:28 CST 2018
+ * Generated: Wed Jan 31 15:59:37 CST 2018
  */
 
 /*
@@ -369,7 +369,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1516515206
+#define SYSID_TIMESTAMP 1516512116
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 

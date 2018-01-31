@@ -103,7 +103,7 @@ ACDS_VERSION := 13.0
 # BUILD_NUMBER: 156
 
 SETTINGS_FILE := settings.bsp
-SOPC_FILE := E:/altera/13.0/project/ddr_layout_V5/nios2.sopcinfo
+SOPC_FILE := D:/altera/project/ddr_layout_V5/nios2.sopcinfo
 
 #-------------------------------------------------------------------------------
 #                             TOOL & COMMAND DEFINITIONS

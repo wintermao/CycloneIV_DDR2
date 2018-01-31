@@ -142,14 +142,6 @@
          type = "String";
       }
    }
-   element slow_peripheral_bridge.s0
-   {
-      datum baseAddress
-      {
-         value = "268435456";
-         type = "String";
-      }
-   }
    element cpu_ddr2_clock_bridge.s0
    {
       datum baseAddress
@@ -158,11 +150,11 @@
          type = "String";
       }
    }
-   element pio_key.s1
+   element slow_peripheral_bridge.s0
    {
       datum baseAddress
       {
-         value = "96";
+         value = "268435456";
          type = "String";
       }
    }
@@ -174,11 +166,11 @@
          type = "String";
       }
    }
-   element pio_led.s1
+   element pio_key.s1
    {
       datum baseAddress
       {
-         value = "112";
+         value = "96";
          type = "String";
       }
    }
@@ -200,6 +192,14 @@
       datum baseAddress
       {
          value = "285216768";
+         type = "String";
+      }
+   }
+   element pio_led.s1
+   {
+      datum baseAddress
+      {
+         value = "112";
          type = "String";
       }
    }
@@ -274,7 +274,7 @@
  <parameter name="projectName" value="ddr_layout.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1516502737735" />
+ <parameter name="timeStamp" value="1516966448992" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
@@ -356,7 +356,7 @@
   <parameter name="cpuID_stored" value="0" />
   <parameter name="breakOffset" value="32" />
   <parameter name="userDefinedSettings" value="" />
-  <parameter name="resetSlave" value="ddr2.s1" />
+  <parameter name="resetSlave">epcs_flash_controller_0.epcs_control_port</parameter>
   <parameter name="mmu_TLBMissExcSlave" value="None" />
   <parameter name="exceptionSlave" value="ddr2.s1" />
   <parameter name="breakSlave">nios2.jtag_debug_module</parameter>

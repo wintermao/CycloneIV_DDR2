@@ -177,7 +177,7 @@ CRT0 :=
 SYS_LIB :=
 
 # Define path to the root of the BSP.
-BSP_ROOT_DIR := ../workspace/ddr_layout_V5_bsp/
+BSP_ROOT_DIR := ../ddr_layout_V5_bsp
 
 # List of application specific include directories, library directories and library names
 APP_INCLUDE_DIRS :=

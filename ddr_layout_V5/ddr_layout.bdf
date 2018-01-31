@@ -1064,6 +1064,22 @@ applicable agreement for further details.
 	(annotation_block (location)(rect 1513 1248 1553 1264))
 )
 (pin
+	(output)
+	(rect 248 1304 424 1320)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "led_blink" (rect 90 0 132 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
 	(bidir)
 	(rect 312 208 488 224)
 	(text "BIDIR" (rect 151 6 175 16)(font "Arial" (font_size 6)))
@@ -1508,6 +1524,41 @@ applicable agreement for further details.
 		(line (pt 0 0)(pt 0 600))
 	)
 )
+(symbol
+	(rect 96 1280 248 1360)
+	(text "led_flash" (rect 5 0 49 12)(font "Arial" ))
+	(text "inst1" (rect 8 64 31 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "in_clk" (rect 0 0 28 12)(font "Arial" ))
+		(text "in_clk" (rect 21 27 49 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset_n" (rect 0 0 36 12)(font "Arial" ))
+		(text "reset_n" (rect 21 43 57 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "flash" (rect 0 0 24 12)(font "Arial" ))
+		(text "flash" (rect 111 27 135 39)(font "Arial" ))
+		(line (pt 152 32)(pt 136 32))
+	)
+	(parameter
+		"OSC_CLOCK"
+		"27000000"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 136 64))
+	)
+	(annotation_block (parameter)(rect 248 1248 456 1280))
+)
 (connector
 	(pt 504 360)
 	(pt 568 360)
@@ -1636,4 +1687,14 @@ applicable agreement for further details.
 	(text "sys_clk" (rect 490 96 528 108)(font "Arial" ))
 	(pt 480 120)
 	(pt 568 120)
+)
+(connector
+	(text "reset_n" (rect 26 1312 62 1324)(font "Arial" ))
+	(pt 96 1328)
+	(pt 16 1328)
+)
+(connector
+	(text "sys_clk" (rect 26 1296 64 1308)(font "Arial" ))
+	(pt 96 1312)
+	(pt 16 1312)
 )

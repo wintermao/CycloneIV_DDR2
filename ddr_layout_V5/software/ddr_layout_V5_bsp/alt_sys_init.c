@@ -2,9 +2,9 @@
  * alt_sys_init.c - HAL initialization source
  *
  * Machine generated for CPU 'nios2' in SOPC Builder design 'nios2'
- * SOPC Builder design path: E:/altera/13.0/project/ddr_layout_V5/nios2.sopcinfo
+ * SOPC Builder design path: D:/altera/project/ddr_layout_V5/nios2.sopcinfo
  *
- * Generated: Wed Jan 24 22:30:28 CST 2018
+ * Generated: Tue Jan 30 09:59:26 CST 2018
  */
 
 /*

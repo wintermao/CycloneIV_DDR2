@@ -2,9 +2,9 @@
  * linker.h - Linker script mapping information
  *
  * Machine generated for CPU 'nios2' in SOPC Builder design 'nios2'
- * SOPC Builder design path: E:/altera/13.0/project/ddr_layout_V5/nios2.sopcinfo
+ * SOPC Builder design path: D:/altera/project/ddr_layout_V5/nios2.sopcinfo
  *
- * Generated: Wed Jan 24 22:30:28 CST 2018
+ * Generated: Wed Jan 31 15:59:37 CST 2018
  */
 
 /*
@@ -85,21 +85,5 @@
 #define ALT_RODATA_DEVICE DDR2
 #define ALT_RWDATA_DEVICE DDR2
 #define ALT_TEXT_DEVICE DDR2
-
-
-/*
- * Initialization code at the reset address is allowed (e.g. no external bootloader).
- *
- */
-
-#define ALT_ALLOW_CODE_AT_RESET
-
-
-/*
- * The alt_load() facility is called from crt0 to copy sections into RAM.
- *
- */
-
-#define ALT_LOAD_COPY_RWDATA
 
 #endif /* __LINKER_H_ */
