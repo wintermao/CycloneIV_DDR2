@@ -15,6 +15,8 @@
  */
 
 #include "spi_test.h"
+#include "ad5142_spi.h"
+
 
 volatile int edge_capture=0;
 int triger=0;
@@ -136,6 +138,7 @@ static void ButtonsHandle( void )
 		default:
 			printf("\nNo key. capture=0x%x\n",edge_capture);
 			triger=0;
+		  break;
 	  }
 	  edge_capture=0;
 	}
@@ -148,16 +151,43 @@ static void rw_spi(void)
 {
 	alt_u8 txbuff[2],rxbuff[2];
 	int result;
+	static alt_u8 i=0;
 
-	txbuff[0]=0x10;txbuff[1]=0x5a;
+	//txbuff[0]=0x10;txbuff[1]=0x5a;
+	//result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,0,rxbuff,0);
+	//printf("write 0x%02x%02x,return %d\n",txbuff[0],txbuff[1],result);
+
+	//txbuff[0]=0x20;txbuff[1]=0x5a;
+	//result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,0,rxbuff,0);
+	//printf("write 0x%02x%02x,return %d\n",txbuff[0],txbuff[1],result);
+/*
+	txbuff[0]=0x10;txbuff[1]=i;
 	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,0,rxbuff,0);
-	printf("write 0x%02x%02x,return %d\n",txbuff[0],txbuff[1],result);
-
-	txbuff[0]=0x20;txbuff[1]=0x5a;
-	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,0,rxbuff,0);
-	printf("write 0x%02x%02x,return %d\n",txbuff[0],txbuff[1],result);
-
+	printf("write 0x%02x%02x,return %d, ",txbuff[0],txbuff[1],result);
+	txbuff[0]=0x30;txbuff[1]=0x03;
+	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,2,rxbuff,0);
+	printf("read 0x%02x%02x,return %d 0x%02x%02x\n",txbuff[0],txbuff[1],result,rxbuff[0],rxbuff[1]);
+	i++;
+	*/
+	txbuff[0]=0x10;txbuff[1]=i;
+	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,2,rxbuff,0);
+	//result=alt_avalon_spi_command(SPI_0_BASE,0,1,txbuff+1,0,rxbuff,0);
+	//printf("s write 0x%02x%02x,return %d, ",txbuff[0],txbuff[1],result);
+	//printf("s read 0x%02x%02x,return %d 0x%02x%02x\n",txbuff[0],txbuff[1],result,rxbuff[0],rxbuff[1]);
+	txbuff[0]=0x30;txbuff[1]=0x03;
+	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,2,rxbuff,0);
+	txbuff[0]=0x30;txbuff[1]=0x02;
+	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,2,rxbuff,0);
+	txbuff[0]=0x30;txbuff[1]=0x01;
+	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,2,rxbuff,0);
 	txbuff[0]=0x30;txbuff[1]=0x00;
+	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,2,rxbuff,0);
+	//result=alt_avalon_spi_command(SPI_0_BASE,0,0,txbuff,2,rxbuff,0);
+	//result=alt_avalon_spi_command(SPI_0_BASE,0,1,txbuff+1,2,rxbuff,0);
+	printf("read 0x%02x%02x,return %d 0x%02x%02x\n",txbuff[0],txbuff[1],result,rxbuff[0],rxbuff[1]);
+	i++;
+/*
+	txbuff[0]=0x33;txbuff[1]=0x00;
 	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,2,rxbuff,0);
 	printf("write 0x%02x%02x,return %d 0x%02x%02x\n",txbuff[0],txbuff[1],result,rxbuff[0],rxbuff[1]);
 
@@ -175,16 +205,42 @@ static void rw_spi(void)
 	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,2,rxbuff,0);
 	printf("write 0x%02x%02x,return %d 0x%02x%02x\n",txbuff[0],txbuff[1],result,rxbuff[0],rxbuff[1]);
 
+	txbuff[0]=0x30;txbuff[1]=0x04;
+	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,2,rxbuff,0);
+	printf("write 0x%02x%02x,return %d 0x%02x%02x\n",txbuff[0],txbuff[1],result,rxbuff[0],rxbuff[1]);
+*/
 }
 #endif
 
+void spi_new(ad5152_dev *dev)
+{
+	alt_u8 channel=0;
+	alt_u8 result;
+	int i;
+	ad5142_write_rdac(dev,channel,0xa5);
+	//ad5142_write_eeprom(dev,channel,0x79);
+	result=ad5142_read_rdac(dev,channel);
+	printf("rdac=%x\n",result);
+	//result=ad5142_read_eeprom(dev,channel);
+	//printf("eeprom=%x\n",result);
+	for(i=0;i<255;i++)
+	{
+		ad5142_write_rdac(dev,channel,i);
+		result=ad5142_read_rdac(dev,channel);
+		printf("i=%x rdac=%x\n",i,result);
+	}
+}
+
 int main()
 {
+	ad5152_dev dev;
 	printf("Begin spi_test from Nios II!\n");
 #ifdef PIO_KEY_NAME
 	/* Initialize the Buttons/Switches (SW0-SW3) */
 	init_button_pio();
 #endif
+	//ad5142_init(&dev,SPI_0_BASE,0);
+	//ad5142_protect(&dev,false);
 	while(1)
 	{
 #ifdef PIO_KEY_NAME
@@ -195,9 +251,11 @@ int main()
 		{
 #ifdef SPI_0_NAME
 			rw_spi();
+			//spi_new(&dev);
 #endif
 			triger=0;
 		}
 	}
+	disable_button_pio();
   return 0;
 }
