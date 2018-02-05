@@ -155,7 +155,7 @@ ACDS_VERSION := 13.0
 SIM_OPTIMIZE ?= 0
 
 # The CPU reset address as needed by elf2flash
-RESET_ADDRESS ?= 0x0c000000
+RESET_ADDRESS ?= 0x04000000
 
 #-------------------------------------
 # Pre-Initialized Memory Descriptions
@@ -169,8 +169,8 @@ DAT_FILES += $(HDL_SIM_DIR)/$(MEM_0).dat
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_0).dat
 SYM_FILES += $(HDL_SIM_DIR)/$(MEM_0).sym
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_0).sym
-$(MEM_0)_START := 0x0c000000
-$(MEM_0)_END := 0x0fffffff
+$(MEM_0)_START := 0x04000000
+$(MEM_0)_END := 0x07ffffff
 $(MEM_0)_HIERARCHICAL_PATH := ddr2
 $(MEM_0)_WIDTH := 32
 $(MEM_0)_ENDIANNESS := --little-endian-mem
@@ -190,24 +190,14 @@ HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_1).dat
 SYM_FILES += $(HDL_SIM_DIR)/$(MEM_1).sym
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_1).sym
 FLASH_FILES += $(MEM_1).flash
-$(MEM_1)_START := 0x11003000
-$(MEM_1)_END := 0x110037ff
+$(MEM_1)_START := 0x01003000
+$(MEM_1)_END := 0x010037ff
 $(MEM_1)_HIERARCHICAL_PATH := epcs_flash_controller_0
 $(MEM_1)_WIDTH := 32
 $(MEM_1)_ENDIANNESS := --little-endian-mem
 $(MEM_1)_CREATE_LANES := 0
 $(MEM_1)_EPCS_FLAGS := --epcs
 $(MEM_1)_NO_ZERO_FILL_FLAG := --no-zero-fill
-
-$(HDL_SIM_DIR)/$(MEM_1).dat: $(MEM_1).flash
-	$(post-process-info)
-	$(MKDIR) -p $(@D)
-	bash -c '$(FLASH2DAT) --infile=$< --outfile=$@ \
-		--base=$(mem_start_address) --end=$(mem_end_address) --width=$(mem_width) \
-		--create-lanes=$(mem_create_lanes) $(flash2dat_extra_args)'
-
-
-FLASH_DAT_FILES += $(HDL_SIM_DIR)/$(MEM_1).dat
 
 .PHONY: epcs_flash_controller_0
 epcs_flash_controller_0: check_elf_exists $(HDL_SIM_DIR)/$(MEM_1).hex $(HDL_SIM_DIR)/$(MEM_1).dat $(HDL_SIM_DIR)/$(MEM_1).sym $(MEM_1).flash
@@ -222,8 +212,8 @@ DAT_FILES += $(HDL_SIM_DIR)/$(MEM_2).dat
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_2).dat
 SYM_FILES += $(HDL_SIM_DIR)/$(MEM_2).sym
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_2).sym
-$(MEM_2)_START := 0x11001000
-$(MEM_2)_END := 0x11001fff
+$(MEM_2)_START := 0x01001000
+$(MEM_2)_END := 0x01001fff
 $(MEM_2)_HIERARCHICAL_PATH := onchip_ram
 $(MEM_2)_WIDTH := 32
 $(MEM_2)_ENDIANNESS := --little-endian-mem

@@ -2,9 +2,9 @@
  * linker.h - Linker script mapping information
  *
  * Machine generated for CPU 'nios2' in SOPC Builder design 'nios2'
- * SOPC Builder design path: D:/altera/project/ddr_layout_V5/nios2.sopcinfo
+ * SOPC Builder design path: E:/altera/13.0/project/ddr_layout_V5/nios2.sopcinfo
  *
- * Generated: Wed Jan 31 15:59:37 CST 2018
+ * Generated: Sun Feb 04 11:02:21 CST 2018
  */
 
 /*
@@ -65,13 +65,13 @@
  *
  */
 
-#define DDR2_REGION_BASE 0xc000020
+#define DDR2_REGION_BASE 0x4000020
 #define DDR2_REGION_SPAN 67108832
-#define EPCS_FLASH_CONTROLLER_0_REGION_BASE 0x11003000
+#define EPCS_FLASH_CONTROLLER_0_REGION_BASE 0x1003000
 #define EPCS_FLASH_CONTROLLER_0_REGION_SPAN 2048
-#define ONCHIP_RAM_REGION_BASE 0x11001000
+#define ONCHIP_RAM_REGION_BASE 0x1001000
 #define ONCHIP_RAM_REGION_SPAN 4096
-#define RESET_REGION_BASE 0xc000000
+#define RESET_REGION_BASE 0x4000000
 #define RESET_REGION_SPAN 32
 
 
@@ -85,5 +85,21 @@
 #define ALT_RODATA_DEVICE DDR2
 #define ALT_RWDATA_DEVICE DDR2
 #define ALT_TEXT_DEVICE DDR2
+
+
+/*
+ * Initialization code at the reset address is allowed (e.g. no external bootloader).
+ *
+ */
+
+#define ALT_ALLOW_CODE_AT_RESET
+
+
+/*
+ * The alt_load() facility is called from crt0 to copy sections into RAM.
+ *
+ */
+
+#define ALT_LOAD_COPY_RWDATA
 
 #endif /* __LINKER_H_ */

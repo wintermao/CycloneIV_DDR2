@@ -16,7 +16,6 @@
 
 #include <unistd.h>
 #include <stdio.h>
-#include <string.h>
 #include "system.h"
 
 int main()
@@ -24,25 +23,22 @@ int main()
   FILE *fp;
   int i=0;
   char ch;
-  char buff[40];
   if((fp=fopen("/dev/uart_0","r+"))==NULL)
   {
-	  printf("open device %s error!\n",UART_0_NAME);
+	  printf("open device /dev/uart_0 error!\n");
 	  return 0;
   }
   while(1)
   {
-	  sprintf(buff,"this is test, i=%d\n",i);
-	  printf("%s",buff);
-	  fwrite(buff,strlen(buff),1,fp);
+	  fprintf(fp,"this is test, i=%d\n",i);
 	  if(fread(&ch,1,1,fp)!=0)
 	  {
-		  printf("revice ch =%c\n",ch);
+		  printf("receive ch =%c\n",ch);
 	  }
 	  i++;
 	  usleep(50000);
   }
-  printf("Hello from Nios II!\n");
-
+  printf("receive \"q\",program exit!\n");
+  fclose(fp);
   return 0;
 }
