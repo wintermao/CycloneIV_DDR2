@@ -210,11 +210,24 @@ static void rw_spi(void)
 	printf("write 0x%02x%02x,return %d 0x%02x%02x\n",txbuff[0],txbuff[1],result,rxbuff[0],rxbuff[1]);
 */
 }
+static void rw_spi_2(void)
+{
+	alt_u8 txbuff[2],rxbuff[2];
+	int result;
+	static alt_u8 i=0;
+
+	txbuff[0]=0x11;txbuff[1]=i;
+	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,0,rxbuff,0);
+	txbuff[0]=0x31;txbuff[1]=0x03;
+	result=alt_avalon_spi_command(SPI_0_BASE,0,2,txbuff,2,rxbuff,0);
+	printf("read 0x%02x%02x,return %d 0x%02x%02x\n",txbuff[0],txbuff[1],result,rxbuff[0],rxbuff[1]);
+	i++;
+}
 #endif
 
 void spi_new(ad5152_dev *dev)
 {
-	alt_u8 channel=0;
+	alt_u8 channel=1;
 	alt_u8 result;
 	int i;
 	ad5142_write_rdac(dev,channel,0xa5);
@@ -223,11 +236,13 @@ void spi_new(ad5152_dev *dev)
 	printf("rdac=%x\n",result);
 	//result=ad5142_read_eeprom(dev,channel);
 	//printf("eeprom=%x\n",result);
+	while(1)
 	for(i=0;i<255;i++)
 	{
 		ad5142_write_rdac(dev,channel,i);
-		result=ad5142_read_rdac(dev,channel);
+		//result=ad5142_read_rdac(dev,channel);
 		printf("i=%x rdac=%x\n",i,result);
+		usleep(500000);
 	}
 }
 
@@ -239,8 +254,8 @@ int main()
 	/* Initialize the Buttons/Switches (SW0-SW3) */
 	init_button_pio();
 #endif
-	//ad5142_init(&dev,SPI_0_BASE,0);
-	//ad5142_protect(&dev,false);
+	ad5142_init(&dev,SPI_0_BASE,0);
+	ad5142_protect(&dev,false);
 	while(1)
 	{
 #ifdef PIO_KEY_NAME
@@ -250,8 +265,9 @@ int main()
 		if(triger!=0)
 		{
 #ifdef SPI_0_NAME
-			rw_spi();
-			//spi_new(&dev);
+			//rw_spi();
+			spi_new(&dev);
+			//rw_spi_2();
 #endif
 			triger=0;
 		}

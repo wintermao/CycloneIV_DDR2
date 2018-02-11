@@ -2,9 +2,9 @@
  * alt_sys_init.c - HAL initialization source
  *
  * Machine generated for CPU 'nios2' in SOPC Builder design 'nios2'
- * SOPC Builder design path: E:/altera/13.0/project/ddr_layout_V5/nios2.sopcinfo
+ * SOPC Builder design path: E:/altera/13.0/project/CycloneIV_DDR2/ddr_layout_V5/nios2.sopcinfo
  *
- * Generated: Sun Feb 04 11:02:21 CST 2018
+ * Generated: Sun Feb 11 10:52:15 CST 2018
  */
 
 /*
@@ -73,7 +73,7 @@
 
 ALTERA_NIOS2_QSYS_IRQ_INSTANCE ( NIOS2, nios2);
 ALTERA_AVALON_DMA_INSTANCE ( DMA_0, dma_0);
-ALTERA_AVALON_EPCS_FLASH_CONTROLLER_INSTANCE ( EPCS_FLASH_CONTROLLER_0, epcs_flash_controller_0);
+ALTERA_AVALON_EPCS_FLASH_CONTROLLER_INSTANCE ( EPCS_FLASH, epcs_flash);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG_UART_0, jtag_uart_0);
 ALTERA_AVALON_SPI_INSTANCE ( SPI_0, spi_0);
 ALTERA_AVALON_SYSID_QSYS_INSTANCE ( SYSID, sysid);
@@ -105,7 +105,7 @@ void alt_sys_init( void )
     ALTERA_AVALON_TIMER_INIT ( SYSTIMER, systimer);
     ALTERA_AVALON_TIMER_INIT ( TIMESTAMP, timestamp);
     ALTERA_AVALON_DMA_INIT ( DMA_0, dma_0);
-    ALTERA_AVALON_EPCS_FLASH_CONTROLLER_INIT ( EPCS_FLASH_CONTROLLER_0, epcs_flash_controller_0);
+    ALTERA_AVALON_EPCS_FLASH_CONTROLLER_INIT ( EPCS_FLASH, epcs_flash);
     ALTERA_AVALON_JTAG_UART_INIT ( JTAG_UART_0, jtag_uart_0);
     ALTERA_AVALON_SPI_INIT ( SPI_0, spi_0);
     ALTERA_AVALON_SYSID_QSYS_INIT ( SYSID, sysid);

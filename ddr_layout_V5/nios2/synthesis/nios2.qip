@@ -2,7 +2,7 @@ set_global_assignment -entity "nios2" -library "nios2" -name IP_TOOL_NAME "Qsys"
 set_global_assignment -entity "nios2" -library "nios2" -name IP_TOOL_VERSION "13.0"
 set_global_assignment -entity "nios2" -library "nios2" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "nios2" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../nios2.sopcinfo"]
-set_instance_assignment -entity "nios2" -library "nios2" -name SLD_INFO "QSYS_NAME nios2 HAS_SOPCINFO 1 GENERATION_ID 1517739835"
+set_instance_assignment -entity "nios2" -library "nios2" -name SLD_INFO "QSYS_NAME nios2 HAS_SOPCINFO 1 GENERATION_ID 1518042643"
 set_global_assignment -library "nios2" -name MISC_FILE [file join $::quartus(qip_path) "../../nios2.cmp"]
 set_global_assignment -name SYNTHESIS_ONLY_QIP ON
 set_global_assignment -library "nios2" -name MISC_FILE [file join $::quartus(qip_path) "../../nios2.qsys"]
@@ -56,8 +56,8 @@ set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_avalon_dc_fifo.v"]
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_dcfifo_synchronizer_bundle.v"]
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/nios2_altpll_0.v"]
-set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/nios2_epcs_flash_controller_0.v"]
-set_global_assignment -library "nios2" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/nios2_epcs_flash_controller_0_boot_rom.hex"]
+set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/nios2_epcs_flash.v"]
+set_global_assignment -library "nios2" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/nios2_epcs_flash_boot_rom.hex"]
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/nios2_spi_0.v"]
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/nios2_uart_0.v"]
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/nios2_pio_key.v"]
@@ -257,9 +257,9 @@ set_global_assignment -entity "altera_avalon_mm_clock_crossing_bridge" -library 
 set_global_assignment -entity "nios2_altpll_0" -library "nios2" -name IP_TOOL_NAME "altpll"
 set_global_assignment -entity "nios2_altpll_0" -library "nios2" -name IP_TOOL_VERSION "13.0"
 set_global_assignment -entity "nios2_altpll_0" -library "nios2" -name IP_TOOL_ENV "Qsys"
-set_global_assignment -entity "nios2_epcs_flash_controller_0" -library "nios2" -name IP_TOOL_NAME "altera_avalon_epcs_flash_controller"
-set_global_assignment -entity "nios2_epcs_flash_controller_0" -library "nios2" -name IP_TOOL_VERSION "13.0.1"
-set_global_assignment -entity "nios2_epcs_flash_controller_0" -library "nios2" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "nios2_epcs_flash" -library "nios2" -name IP_TOOL_NAME "altera_avalon_epcs_flash_controller"
+set_global_assignment -entity "nios2_epcs_flash" -library "nios2" -name IP_TOOL_VERSION "13.0.1"
+set_global_assignment -entity "nios2_epcs_flash" -library "nios2" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -entity "nios2_spi_0" -library "nios2" -name IP_TOOL_NAME "altera_avalon_spi"
 set_global_assignment -entity "nios2_spi_0" -library "nios2" -name IP_TOOL_VERSION "13.0.1"
 set_global_assignment -entity "nios2_spi_0" -library "nios2" -name IP_TOOL_ENV "Qsys"

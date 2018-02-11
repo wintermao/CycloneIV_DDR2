@@ -2,11 +2,11 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2018-2-4 18:26:03</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1517739963769</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>E:\altera\13.0\project\ddr_layout_V5\software\ddr_layout_V5_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>2018-2-11 10:52:41</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1518317561998</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>E:\altera\13.0\project\CycloneIV_DDR2\ddr_layout_V5\software\ddr_layout_V5_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
-        <SopcDesignFile>E:\altera\13.0\project\ddr_layout_V5\nios2.sopcinfo</SopcDesignFile>
+        <SopcDesignFile>E:\altera\13.0\project\CycloneIV_DDR2\ddr_layout_V5\nios2.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>nios2</Cpu>
         <SchemaVersion>1.9</SchemaVersion>
@@ -953,7 +953,7 @@
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>epcs_flash_controller_0</slaveDescriptor>
+                <slaveDescriptor>epcs_flash</slaveDescriptor>
                 <addressRange>0x01003000 - 0x010037FF</addressRange>
                 <addressSpan>2048</addressSpan>
                 <attributes>flash, memory, non-volatile</attributes>

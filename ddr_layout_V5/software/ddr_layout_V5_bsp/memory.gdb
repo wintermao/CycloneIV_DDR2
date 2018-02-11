@@ -1,9 +1,9 @@
 # memory.gdb - GDB memory region definitions
 #
 # Machine generated for CPU 'nios2' in SOPC Builder design 'nios2'
-# SOPC Builder design path: E:/altera/13.0/project/ddr_layout_V5/nios2.sopcinfo
+# SOPC Builder design path: E:/altera/13.0/project/CycloneIV_DDR2/ddr_layout_V5/nios2.sopcinfo
 #
-# Generated: Sun Feb 04 11:02:21 CST 2018
+# Generated: Sun Feb 11 10:52:15 CST 2018
 
 # DO NOT MODIFY THIS FILE
 #
@@ -49,7 +49,7 @@
 # onchip_ram
 memory 0x1001000 0x1002000 cache
 
-# epcs_flash_controller_0
+# epcs_flash
 memory 0x1003000 0x1003800 cache
 
 # ddr2

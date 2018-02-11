@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'nios2' in SOPC Builder design 'nios2'
- * SOPC Builder design path: E:/altera/13.0/project/ddr_layout_V5/nios2.sopcinfo
+ * SOPC Builder design path: E:/altera/13.0/project/CycloneIV_DDR2/ddr_layout_V5/nios2.sopcinfo
  *
- * Generated: Sun Feb 04 18:26:08 CST 2018
+ * Generated: Sun Feb 11 10:52:15 CST 2018
  */
 
 /*
@@ -249,18 +249,18 @@
 
 
 /*
- * epcs_flash_controller_0 configuration
+ * epcs_flash configuration
  *
  */
 
-#define ALT_MODULE_CLASS_epcs_flash_controller_0 altera_avalon_epcs_flash_controller
-#define EPCS_FLASH_CONTROLLER_0_BASE 0x1003000
-#define EPCS_FLASH_CONTROLLER_0_IRQ 5
-#define EPCS_FLASH_CONTROLLER_0_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define EPCS_FLASH_CONTROLLER_0_NAME "/dev/epcs_flash_controller_0"
-#define EPCS_FLASH_CONTROLLER_0_REGISTER_OFFSET 1024
-#define EPCS_FLASH_CONTROLLER_0_SPAN 2048
-#define EPCS_FLASH_CONTROLLER_0_TYPE "altera_avalon_epcs_flash_controller"
+#define ALT_MODULE_CLASS_epcs_flash altera_avalon_epcs_flash_controller
+#define EPCS_FLASH_BASE 0x1003000
+#define EPCS_FLASH_IRQ 5
+#define EPCS_FLASH_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define EPCS_FLASH_NAME "/dev/epcs_flash"
+#define EPCS_FLASH_REGISTER_OFFSET 1024
+#define EPCS_FLASH_SPAN 2048
+#define EPCS_FLASH_TYPE "altera_avalon_epcs_flash_controller"
 
 
 /*
@@ -417,7 +417,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1517739835
+#define SYSID_TIMESTAMP 1518042643
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 

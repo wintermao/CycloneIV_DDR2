@@ -81,7 +81,7 @@
          type = "int";
       }
    }
-   element epcs_flash_controller_0.epcs_control_port
+   element epcs_flash.epcs_control_port
    {
       datum baseAddress
       {
@@ -89,7 +89,7 @@
          type = "String";
       }
    }
-   element epcs_flash_controller_0
+   element epcs_flash
    {
       datum _sortIndex
       {
@@ -179,11 +179,43 @@
          type = "String";
       }
    }
+   element systimer.s1
+   {
+      datum baseAddress
+      {
+         value = "128";
+         type = "String";
+      }
+   }
+   element pio_key.s1
+   {
+      datum baseAddress
+      {
+         value = "176";
+         type = "String";
+      }
+   }
    element uart_0.s1
    {
       datum baseAddress
       {
          value = "64";
+         type = "String";
+      }
+   }
+   element onchip_ram.s1
+   {
+      datum baseAddress
+      {
+         value = "16781312";
+         type = "String";
+      }
+   }
+   element pio_led.s1
+   {
+      datum baseAddress
+      {
+         value = "160";
          type = "String";
       }
    }
@@ -200,43 +232,11 @@
          type = "String";
       }
    }
-   element systimer.s1
-   {
-      datum baseAddress
-      {
-         value = "128";
-         type = "String";
-      }
-   }
-   element pio_led.s1
-   {
-      datum baseAddress
-      {
-         value = "160";
-         type = "String";
-      }
-   }
-   element onchip_ram.s1
-   {
-      datum baseAddress
-      {
-         value = "16781312";
-         type = "String";
-      }
-   }
    element timestamp.s1
    {
       datum baseAddress
       {
          value = "0";
-         type = "String";
-      }
-   }
-   element pio_key.s1
-   {
-      datum baseAddress
-      {
-         value = "176";
          type = "String";
       }
    }
@@ -311,7 +311,7 @@
  <parameter name="projectName" value="ddr_layout.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1517739697289" />
+ <parameter name="timeStamp" value="1518042461450" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
@@ -333,6 +333,11 @@
    type="conduit"
    dir="end" />
  <interface name="spi_dp" internal="spi_0.external" type="conduit" dir="end" />
+ <interface
+   name="epcs_flash"
+   internal="epcs_flash.external"
+   type="conduit"
+   dir="end" />
  <module kind="clock_source" version="13.0" enabled="1" name="clk">
   <parameter name="clockFrequency" value="27000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -440,8 +445,8 @@
   <parameter name="tightlyCoupledInstructionMaster1AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash_controller_0.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='timestamp.s1' start='0x0' end='0x20' /><slave name='dma_0.control_port_slave' start='0x20' end='0x40' /><slave name='uart_0.s1' start='0x40' end='0x60' /><slave name='spi_0.spi_control_port' start='0x60' end='0x80' /><slave name='systimer.s1' start='0x80' end='0xA0' /><slave name='pio_led.s1' start='0xA0' end='0xB0' /><slave name='pio_key.s1' start='0xB0' end='0xC0' /><slave name='altpll_0.pll_slave' start='0xC0' end='0xD0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0xD0' end='0xD8' /><slave name='sysid.control_slave' start='0xD8' end='0xE0' /><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash_controller_0.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='timestamp.s1' start='0x0' end='0x20' /><slave name='dma_0.control_port_slave' start='0x20' end='0x40' /><slave name='uart_0.s1' start='0x40' end='0x60' /><slave name='spi_0.spi_control_port' start='0x60' end='0x80' /><slave name='systimer.s1' start='0x80' end='0xA0' /><slave name='pio_led.s1' start='0xA0' end='0xB0' /><slave name='pio_key.s1' start='0xB0' end='0xC0' /><slave name='altpll_0.pll_slave' start='0xC0' end='0xD0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0xD0' end='0xD8' /><slave name='sysid.control_slave' start='0xD8' end='0xE0' /><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="108000000" />
   <parameter name="deviceFamilyName" value="Cyclone IV E" />
   <parameter name="internalIrqMaskSystemInfo" value="255" />
@@ -782,12 +787,12 @@
    kind="altera_avalon_epcs_flash_controller"
    version="13.0.1"
    enabled="1"
-   name="epcs_flash_controller_0">
+   name="epcs_flash">
   <parameter name="autoSelectASMIAtom" value="true" />
   <parameter name="useASMIAtom" value="false" />
   <parameter name="clockRate" value="108000000" />
   <parameter name="deviceFamilyString" value="Cyclone IV E" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_epcs_flash_controller_0</parameter>
+  <parameter name="autoInitializationFileName">$${FILENAME}_epcs_flash</parameter>
  </module>
  <module kind="altpll" version="13.0" enabled="1" name="altpll_0">
   <parameter name="HIDDEN_CUSTOM_ELABORATION">altpll_avalon_elaboration</parameter>
@@ -1163,7 +1168,7 @@
    kind="avalon"
    version="13.0"
    start="nios2.data_master"
-   end="epcs_flash_controller_0.epcs_control_port">
+   end="epcs_flash.epcs_control_port">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x01003000" />
   <parameter name="defaultConnection" value="false" />
@@ -1172,7 +1177,7 @@
    kind="avalon"
    version="13.0"
    start="nios2.instruction_master"
-   end="epcs_flash_controller_0.epcs_control_port">
+   end="epcs_flash.epcs_control_port">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x01003000" />
   <parameter name="defaultConnection" value="false" />
@@ -1184,7 +1189,7 @@
    kind="interrupt"
    version="13.0"
    start="nios2.d_irq"
-   end="epcs_flash_controller_0.irq">
+   end="epcs_flash.irq">
   <parameter name="irqNumber" value="5" />
  </connection>
  <connection kind="reset" version="13.0" start="clk.clk_reset" end="uart_0.reset" />
@@ -1213,17 +1218,17 @@
    kind="reset"
    version="13.0"
    start="clk.clk_reset"
-   end="epcs_flash_controller_0.reset" />
+   end="epcs_flash.reset" />
  <connection
    kind="reset"
    version="13.0"
    start="nios2.jtag_debug_module_reset"
-   end="epcs_flash_controller_0.reset" />
+   end="epcs_flash.reset" />
  <connection
    kind="reset"
    version="13.0"
    start="ddr2.reset_request_n"
-   end="epcs_flash_controller_0.reset" />
+   end="epcs_flash.reset" />
  <connection
    kind="clock"
    version="13.0"
@@ -1449,11 +1454,7 @@
    end="cpu_ddr2_clock_bridge.s0_reset" />
  <connection kind="clock" version="13.0" start="altpll_0.c2" end="nios2.clk" />
  <connection kind="clock" version="13.0" start="altpll_0.c2" end="onchip_ram.clk1" />
- <connection
-   kind="clock"
-   version="13.0"
-   start="altpll_0.c2"
-   end="epcs_flash_controller_0.clk" />
+ <connection kind="clock" version="13.0" start="altpll_0.c2" end="epcs_flash.clk" />
  <connection
    kind="clock"
    version="13.0"

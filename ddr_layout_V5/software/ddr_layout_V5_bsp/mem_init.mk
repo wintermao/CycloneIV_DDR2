@@ -179,9 +179,9 @@ $(MEM_0)_CREATE_LANES := 0
 .PHONY: ddr2
 ddr2: check_elf_exists $(HDL_SIM_DIR)/$(MEM_0).dat $(HDL_SIM_DIR)/$(MEM_0).sym
 
-# Memory: epcs_flash_controller_0
-MEM_1 := nios2_epcs_flash_controller_0_boot_rom
-$(MEM_1)_NAME := epcs_flash_controller_0
+# Memory: epcs_flash
+MEM_1 := nios2_epcs_flash_boot_rom
+$(MEM_1)_NAME := epcs_flash
 $(MEM_1)_MEM_INIT_FILE_PARAM_NAME := INIT_FILE
 HEX_FILES += $(HDL_SIM_DIR)/$(MEM_1).hex
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_1).hex
@@ -192,15 +192,15 @@ HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_1).sym
 FLASH_FILES += $(MEM_1).flash
 $(MEM_1)_START := 0x01003000
 $(MEM_1)_END := 0x010037ff
-$(MEM_1)_HIERARCHICAL_PATH := epcs_flash_controller_0
+$(MEM_1)_HIERARCHICAL_PATH := epcs_flash
 $(MEM_1)_WIDTH := 32
 $(MEM_1)_ENDIANNESS := --little-endian-mem
 $(MEM_1)_CREATE_LANES := 0
 $(MEM_1)_EPCS_FLAGS := --epcs
 $(MEM_1)_NO_ZERO_FILL_FLAG := --no-zero-fill
 
-.PHONY: epcs_flash_controller_0
-epcs_flash_controller_0: check_elf_exists $(HDL_SIM_DIR)/$(MEM_1).hex $(HDL_SIM_DIR)/$(MEM_1).dat $(HDL_SIM_DIR)/$(MEM_1).sym $(MEM_1).flash
+.PHONY: epcs_flash
+epcs_flash: check_elf_exists $(HDL_SIM_DIR)/$(MEM_1).hex $(HDL_SIM_DIR)/$(MEM_1).dat $(HDL_SIM_DIR)/$(MEM_1).sym $(MEM_1).flash
 
 # Memory: onchip_ram
 MEM_2 := nios2_onchip_ram

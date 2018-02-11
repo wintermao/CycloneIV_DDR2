@@ -87,7 +87,7 @@ ACDS_VERSION := 13.0
 
 # Qsys--generated SOPCINFO file. Required for resolving node instance ID's with 
 # design component names. 
-SOPCINFO_FILE := E:/altera/13.0/project/ddr_layout_V5/nios2.sopcinfo
+SOPCINFO_FILE := E:/altera/13.0/project/CycloneIV_DDR2/ddr_layout_V5/nios2.sopcinfo
 
 # Big-Endian operation. 
 # setting BIG_ENDIAN is false
@@ -152,9 +152,9 @@ SOPC_SYSID_FLAG += --sidp=0xd8
 ELF_PATCH_FLAG  += --sidp 0xd8
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1517739835
-SOPC_SYSID_FLAG += --timestamp=1517739835
-ELF_PATCH_FLAG  += --timestamp 1517739835
+# setting SOPC_TIMESTAMP is 1518042643
+SOPC_SYSID_FLAG += --timestamp=1518042643
+ELF_PATCH_FLAG  += --timestamp 1518042643
 
 # Enable JTAG UART driver to recover when host is inactive causing buffer to 
 # full without returning error. Printf will not fail with this recovery. none 

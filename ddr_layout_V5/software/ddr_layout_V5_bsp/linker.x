@@ -2,9 +2,9 @@
  * linker.x - Linker script
  *
  * Machine generated for CPU 'nios2' in SOPC Builder design 'nios2'
- * SOPC Builder design path: E:/altera/13.0/project/ddr_layout_V5/nios2.sopcinfo
+ * SOPC Builder design path: E:/altera/13.0/project/CycloneIV_DDR2/ddr_layout_V5/nios2.sopcinfo
  *
- * Generated: Sun Feb 04 11:02:21 CST 2018
+ * Generated: Sun Feb 11 10:52:15 CST 2018
  */
 
 /*
@@ -51,14 +51,14 @@
 MEMORY
 {
     onchip_ram : ORIGIN = 0x1001000, LENGTH = 4096
-    epcs_flash_controller_0 : ORIGIN = 0x1003000, LENGTH = 2048
+    epcs_flash : ORIGIN = 0x1003000, LENGTH = 2048
     reset : ORIGIN = 0x4000000, LENGTH = 32
     ddr2 : ORIGIN = 0x4000020, LENGTH = 67108832
 }
 
 /* Define symbols for each memory base-address */
 __alt_mem_onchip_ram = 0x1001000;
-__alt_mem_epcs_flash_controller_0 = 0x1003000;
+__alt_mem_epcs_flash = 0x1003000;
 __alt_mem_ddr2 = 0x4000000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
@@ -327,15 +327,15 @@ SECTIONS
      *
      */
 
-    .epcs_flash_controller_0 : AT ( LOADADDR (.onchip_ram) + SIZEOF (.onchip_ram) )
+    .epcs_flash : AT ( LOADADDR (.onchip_ram) + SIZEOF (.onchip_ram) )
     {
-        PROVIDE (_alt_partition_epcs_flash_controller_0_start = ABSOLUTE(.));
-        *(.epcs_flash_controller_0. epcs_flash_controller_0.*)
+        PROVIDE (_alt_partition_epcs_flash_start = ABSOLUTE(.));
+        *(.epcs_flash. epcs_flash.*)
         . = ALIGN(4);
-        PROVIDE (_alt_partition_epcs_flash_controller_0_end = ABSOLUTE(.));
-    } > epcs_flash_controller_0
+        PROVIDE (_alt_partition_epcs_flash_end = ABSOLUTE(.));
+    } > epcs_flash
 
-    PROVIDE (_alt_partition_epcs_flash_controller_0_load_addr = LOADADDR(.epcs_flash_controller_0));
+    PROVIDE (_alt_partition_epcs_flash_load_addr = LOADADDR(.epcs_flash));
 
     /*
      *
@@ -344,7 +344,7 @@ SECTIONS
      *
      */
 
-    .ddr2 LOADADDR (.epcs_flash_controller_0) + SIZEOF (.epcs_flash_controller_0) : AT ( LOADADDR (.epcs_flash_controller_0) + SIZEOF (.epcs_flash_controller_0) )
+    .ddr2 LOADADDR (.epcs_flash) + SIZEOF (.epcs_flash) : AT ( LOADADDR (.epcs_flash) + SIZEOF (.epcs_flash) )
     {
         PROVIDE (_alt_partition_ddr2_start = ABSOLUTE(.));
         *(.ddr2. ddr2.*)
