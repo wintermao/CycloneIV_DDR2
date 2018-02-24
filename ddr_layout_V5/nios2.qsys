@@ -179,46 +179,6 @@
          type = "String";
       }
    }
-   element systimer.s1
-   {
-      datum baseAddress
-      {
-         value = "128";
-         type = "String";
-      }
-   }
-   element pio_key.s1
-   {
-      datum baseAddress
-      {
-         value = "176";
-         type = "String";
-      }
-   }
-   element uart_0.s1
-   {
-      datum baseAddress
-      {
-         value = "64";
-         type = "String";
-      }
-   }
-   element onchip_ram.s1
-   {
-      datum baseAddress
-      {
-         value = "16781312";
-         type = "String";
-      }
-   }
-   element pio_led.s1
-   {
-      datum baseAddress
-      {
-         value = "160";
-         type = "String";
-      }
-   }
    element ddr2.s1
    {
       datum _lockedAddress
@@ -232,11 +192,51 @@
          type = "String";
       }
    }
+   element pio_led.s1
+   {
+      datum baseAddress
+      {
+         value = "160";
+         type = "String";
+      }
+   }
+   element systimer.s1
+   {
+      datum baseAddress
+      {
+         value = "128";
+         type = "String";
+      }
+   }
+   element uart_0.s1
+   {
+      datum baseAddress
+      {
+         value = "64";
+         type = "String";
+      }
+   }
    element timestamp.s1
    {
       datum baseAddress
       {
          value = "0";
+         type = "String";
+      }
+   }
+   element pio_key.s1
+   {
+      datum baseAddress
+      {
+         value = "176";
+         type = "String";
+      }
+   }
+   element onchip_ram.s1
+   {
+      datum baseAddress
+      {
+         value = "16781312";
          type = "String";
       }
    }
@@ -311,7 +311,7 @@
  <parameter name="projectName" value="ddr_layout.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1518042461450" />
+ <parameter name="timeStamp" value="1519512097421" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
@@ -769,7 +769,7 @@
  </module>
  <module kind="altera_avalon_spi" version="13.0.1" enabled="1" name="spi_0">
   <parameter name="clockPhase" value="0" />
-  <parameter name="clockPolarity" value="0" />
+  <parameter name="clockPolarity" value="1" />
   <parameter name="dataWidth" value="8" />
   <parameter name="disableAvalonFlowControl" value="false" />
   <parameter name="insertDelayBetweenSlaveSelectAndSClk" value="false" />

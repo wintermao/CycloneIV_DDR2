@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2' in SOPC Builder design 'nios2'
  * SOPC Builder design path: E:/altera/13.0/project/CycloneIV_DDR2/ddr_layout_V5/nios2.sopcinfo
  *
- * Generated: Sun Feb 11 10:52:15 CST 2018
+ * Generated: Sun Feb 25 06:48:00 CST 2018
  */
 
 /*
@@ -383,7 +383,7 @@
 #define SPI_0_BASE 0x60
 #define SPI_0_CLOCKMULT 1
 #define SPI_0_CLOCKPHASE 0
-#define SPI_0_CLOCKPOLARITY 0
+#define SPI_0_CLOCKPOLARITY 1
 #define SPI_0_CLOCKUNITS "Hz"
 #define SPI_0_DATABITS 8
 #define SPI_0_DATAWIDTH 16
@@ -417,7 +417,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1518042643
+#define SYSID_TIMESTAMP 1519512195
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 

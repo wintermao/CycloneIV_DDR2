@@ -22,7 +22,8 @@ void epcs()
 	alt_flash_fd*  my_epcs;
 	int offset;
 	//get epcs device handle
-	my_epcs = alt_flash_open_dev("/dev/epcs_flash");
+	//my_epcs = alt_flash_open_dev("/dev/epcs_flash");
+	my_epcs = alt_flash_open_dev(EPCS_FLASH_NAME);
 	if(my_epcs==NULL)
 	{
 		printf("open %s failed!\n",EPCS_FLASH_NAME);

@@ -295,7 +295,7 @@ applicable agreement for further details.
 	(input)
 	(rect 336 696 504 712)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "epcs_data" (rect 5 0 56 12)(font "Arial" ))
+	(text "epcs_data" (rect 5 0 55 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -940,7 +940,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 64 1208 240 1224)
+	(rect 104 768 280 784)
 	(text "OUTPUT" (rect 137 6 175 16)(font "Arial" (font_size 6)))
 	(text "DP_SPI_Reset" (rect 12 4 86 16)(font "Arial" ))
 	(pt 176 8)
@@ -954,7 +954,7 @@ applicable agreement for further details.
 		(line (pt 98 4)(pt 94 8))
 	)
 	(rotate180)
-	(annotation_block (location)(rect 8 1224 64 1240))
+	(annotation_block (location)(rect 48 784 104 800))
 )
 (pin
 	(output)
@@ -1101,7 +1101,7 @@ applicable agreement for further details.
 	(output)
 	(rect 328 648 504 664)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "epcs_dclk" (rect 5 0 55 12)(font "Arial" ))
+	(text "epcs_dclk" (rect 5 0 54 12)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -1119,7 +1119,7 @@ applicable agreement for further details.
 	(output)
 	(rect 328 664 504 680)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "epcs_sce" (rect 5 0 53 12)(font "Arial" ))
+	(text "epcs_sce" (rect 5 0 52 12)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -1137,7 +1137,7 @@ applicable agreement for further details.
 	(output)
 	(rect 328 680 504 696)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "epcs_sdo" (rect 5 0 53 12)(font "Arial" ))
+	(text "epcs_sdo" (rect 5 0 52 12)(font "Arial" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -1801,11 +1801,6 @@ applicable agreement for further details.
 	(pt 16 1312)
 )
 (connector
-	(text "LED[3]" (rect 250 1200 284 1212)(font "Arial" ))
-	(pt 288 1216)
-	(pt 240 1216)
-)
-(connector
 	(pt 568 656)
 	(pt 504 656)
 )
@@ -1820,4 +1815,9 @@ applicable agreement for further details.
 (connector
 	(pt 568 704)
 	(pt 504 704)
+)
+(connector
+	(text "reset_n" (rect 290 760 326 772)(font "Arial" ))
+	(pt 328 776)
+	(pt 280 776)
 )
