@@ -13,17 +13,17 @@
 #include "alt_types.h"
 #include "stdbool.h"
 
-typedef struct ad5152_dev_s
+typedef struct ad5142_dev_s
 {
 	alt_u32 base;
 	alt_u32 slave;
-}ad5152_dev;
+}ad5142_dev;
 
-void ad5142_init(ad5152_dev *dev,alt_u32 base,alt_u32 slave);
-alt_u8 ad5142_read_rdac(ad5152_dev *dev,alt_u8 channel);
-alt_u8 ad5142_read_eeprom(ad5152_dev *dev,alt_u8 channel);
-void ad5142_write_rdac(ad5152_dev *dev,alt_u8 channel,alt_u8 data);
-void ad5142_write_eeprom(ad5152_dev *dev,alt_u8 channel,alt_u8 data);
-void ad5142_reset(ad5152_dev *dev);
-void ad5142_protect(ad5152_dev *dev,bool state);
+void ad5142_init(ad5142_dev *dev,alt_u32 base,alt_u32 slave);
+alt_u8 ad5142_read_rdac(ad5142_dev *dev,alt_u8 channel);
+alt_u8 ad5142_read_eeprom(ad5142_dev *dev,alt_u8 channel);
+void ad5142_write_rdac(ad5142_dev *dev,alt_u8 channel,alt_u8 data);
+void ad5142_write_eeprom(ad5142_dev *dev,alt_u8 channel,alt_u8 data);
+void ad5142_reset(ad5142_dev *dev);
+void ad5142_protect(ad5142_dev *dev,bool state);
 #endif /* AD5142_SPI_H_ */
