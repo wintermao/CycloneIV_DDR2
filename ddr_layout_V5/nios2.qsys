@@ -12,11 +12,27 @@
    element $${FILENAME}
    {
    }
+   element ad9245_1
+   {
+      datum _sortIndex
+      {
+         value = "19";
+         type = "int";
+      }
+   }
+   element ad9245_2
+   {
+      datum _sortIndex
+      {
+         value = "20";
+         type = "int";
+      }
+   }
    element altpll_0
    {
       datum _sortIndex
       {
-         value = "1";
+         value = "2";
          type = "int";
       }
    }
@@ -32,7 +48,7 @@
    {
       datum _sortIndex
       {
-         value = "0";
+         value = "1";
          type = "int";
       }
    }
@@ -117,7 +133,15 @@
    {
       datum _sortIndex
       {
-         value = "3";
+         value = "0";
+         type = "int";
+      }
+   }
+   element nios_clk
+   {
+      datum _sortIndex
+      {
+         value = "18";
          type = "int";
       }
    }
@@ -179,11 +203,11 @@
          type = "String";
       }
    }
-   element pio_led.s1
+   element ad9245_2.s1
    {
       datum baseAddress
       {
-         value = "192";
+         value = "256";
          type = "String";
       }
    }
@@ -200,6 +224,14 @@
       datum baseAddress
       {
          value = "16781312";
+         type = "String";
+      }
+   }
+   element uart_0.s1
+   {
+      datum baseAddress
+      {
+         value = "96";
          type = "String";
       }
    }
@@ -224,11 +256,19 @@
          type = "String";
       }
    }
-   element uart_0.s1
+   element ad9245_1.s1
    {
       datum baseAddress
       {
-         value = "96";
+         value = "260";
+         type = "String";
+      }
+   }
+   element pio_led.s1
+   {
+      datum baseAddress
+      {
+         value = "192";
          type = "String";
       }
    }
@@ -244,7 +284,7 @@
    {
       datum _sortIndex
       {
-         value = "2";
+         value = "3";
          type = "int";
       }
    }
@@ -327,7 +367,7 @@
  <parameter name="projectName" value="ddr_layout.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1519526404009" />
+ <parameter name="timeStamp" value="1519955986913" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
@@ -357,6 +397,27 @@
  <interface
    name="spi_ad5781"
    internal="spi_ad5781.external"
+   type="conduit"
+   dir="end" />
+ <interface name="nios_clk" internal="nios_clk.out_clk" type="clock" dir="start" />
+ <interface
+   name="ad9245_1_ad_data"
+   internal="ad9245_1.ad_data"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="ad9245_1_ad_clk"
+   internal="ad9245_1.ad_clk"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="ad9245_2_ad_data"
+   internal="ad9245_2.ad_data"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="ad9245_2_ad_clk"
+   internal="ad9245_2.ad_clk"
    type="conduit"
    dir="end" />
  <module kind="clock_source" version="13.0" enabled="1" name="clk">
@@ -467,7 +528,7 @@
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='spi_ad5781.spi_control_port' start='0x0' end='0x20' /><slave name='timestamp.s1' start='0x20' end='0x40' /><slave name='dma_0.control_port_slave' start='0x40' end='0x60' /><slave name='uart_0.s1' start='0x60' end='0x80' /><slave name='spi_0.spi_control_port' start='0x80' end='0xA0' /><slave name='systimer.s1' start='0xA0' end='0xC0' /><slave name='pio_led.s1' start='0xC0' end='0xD0' /><slave name='pio_key.s1' start='0xD0' end='0xE0' /><slave name='altpll_0.pll_slave' start='0xE0' end='0xF0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0xF0' end='0xF8' /><slave name='sysid.control_slave' start='0xF8' end='0x100' /><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='spi_ad5781.spi_control_port' start='0x0' end='0x20' /><slave name='timestamp.s1' start='0x20' end='0x40' /><slave name='dma_0.control_port_slave' start='0x40' end='0x60' /><slave name='uart_0.s1' start='0x60' end='0x80' /><slave name='spi_0.spi_control_port' start='0x80' end='0xA0' /><slave name='systimer.s1' start='0xA0' end='0xC0' /><slave name='pio_led.s1' start='0xC0' end='0xD0' /><slave name='pio_key.s1' start='0xD0' end='0xE0' /><slave name='altpll_0.pll_slave' start='0xE0' end='0xF0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0xF0' end='0xF8' /><slave name='sysid.control_slave' start='0xF8' end='0x100' /><slave name='ad9245_2.s1' start='0x100' end='0x104' /><slave name='ad9245_1.s1' start='0x104' end='0x108' /><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="108000000" />
   <parameter name="deviceFamilyName" value="Cyclone IV E" />
   <parameter name="internalIrqMaskSystemInfo" value="511" />
@@ -1073,6 +1134,19 @@
   <parameter name="avalonSpec" value="2.0" />
   <parameter name="inputClockRate" value="54000000" />
  </module>
+ <module kind="altera_clock_bridge" version="13.0" enabled="1" name="nios_clk">
+  <parameter name="DERIVED_CLOCK_RATE" value="108000000" />
+  <parameter name="EXPLICIT_CLOCK_RATE" value="108000000" />
+  <parameter name="NUM_CLOCK_OUTPUTS" value="1" />
+ </module>
+ <module kind="ad9245" version="1.0" enabled="1" name="ad9245_1">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
+  <parameter name="AUTO_AD_CLK_SOURCE_CLOCK_RATE" value="54000000" />
+ </module>
+ <module kind="ad9245" version="1.0" enabled="1" name="ad9245_2">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
+  <parameter name="AUTO_AD_CLK_SOURCE_CLOCK_RATE" value="54000000" />
+ </module>
  <connection
    kind="avalon"
    version="13.0"
@@ -1638,6 +1712,67 @@
    end="spi_ad5781.irq">
   <parameter name="irqNumber" value="8" />
  </connection>
+ <connection kind="clock" version="13.0" start="altpll_0.c2" end="nios_clk.in_clk" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="nios2.jtag_debug_module_reset"
+   end="ad9245_1.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="clk.clk_reset"
+   end="ad9245_1.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="ddr2.reset_request_n"
+   end="ad9245_1.reset" />
+ <connection
+   kind="avalon"
+   version="13.0"
+   start="slow_peripheral_bridge.m0"
+   end="ad9245_1.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0104" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection kind="clock" version="13.0" start="altpll_0.c0" end="ad9245_1.clk" />
+ <connection
+   kind="clock"
+   version="13.0"
+   start="altpll_0.c0"
+   end="ad9245_1.ad_clk_source" />
+ <connection
+   kind="clock"
+   version="13.0"
+   start="altpll_0.c0"
+   end="ad9245_2.ad_clk_source" />
+ <connection kind="clock" version="13.0" start="altpll_0.c0" end="ad9245_2.clk" />
+ <connection
+   kind="avalon"
+   version="13.0"
+   start="slow_peripheral_bridge.m0"
+   end="ad9245_2.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0100" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="reset"
+   version="13.0"
+   start="ddr2.reset_request_n"
+   end="ad9245_2.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="clk.clk_reset"
+   end="ad9245_2.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="nios2.jtag_debug_module_reset"
+   end="ad9245_2.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>

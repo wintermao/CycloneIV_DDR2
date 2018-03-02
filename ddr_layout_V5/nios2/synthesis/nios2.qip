@@ -2,7 +2,7 @@ set_global_assignment -entity "nios2" -library "nios2" -name IP_TOOL_NAME "Qsys"
 set_global_assignment -entity "nios2" -library "nios2" -name IP_TOOL_VERSION "13.0"
 set_global_assignment -entity "nios2" -library "nios2" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "nios2" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../nios2.sopcinfo"]
-set_instance_assignment -entity "nios2" -library "nios2" -name SLD_INFO "QSYS_NAME nios2 HAS_SOPCINFO 1 GENERATION_ID 1519528240"
+set_instance_assignment -entity "nios2" -library "nios2" -name SLD_INFO "QSYS_NAME nios2 HAS_SOPCINFO 1 GENERATION_ID 1519956546"
 set_global_assignment -library "nios2" -name MISC_FILE [file join $::quartus(qip_path) "../../nios2.cmp"]
 set_global_assignment -name SYNTHESIS_ONLY_QIP ON
 set_global_assignment -library "nios2" -name MISC_FILE [file join $::quartus(qip_path) "../../nios2.qsys"]
@@ -50,6 +50,7 @@ set_global_assignment -library "nios2" -name SYSTEMVERILOG_FILE [file join $::qu
 set_global_assignment -library "nios2" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_agent.sv"]
 set_global_assignment -library "nios2" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_translator.sv"]
 set_global_assignment -library "nios2" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_translator.sv"]
+set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/ad9245.v"]
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/nios2_spi_ad5781.v"]
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/nios2_timestamp.v"]
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/nios2_dma_0.v"]
