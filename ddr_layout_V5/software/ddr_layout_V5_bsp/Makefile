@@ -103,7 +103,7 @@ ACDS_VERSION := 13.0
 # BUILD_NUMBER: 156
 
 SETTINGS_FILE := settings.bsp
-SOPC_FILE := E:/altera/13.0/project/CycloneIV_DDR2/ddr_layout_V5/nios2.sopcinfo
+SOPC_FILE := D:/altera/project/CycloneIV_DDR2/ddr_layout_V5/nios2.sopcinfo
 
 #-------------------------------------------------------------------------------
 #                             TOOL & COMMAND DEFINITIONS
@@ -210,6 +210,13 @@ GENERATED_C_LIB_SRCS += alt_sys_init.c
 # used to build each file.
 #-------------------------------------------------------------------------------
 
+# ad9245_driver sources root 
+ad9245_driver_SRCS_ROOT := drivers
+
+# ad9245_driver sources 
+ad9245_driver_C_LIB_SRCS := \
+	$(ad9245_driver_SRCS_ROOT)/src/ad9245.c
+
 # altera_avalon_dma_driver sources root 
 altera_avalon_dma_driver_SRCS_ROOT := drivers
 
@@ -310,6 +317,20 @@ altera_nios2_qsys_hal_driver_ASM_LIB_SRCS := \
 	$(altera_nios2_qsys_hal_driver_SRCS_ROOT)/src/alt_log_macro.S \
 	$(altera_nios2_qsys_hal_driver_SRCS_ROOT)/src/crt0.S
 
+# clk_gen_driver sources root 
+clk_gen_driver_SRCS_ROOT := drivers
+
+# clk_gen_driver sources 
+clk_gen_driver_C_LIB_SRCS := \
+	$(clk_gen_driver_SRCS_ROOT)/src/clk_gen.c
+
+# dac2904_driver sources root 
+dac2904_driver_SRCS_ROOT := drivers
+
+# dac2904_driver sources 
+dac2904_driver_C_LIB_SRCS := \
+	$(dac2904_driver_SRCS_ROOT)/src/dac2904.c
+
 # hal sources root 
 hal_SRCS_ROOT := HAL
 
@@ -371,6 +392,7 @@ hal_C_LIB_SRCS := \
 
 # Assemble all component C source files 
 COMPONENT_C_LIB_SRCS += \
+	$(ad9245_driver_C_LIB_SRCS) \
 	$(altera_avalon_dma_driver_C_LIB_SRCS) \
 	$(altera_avalon_epcs_flash_controller_driver_C_LIB_SRCS) \
 	$(altera_avalon_jtag_uart_driver_C_LIB_SRCS) \
@@ -379,6 +401,8 @@ COMPONENT_C_LIB_SRCS += \
 	$(altera_avalon_timer_driver_C_LIB_SRCS) \
 	$(altera_avalon_uart_driver_C_LIB_SRCS) \
 	$(altera_nios2_qsys_hal_driver_C_LIB_SRCS) \
+	$(clk_gen_driver_C_LIB_SRCS) \
+	$(dac2904_driver_C_LIB_SRCS) \
 	$(hal_C_LIB_SRCS)
 
 # Assemble all component assembly source files 

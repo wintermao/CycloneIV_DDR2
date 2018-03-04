@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'nios2' in SOPC Builder design 'nios2'
- * SOPC Builder design path: E:/altera/13.0/project/CycloneIV_DDR2/ddr_layout_V5/nios2.sopcinfo
+ * SOPC Builder design path: D:/altera/project/CycloneIV_DDR2/ddr_layout_V5/nios2.sopcinfo
  *
- * Generated: Sun Feb 25 06:48:00 CST 2018
+ * Generated: Sun Mar 04 23:00:04 CST 2018
  */
 
 /*
@@ -123,6 +123,7 @@
  *
  */
 
+#define __AD9245
 #define __ALTERA_AVALON_DMA
 #define __ALTERA_AVALON_EPCS_FLASH_CONTROLLER
 #define __ALTERA_AVALON_JTAG_UART
@@ -135,6 +136,8 @@
 #define __ALTERA_NIOS2_QSYS
 #define __ALTMEMDDR2
 #define __ALTPLL
+#define __CLK_GEN
+#define __DAC2904
 
 
 /*
@@ -153,19 +156,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0xd0
+#define ALT_STDERR_BASE 0x110
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0xd0
+#define ALT_STDIN_BASE 0x110
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0xd0
+#define ALT_STDOUT_BASE 0x110
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -174,17 +177,115 @@
 
 
 /*
+ * ad9245_1 configuration
+ *
+ */
+
+#define AD9245_1_BASE 0x134
+#define AD9245_1_IRQ -1
+#define AD9245_1_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define AD9245_1_NAME "/dev/ad9245_1"
+#define AD9245_1_SPAN 4
+#define AD9245_1_TYPE "ad9245"
+#define ALT_MODULE_CLASS_ad9245_1 ad9245
+
+
+/*
+ * ad9245_2 configuration
+ *
+ */
+
+#define AD9245_2_BASE 0x130
+#define AD9245_2_IRQ -1
+#define AD9245_2_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define AD9245_2_NAME "/dev/ad9245_2"
+#define AD9245_2_SPAN 4
+#define AD9245_2_TYPE "ad9245"
+#define ALT_MODULE_CLASS_ad9245_2 ad9245
+
+
+/*
  * altpll_0 configuration
  *
  */
 
-#define ALTPLL_0_BASE 0xc0
+#define ALTPLL_0_BASE 0x100
 #define ALTPLL_0_IRQ -1
 #define ALTPLL_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define ALTPLL_0_NAME "/dev/altpll_0"
 #define ALTPLL_0_SPAN 16
 #define ALTPLL_0_TYPE "altpll"
 #define ALT_MODULE_CLASS_altpll_0 altpll
+
+
+/*
+ * clk_gen configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_clk_gen clk_gen
+#define CLK_GEN_BASE 0x0
+#define CLK_GEN_IRQ -1
+#define CLK_GEN_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define CLK_GEN_NAME "/dev/clk_gen"
+#define CLK_GEN_SPAN 32
+#define CLK_GEN_TYPE "clk_gen"
+
+
+/*
+ * dac2904_1 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_dac2904_1 dac2904
+#define DAC2904_1_BASE 0x12c
+#define DAC2904_1_IRQ -1
+#define DAC2904_1_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define DAC2904_1_NAME "/dev/dac2904_1"
+#define DAC2904_1_SPAN 4
+#define DAC2904_1_TYPE "dac2904"
+
+
+/*
+ * dac2904_2 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_dac2904_2 dac2904
+#define DAC2904_2_BASE 0x128
+#define DAC2904_2_IRQ -1
+#define DAC2904_2_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define DAC2904_2_NAME "/dev/dac2904_2"
+#define DAC2904_2_SPAN 4
+#define DAC2904_2_TYPE "dac2904"
+
+
+/*
+ * dac2904_3 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_dac2904_3 dac2904
+#define DAC2904_3_BASE 0x124
+#define DAC2904_3_IRQ -1
+#define DAC2904_3_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define DAC2904_3_NAME "/dev/dac2904_3"
+#define DAC2904_3_SPAN 4
+#define DAC2904_3_TYPE "dac2904"
+
+
+/*
+ * dac2904_4 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_dac2904_4 dac2904
+#define DAC2904_4_BASE 0x120
+#define DAC2904_4_IRQ -1
+#define DAC2904_4_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define DAC2904_4_NAME "/dev/dac2904_4"
+#define DAC2904_4_SPAN 4
+#define DAC2904_4_TYPE "dac2904"
 
 
 /*
@@ -238,7 +339,7 @@
 #define DMA_0_ALLOW_HW_TRANSACTIONS 1
 #define DMA_0_ALLOW_QUADWORD_TRANSACTIONS 1
 #define DMA_0_ALLOW_WORD_TRANSACTIONS 1
-#define DMA_0_BASE 0x20
+#define DMA_0_BASE 0x60
 #define DMA_0_IRQ 6
 #define DMA_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define DMA_0_LENGTHWIDTH 13
@@ -279,7 +380,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0xd0
+#define JTAG_UART_0_BASE 0x110
 #define JTAG_UART_0_IRQ 0
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -326,7 +427,7 @@
  */
 
 #define ALT_MODULE_CLASS_pio_key altera_avalon_pio
-#define PIO_KEY_BASE 0xb0
+#define PIO_KEY_BASE 0xf0
 #define PIO_KEY_BIT_CLEARING_EDGE_REGISTER 0
 #define PIO_KEY_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define PIO_KEY_CAPTURE 1
@@ -353,7 +454,7 @@
  */
 
 #define ALT_MODULE_CLASS_pio_led altera_avalon_pio
-#define PIO_LED_BASE 0xa0
+#define PIO_LED_BASE 0xe0
 #define PIO_LED_BIT_CLEARING_EDGE_REGISTER 0
 #define PIO_LED_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define PIO_LED_CAPTURE 0
@@ -380,7 +481,7 @@
  */
 
 #define ALT_MODULE_CLASS_spi_0 altera_avalon_spi
-#define SPI_0_BASE 0x60
+#define SPI_0_BASE 0xa0
 #define SPI_0_CLOCKMULT 1
 #define SPI_0_CLOCKPHASE 0
 #define SPI_0_CLOCKPOLARITY 1
@@ -406,18 +507,49 @@
 
 
 /*
+ * spi_ad5781 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_spi_ad5781 altera_avalon_spi
+#define SPI_AD5781_BASE 0x20
+#define SPI_AD5781_CLOCKMULT 1
+#define SPI_AD5781_CLOCKPHASE 0
+#define SPI_AD5781_CLOCKPOLARITY 1
+#define SPI_AD5781_CLOCKUNITS "Hz"
+#define SPI_AD5781_DATABITS 8
+#define SPI_AD5781_DATAWIDTH 16
+#define SPI_AD5781_DELAYMULT "1.0E-9"
+#define SPI_AD5781_DELAYUNITS "ns"
+#define SPI_AD5781_EXTRADELAY 0
+#define SPI_AD5781_INSERT_SYNC 0
+#define SPI_AD5781_IRQ 8
+#define SPI_AD5781_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define SPI_AD5781_ISMASTER 1
+#define SPI_AD5781_LSBFIRST 0
+#define SPI_AD5781_NAME "/dev/spi_ad5781"
+#define SPI_AD5781_NUMSLAVES 1
+#define SPI_AD5781_PREFIX "spi_"
+#define SPI_AD5781_SPAN 32
+#define SPI_AD5781_SYNC_REG_DEPTH 2
+#define SPI_AD5781_TARGETCLOCK 27000000u
+#define SPI_AD5781_TARGETSSDELAY "0.0"
+#define SPI_AD5781_TYPE "altera_avalon_spi"
+
+
+/*
  * sysid configuration
  *
  */
 
 #define ALT_MODULE_CLASS_sysid altera_avalon_sysid_qsys
-#define SYSID_BASE 0xd8
+#define SYSID_BASE 0x118
 #define SYSID_ID 0
 #define SYSID_IRQ -1
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1519512195
+#define SYSID_TIMESTAMP 1520174523
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -428,7 +560,7 @@
 
 #define ALT_MODULE_CLASS_systimer altera_avalon_timer
 #define SYSTIMER_ALWAYS_RUN 0
-#define SYSTIMER_BASE 0x80
+#define SYSTIMER_BASE 0xc0
 #define SYSTIMER_COUNTER_SIZE 32
 #define SYSTIMER_FIXED_PERIOD 0
 #define SYSTIMER_FREQ 54000000
@@ -454,7 +586,7 @@
 
 #define ALT_MODULE_CLASS_timestamp altera_avalon_timer
 #define TIMESTAMP_ALWAYS_RUN 0
-#define TIMESTAMP_BASE 0x0
+#define TIMESTAMP_BASE 0x40
 #define TIMESTAMP_COUNTER_SIZE 32
 #define TIMESTAMP_FIXED_PERIOD 0
 #define TIMESTAMP_FREQ 54000000
@@ -479,7 +611,7 @@
  */
 
 #define ALT_MODULE_CLASS_uart_0 altera_avalon_uart
-#define UART_0_BASE 0x40
+#define UART_0_BASE 0x80
 #define UART_0_BAUD 115200
 #define UART_0_DATA_BITS 8
 #define UART_0_FIXED_BAUD 1

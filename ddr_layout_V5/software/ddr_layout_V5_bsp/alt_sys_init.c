@@ -2,9 +2,9 @@
  * alt_sys_init.c - HAL initialization source
  *
  * Machine generated for CPU 'nios2' in SOPC Builder design 'nios2'
- * SOPC Builder design path: E:/altera/13.0/project/CycloneIV_DDR2/ddr_layout_V5/nios2.sopcinfo
+ * SOPC Builder design path: D:/altera/project/CycloneIV_DDR2/ddr_layout_V5/nios2.sopcinfo
  *
- * Generated: Sun Feb 11 10:52:15 CST 2018
+ * Generated: Sun Mar 04 18:11:20 CST 2018
  */
 
 /*
@@ -59,6 +59,7 @@
  */
 
 #include "altera_nios2_qsys_irq.h"
+#include "ad9245.h"
 #include "altera_avalon_dma.h"
 #include "altera_avalon_epcs_flash_controller.h"
 #include "altera_avalon_jtag_uart.h"
@@ -66,20 +67,30 @@
 #include "altera_avalon_sysid_qsys.h"
 #include "altera_avalon_timer.h"
 #include "altera_avalon_uart.h"
+#include "clk_gen.h"
+#include "dac2904.h"
 
 /*
  * Allocate the device storage
  */
 
 ALTERA_NIOS2_QSYS_IRQ_INSTANCE ( NIOS2, nios2);
+AD9245_INSTANCE ( AD9245_1, ad9245_1);
+AD9245_INSTANCE ( AD9245_2, ad9245_2);
 ALTERA_AVALON_DMA_INSTANCE ( DMA_0, dma_0);
 ALTERA_AVALON_EPCS_FLASH_CONTROLLER_INSTANCE ( EPCS_FLASH, epcs_flash);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG_UART_0, jtag_uart_0);
 ALTERA_AVALON_SPI_INSTANCE ( SPI_0, spi_0);
+ALTERA_AVALON_SPI_INSTANCE ( SPI_AD5781, spi_ad5781);
 ALTERA_AVALON_SYSID_QSYS_INSTANCE ( SYSID, sysid);
 ALTERA_AVALON_TIMER_INSTANCE ( SYSTIMER, systimer);
 ALTERA_AVALON_TIMER_INSTANCE ( TIMESTAMP, timestamp);
 ALTERA_AVALON_UART_INSTANCE ( UART_0, uart_0);
+CLK_GEN_INSTANCE ( CLK_GEN, clk_gen);
+DAC2904_INSTANCE ( DAC2904_1, dac2904_1);
+DAC2904_INSTANCE ( DAC2904_2, dac2904_2);
+DAC2904_INSTANCE ( DAC2904_3, dac2904_3);
+DAC2904_INSTANCE ( DAC2904_4, dac2904_4);
 
 /*
  * Initialize the interrupt controller devices
@@ -104,10 +115,18 @@ void alt_sys_init( void )
 {
     ALTERA_AVALON_TIMER_INIT ( SYSTIMER, systimer);
     ALTERA_AVALON_TIMER_INIT ( TIMESTAMP, timestamp);
+    AD9245_INIT ( AD9245_1, ad9245_1);
+    AD9245_INIT ( AD9245_2, ad9245_2);
     ALTERA_AVALON_DMA_INIT ( DMA_0, dma_0);
     ALTERA_AVALON_EPCS_FLASH_CONTROLLER_INIT ( EPCS_FLASH, epcs_flash);
     ALTERA_AVALON_JTAG_UART_INIT ( JTAG_UART_0, jtag_uart_0);
     ALTERA_AVALON_SPI_INIT ( SPI_0, spi_0);
+    ALTERA_AVALON_SPI_INIT ( SPI_AD5781, spi_ad5781);
     ALTERA_AVALON_SYSID_QSYS_INIT ( SYSID, sysid);
     ALTERA_AVALON_UART_INIT ( UART_0, uart_0);
+    CLK_GEN_INIT ( CLK_GEN, clk_gen);
+    DAC2904_INIT ( DAC2904_1, dac2904_1);
+    DAC2904_INIT ( DAC2904_2, dac2904_2);
+    DAC2904_INIT ( DAC2904_3, dac2904_3);
+    DAC2904_INIT ( DAC2904_4, dac2904_4);
 }

@@ -144,6 +144,7 @@ ELF := spi_test.elf
 # Paths to C, C++, and assembly source files.
 C_SRCS += spi_test.c
 C_SRCS += ad5142_spi.c
+C_SRCS += ad5781_spi.c
 CXX_SRCS :=
 ASM_SRCS :=
 

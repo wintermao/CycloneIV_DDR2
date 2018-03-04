@@ -1,8 +1,6 @@
 module ad9245					
 (
 	//ad9245 interface
-	input wire ad_clk_source,			//ad clock source
-	output  wire ad_clk,					//ad sample clock
 	input  wire [13:0] ad_data,		//ad sample data
 	
 	//AVALON interface
@@ -27,5 +25,5 @@ module ad9245
 			end
 		end
 	end
-	assign ad_clk=ad_clk_source;
+
 endmodule

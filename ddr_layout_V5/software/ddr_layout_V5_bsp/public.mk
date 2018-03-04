@@ -87,7 +87,7 @@ ACDS_VERSION := 13.0
 
 # Qsys--generated SOPCINFO file. Required for resolving node instance ID's with 
 # design component names. 
-SOPCINFO_FILE := E:/altera/13.0/project/CycloneIV_DDR2/ddr_layout_V5/nios2.sopcinfo
+SOPCINFO_FILE := D:/altera/project/CycloneIV_DDR2/ddr_layout_V5/nios2.sopcinfo
 
 # Big-Endian operation. 
 # setting BIG_ENDIAN is false
@@ -147,14 +147,17 @@ SOPC_SYSID_FLAG += --id=0
 ELF_PATCH_FLAG  += --id 0
 
 # The SOPC System ID Base Address 
-# setting SOPC_SYSID_BASE_ADDRESS is 0xd8
-SOPC_SYSID_FLAG += --sidp=0xd8
-ELF_PATCH_FLAG  += --sidp 0xd8
+# setting SOPC_SYSID_BASE_ADDRESS is 0x118
+SOPC_SYSID_FLAG += --sidp=0x118
+ELF_PATCH_FLAG  += --sidp 0x118
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1519512195
-SOPC_SYSID_FLAG += --timestamp=1519512195
-ELF_PATCH_FLAG  += --timestamp 1519512195
+# setting SOPC_TIMESTAMP is 1520174523
+SOPC_SYSID_FLAG += --timestamp=1520174523
+ELF_PATCH_FLAG  += --timestamp 1520174523
+
+# Small-footprint (polled mode) driver none 
+# setting ad9245_driver.enable_small_driver is false
 
 # Enable JTAG UART driver to recover when host is inactive causing buffer to 
 # full without returning error. Printf will not fail with this recovery. none 
@@ -171,6 +174,12 @@ ELF_PATCH_FLAG  += --timestamp 1519512195
 
 # Small-footprint (polled mode) driver none 
 # setting altera_avalon_uart_driver.enable_small_driver is false
+
+# Small-footprint (polled mode) driver none 
+# setting clk_gen_driver.enable_small_driver is false
+
+# Small-footprint (polled mode) driver none 
+# setting dac2904_driver.enable_small_driver is false
 
 # Build a custom version of newlib with the specified space-separated compiler 
 # flags. The custom newlib build will be placed in the &lt;bsp root>/newlib 

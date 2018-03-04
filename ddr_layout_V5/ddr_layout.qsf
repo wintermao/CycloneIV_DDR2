@@ -975,13 +975,6 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_R6 -to led_blink
-set_global_assignment -name VERILOG_FILE led_flash.v
-set_global_assignment -name QIP_FILE nios2/synthesis/nios2.qip
-set_global_assignment -name QIP_FILE altpll0.qip
-set_global_assignment -name BDF_FILE ddr_layout.bdf
-set_global_assignment -name QIP_FILE altlvds_tx0.qip
-set_global_assignment -name VERILOG_FILE patern.v
-set_global_assignment -name SOURCE_FILE db/ddr_layout.cmp.rdb
 set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "USE AS REGULAR IO"
 set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
 set_global_assignment -name ON_CHIP_BITSTREAM_DECOMPRESSION OFF
@@ -995,5 +988,11 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to epcs_dclk
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to epcs_sce
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to epcs_sdo
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to DP_SPI_SDO
-set_global_assignment -name SLD_FILE "D:/altera/project/CycloneIV_DDR2/ddr_layout_V5/spi_test_auto_stripped.stp"
+set_global_assignment -name VERILOG_FILE led_flash.v
+set_global_assignment -name QIP_FILE nios2/synthesis/nios2.qip
+set_global_assignment -name BDF_FILE ddr_layout.bdf
+set_global_assignment -name QIP_FILE altlvds_tx0.qip
+set_global_assignment -name VERILOG_FILE patern.v
+set_global_assignment -name SOURCE_FILE db/ddr_layout.cmp.rdb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SLD_FILE "D:/altera/project/CycloneIV_DDR2/ddr_layout_V5/spi_test_auto_stripped.stp"
