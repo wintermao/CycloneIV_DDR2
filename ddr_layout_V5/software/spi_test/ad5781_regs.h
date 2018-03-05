@@ -1,12 +1,12 @@
 /*
- * ad5781_reg.h
+ * ad5781_regs.h
  *
  *  Created on: 2018-2-25
  *      Author: mmh
  */
 
-#ifndef AD5781_REG_H_
-#define AD5781_REG_H_
+#ifndef __AD5781_REG_H__
+#define __AD5781_REG_H__
 
 #define AD5781_REGISTER_INPUT	0
 #define AD5781_REGISTER_DAC	0X100000
@@ -25,4 +25,4 @@
 #define AD5781_SOFT_CLR_MSK	0x02
 #define AD5781_SOFT_RESET_MSK	0x04
 
-#endif /* AD5781_REG_H_ */
+#endif /* __AD5781_REG_H__ */

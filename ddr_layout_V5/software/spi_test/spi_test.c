@@ -162,7 +162,7 @@ void spi_rw_ad5781(ad5781_dev *dev)
 	{
 		ad5781_write_dac(dev,i);
 		result=ad5781_read_dac(dev);
-		printf("i=%x dac=%x\n",i,result);
+		printf("i=%x dac=%lx\n",i,result);
 		usleep(500000);
 	}
 }

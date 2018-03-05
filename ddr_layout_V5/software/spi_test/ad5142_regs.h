@@ -1,12 +1,12 @@
 /*
- * ad5142_reg.h
+ * ad5142_regs.h
  *
  *  Created on: 2018-2-3
  *      Author: mmh
  */
 
-#ifndef AD5142_REG_H_
-#define AD5142_REG_H_
+#ifndef __AD5142_REG_H__
+#define __AD5142_REG_H__
 
 #define AD5142_COMMAND_SERIAL_TO_RDAC	0x10
 #define AD5142_COMMAND_SERIAL_TO_INPUT	0x20
@@ -41,4 +41,4 @@
 #define AD5142_RDAC2_ADDRESS	1
 #define AD5142_RDAC_ADDRESS_MSK	0X01
 
-#endif /* AD5142_REG_H_ */
+#endif /* __AD5142_REG_H__ */

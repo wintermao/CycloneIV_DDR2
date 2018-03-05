@@ -5,10 +5,10 @@
  *      Author: mmh
  */
 
-#ifndef AD5781_SPI_H_
-#define AD5781_SPI_H_
+#ifndef __AD5781_SPI_H__
+#define __AD5781_SPI_H__
 
-#include "ad5781_reg.h"
+#include "ad5781_regs.h"
 #include "altera_avalon_spi.h"
 #include "alt_types.h"
 #include "stdbool.h"
@@ -28,4 +28,4 @@ void ad5781_write_control(ad5781_dev *dev,alt_u32 data);
 void ad5781_write_clear(ad5781_dev *dev,alt_u32 data);
 void ad5781_write_soft(ad5781_dev *dev,alt_u32 data);
 
-#endif /* AD5781_SPI_H_ */
+#endif /* __AD5781_SPI_H__ */

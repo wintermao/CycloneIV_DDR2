@@ -18,17 +18,6 @@
 #include "sys/alt_irq.h"
 #include "altera_avalon_pio_regs.h"
 
-/* UART Related Prototypes */
-#ifdef JTAG_UART_0_NAME
-//static void UARTSendLots( void );
-//static void UARTReceiveChars( void );
-#endif
-
-/* LED Related Prototype */
-#ifdef PIO_LED_NAME
-//static void TestLEDs( void );
-#endif
-
 /* Button/Switch (SW0-SW3) Related Prototype */
 #ifdef PIO_KEY_NAME
 static void init_button_pio(void);
@@ -38,10 +27,6 @@ static void ButtonsHandle( void );
 #define PIO_KEY_SW1	0x01
 #define PIO_KEY_SW2	0x04
 #define PIO_KEY_SW3	0x08
-#endif
-
-#ifdef SPI_0_NAME
-static void rw_spi(void);
 #endif
 
 #endif /* SPI_TEST_H_ */
