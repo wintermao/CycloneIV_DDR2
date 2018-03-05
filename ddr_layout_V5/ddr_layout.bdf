@@ -1395,41 +1395,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 112 1568 264 1648)
-	(text "led_flash" (rect 5 0 49 12)(font "Arial" ))
-	(text "inst1" (rect 8 64 31 76)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "in_clk" (rect 0 0 28 12)(font "Arial" ))
-		(text "in_clk" (rect 21 27 49 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "reset_n" (rect 0 0 36 12)(font "Arial" ))
-		(text "reset_n" (rect 21 43 57 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 152 32)
-		(output)
-		(text "flash" (rect 0 0 24 12)(font "Arial" ))
-		(text "flash" (rect 111 27 135 39)(font "Arial" ))
-		(line (pt 152 32)(pt 136 32))
-	)
-	(parameter
-		"OSC_CLOCK"
-		"27000000"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 136 64))
-	)
-	(annotation_block (parameter)(rect 264 1536 472 1568))
-)
-(symbol
 	(rect 224 808 256 840)
 	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
 	(text "inst4" (rect 3 21 26 33)(font "Arial" )(invisible))
@@ -1657,7 +1622,7 @@ applicable agreement for further details.
 		(pt 464 72)
 		(output)
 		(text "nios_clk_clk" (rect 0 0 68 14)(font "Arial" (font_size 8)))
-		(text "nios_clk_clk" (rect 402 61 459 75)(font "Arial" (font_size 8)))
+		(text "nios_clk_clk" (rect 402 61 470 75)(font "Arial" (font_size 8)))
 		(line (pt 464 72)(pt 272 72))
 	)
 	(port
@@ -2046,16 +2011,6 @@ applicable agreement for further details.
 (connector
 	(pt 1000 120)
 	(pt 1024 120)
-)
-(connector
-	(text "reset_n" (rect 42 1600 78 1612)(font "Arial" ))
-	(pt 112 1616)
-	(pt 32 1616)
-)
-(connector
-	(text "osc_clk" (rect 34 1584 71 1596)(font "Arial" ))
-	(pt 112 1600)
-	(pt 32 1600)
 )
 (connector
 	(pt 520 2056)
