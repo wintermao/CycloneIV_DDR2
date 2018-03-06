@@ -37,6 +37,7 @@
   input write;							// write enables
   input [31:0] writedata;		// writedata
   output [31:0] readdata;		// readdata
+  output interrupt;
   //spi inteface
   input miso;               // Master in slave out
   output mosi;              // Master out slave in
@@ -44,6 +45,7 @@
   output [numberOfSlaves:0] ss; 					// numberOfSlaves slave select lines
   
   reg [31:0] readdata;
+  reg interrupt;
   reg [7:0] shift_register;       // Shift register
   reg [7:0] txdata;               // Transmit buffer
   reg [7:0] rxdata;               // Receive buffer
@@ -51,7 +53,7 @@
   reg [15:0] status;              // Status Register is a dummy register never used.
   reg [7:0] divide_num;         	// Clock divide counter
   reg [3:0] count;                // SPI woread length counter
-  reg status_update;							// status register update signal
+  reg status_clear;								// status register update signal
   reg sclk;                       // SPI clock
   reg slave_chipselect;           // Slave chipselect flag
   reg mosi;                  			// Master out slave in
@@ -59,7 +61,8 @@
   reg [numberOfSlaves:0]ss_reg;
   reg [7:0] divide_pre;
   reg spi_clk_gen;
-  
+  reg status_toe,status_roe,status_tmt,status_trdy,status_rrdy,status_e;
+  reg read_rx;
   wire CPOL = control[3];          
   wire CPHA = control[4];
   wire [numberOfSlaves:0]ss; 
@@ -110,25 +113,42 @@
   	end else begin
       if (chipselect & write & (address == `addr_tx)) begin
           spi_woread_send <=1;																				//spi_woread_send=1 is start send
+          if(count!=0) status_toe <= 1;						//set SPI_MASTER_STATUS_TOE_MSK status bit
+          else status_toe <= 0;
+          if(status_rrdy==1) status_roe <= 1;
+          else 	status_roe <= 0;
       end else begin
           spi_woread_send <=0;
       end
     end
   end
   
-  // generate status register update signal
+  // generate status register clear signal
   always @ (posedge clk or negedge reset_n) begin
   	if (!reset_n) begin
-  		status_update <=0;
+  		status_clear <=0;
   	end else begin
       if (chipselect & write & (address == `addr_status)) begin
-          status_update <=1;																				//status_update=1 is update status register
+          status_clear <=1;																				//status_clear=1 is clear status register
       end else begin
-          status_update <=0;
+          status_clear <=0;
       end
     end
   end
-
+  
+// generate read rxdata signal
+  always @ (posedge clk or negedge reset_n) begin
+  	if (!reset_n) begin
+  		read_rx <=0;
+  	end else begin
+      if (chipselect & read & (address == `addr_rx)) begin
+          read_rx <=1;																				//status_clear=1 is clear status register
+      end else begin
+          read_rx <=0;
+      end
+    end
+  end
+  
   // New SPI writeod starts when the transmit buffer is updated
   always @ (posedge clk or negedge reset_n) begin
   	if (!reset_n) begin
@@ -184,24 +204,25 @@
           mosi = shift_register[7];
       end
   end
-  
-  // status bit update
-  always @ (posedge (clk or posedge slave_chipselect or posedge spi_woread_send or negedge reset_n or posedge status_update) begin
+
+  //status register SPI_MASTER_STATUS_TOE_MSK bit update
+  always @ (posedge sclk or posedge slave_chipselect or posedge read_rx or negedge reset_n) begin
   	if (!reset_n) begin
-  		rxdata <= 0;
-  		status <= 0;		//????
+  		status_tmt <= 1;
+  		status_trdy <= 1;
+  		status_rrdy <= 0;
+  	end else if(slave_chipselect) begin
+  		rxdata <= shift_register;         // updating read buffer
+  		status_tmt <= 1;
+  		status_trdy <= 1;
+  		status_rrdy <= 1;
+  	end else if (read_rx) begin
+  		status_rrdy <= 0;
   	end else begin
-      if (spi_woread_send) begin
-        if(count!=0) status = status | SPI_MASTER_STATUS_TOE_MSK;		//set transmitter over error flag
-        else status = status ^ SPI_MASTER_STATUS_TOE_MSK;					//clear transmitter over error flag
-      end else if (slave_chipselect) begin
-        status = status | SPI_MASTER_STATUS_RRDY_MSK;		//set transmitter over error flag
-      	rxdata = shift_register;         // updating read buffer
-      end else begin
-      	 if(count==0) status = status | SPI_MASTER_STATUS_TMT_MSK;		//set transmitter over error flag
-      	 else status = status ^ SPI_MASTER_STATUS_TMT_MSK;						//clear transmitter over error flag
-      end
-    end
+  		status_tmt <= 0;
+  		status_tryd <= 0;
+  		status_rrdy <= 0;
+  	end
   end
   
   // Counting SPI woread length
@@ -216,9 +237,22 @@
       end
     end
   end
+  //generate interrupt signal
+  always @ (posedge clk or negedge reset_n) begin
+  	if (!reset_n) begin
+  		interrupt <=0;
+  	end else begin
+      if((control & status & 16'hd8) && (control & 16'h100)) 
+      	 interrupt <= 1;
+      else interrupt <= 0;
+      end
+    end
+  end
   
   // Slave Select output
-  assign ss = slave_chipselect ? -1 : ~ss_reg;  
+  assign status_e = status_toe | status_roe;
+  assign ss = slave_chipselect ? -1 : ~ss_reg; 
+  assign status = {7'h0,status_e,status_rrdy,status_trdy,status_tmt,status_toe,status_roe,2'h0}; 
   endmodule
   
   //------------------------ END ----------------------
