@@ -19,6 +19,7 @@
   									write,
   									readdata,
   									writedata,
+  									interrupt,
   									miso,
   									mosi,
   									sclk,
@@ -27,6 +28,8 @@
   									
 //  parameter dataWidth;
   parameter numberOfSlaves=1;
+  parameter clk_pol=0;
+  parameter clk_pha=0;
   
 	//avalon inteface
   input clk;               	// Host Processor clock
@@ -63,8 +66,8 @@
   reg spi_clk_gen;
   reg status_toe,status_roe,status_tmt,status_trdy,status_rrdy,status_e;
   reg read_rx;
-  wire CPOL = control[3];          
-  wire CPHA = control[4];
+  reg CPOL;          
+  reg CPHA;
   wire [numberOfSlaves:0]ss; 
 
 	//initial default register
@@ -123,6 +126,19 @@
     end
   end
   
+  // write control register ,the update CPOL & CPHA
+  always @ (posedge clk or negedge reset_n) begin
+  	if (!reset_n) begin
+  		CPOL <= clk_pol;
+  		CPHA <= clk_pha;
+  	end else begin
+      if (chipselect & write & (address == `addr_control)) begin
+          CPOL <= control[0];	
+          CPHA <= control[1];																				//set CPOL & CPHA
+      end
+    end
+  end
+  
   // generate status register clear signal
   always @ (posedge clk or negedge reset_n) begin
   	if (!reset_n) begin
@@ -142,7 +158,7 @@
   		read_rx <=0;
   	end else begin
       if (chipselect & read & (address == `addr_rx)) begin
-          read_rx <=1;																				//status_clear=1 is clear status register
+          read_rx <=1;																				//read_rx=1 is read rxdata
       end else begin
           read_rx <=0;
       end
@@ -205,7 +221,7 @@
       end
   end
 
-  //status register SPI_MASTER_STATUS_TOE_MSK bit update
+  //status register tmt trdy rrdy bit update
   always @ (posedge sclk or posedge slave_chipselect or posedge read_rx or negedge reset_n) begin
   	if (!reset_n) begin
   		status_tmt <= 1;
@@ -220,8 +236,8 @@
   		status_rrdy <= 0;
   	end else begin
   		status_tmt <= 0;
-  		status_tryd <= 0;
-  		status_rrdy <= 0;
+  		status_trdy <= 0;
+  		status_rrdy <= 0;		//???
   	end
   end
   
@@ -237,22 +253,24 @@
       end
     end
   end
+  
   //generate interrupt signal
-  always @ (posedge clk or negedge reset_n) begin
+  always @ (posedge status_rrdy or posedge status_trdy or posedge status_toe or posedge status_roe or posedge  status_clear or negedge reset_n) begin
   	if (!reset_n) begin
+  		interrupt <=0;
+  	end else if(status_clear) begin
   		interrupt <=0;
   	end else begin
       if((control & status & 16'hd8) && (control & 16'h100)) 
       	 interrupt <= 1;
       else interrupt <= 0;
-      end
     end
   end
   
-  // Slave Select output
+
   assign status_e = status_toe | status_roe;
-  assign ss = slave_chipselect ? -1 : ~ss_reg; 
-  assign status = {7'h0,status_e,status_rrdy,status_trdy,status_tmt,status_toe,status_roe,2'h0}; 
+  assign ss = ((control & 16'h400) | (~slave_chipselect)) ?  ~ss_reg : -1; 
+  assign status = {7'h0,status_e,status_rrdy,status_trdy,status_tmt,status_toe,status_roe,3'h0}; 
   endmodule
   
   //------------------------ END ----------------------
