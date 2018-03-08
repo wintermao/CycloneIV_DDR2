@@ -389,6 +389,13 @@ hal_C_LIB_SRCS := \
 	$(hal_SRCS_ROOT)/src/alt_wait.c \
 	$(hal_SRCS_ROOT)/src/alt_write.c
 
+# oc_i2c_master_driver sources root 
+oc_i2c_master_driver_SRCS_ROOT := drivers
+
+# oc_i2c_master_driver sources 
+oc_i2c_master_driver_C_LIB_SRCS := \
+	$(oc_i2c_master_driver_SRCS_ROOT)/src/oc_i2c_master.c
+
 
 # Assemble all component C source files 
 COMPONENT_C_LIB_SRCS += \
@@ -403,7 +410,8 @@ COMPONENT_C_LIB_SRCS += \
 	$(altera_nios2_qsys_hal_driver_C_LIB_SRCS) \
 	$(clk_gen_driver_C_LIB_SRCS) \
 	$(dac2904_driver_C_LIB_SRCS) \
-	$(hal_C_LIB_SRCS)
+	$(hal_C_LIB_SRCS) \
+	$(oc_i2c_master_driver_C_LIB_SRCS)
 
 # Assemble all component assembly source files 
 COMPONENT_ASM_LIB_SRCS += \

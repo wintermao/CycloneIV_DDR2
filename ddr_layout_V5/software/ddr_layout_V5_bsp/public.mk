@@ -147,14 +147,14 @@ SOPC_SYSID_FLAG += --id=0
 ELF_PATCH_FLAG  += --id 0
 
 # The SOPC System ID Base Address 
-# setting SOPC_SYSID_BASE_ADDRESS is 0x118
-SOPC_SYSID_FLAG += --sidp=0x118
-ELF_PATCH_FLAG  += --sidp 0x118
+# setting SOPC_SYSID_BASE_ADDRESS is 0x138
+SOPC_SYSID_FLAG += --sidp=0x138
+ELF_PATCH_FLAG  += --sidp 0x138
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1520174523
-SOPC_SYSID_FLAG += --timestamp=1520174523
-ELF_PATCH_FLAG  += --timestamp 1520174523
+# setting SOPC_TIMESTAMP is 1520506370
+SOPC_SYSID_FLAG += --timestamp=1520506370
+ELF_PATCH_FLAG  += --timestamp 1520506370
 
 # Small-footprint (polled mode) driver none 
 # setting ad9245_driver.enable_small_driver is false
@@ -351,6 +351,9 @@ ELF_PATCH_FLAG  += --stdin_dev jtag_uart_0
 # ALT_STDOUT family of defines in system.h. none 
 # setting hal.stdout is jtag_uart_0
 ELF_PATCH_FLAG  += --stdout_dev jtag_uart_0
+
+# Small-footprint (polled mode) driver none 
+# setting oc_i2c_master_driver.enable_small_driver is false
 
 
 #------------------------------------------------------------------------------

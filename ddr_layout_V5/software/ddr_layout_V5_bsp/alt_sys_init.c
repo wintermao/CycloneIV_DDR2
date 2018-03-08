@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2' in SOPC Builder design 'nios2'
  * SOPC Builder design path: D:/altera/project/CycloneIV_DDR2/ddr_layout_V5/nios2.sopcinfo
  *
- * Generated: Sun Mar 04 18:11:20 CST 2018
+ * Generated: Thu Mar 08 18:58:06 CST 2018
  */
 
 /*
@@ -69,6 +69,7 @@
 #include "altera_avalon_uart.h"
 #include "clk_gen.h"
 #include "dac2904.h"
+#include "oc_i2c_master.h"
 
 /*
  * Allocate the device storage
@@ -91,6 +92,7 @@ DAC2904_INSTANCE ( DAC2904_1, dac2904_1);
 DAC2904_INSTANCE ( DAC2904_2, dac2904_2);
 DAC2904_INSTANCE ( DAC2904_3, dac2904_3);
 DAC2904_INSTANCE ( DAC2904_4, dac2904_4);
+OC_I2C_MASTER_INSTANCE ( OC_I2C_MASTER_0, oc_i2c_master_0);
 
 /*
  * Initialize the interrupt controller devices
@@ -129,4 +131,5 @@ void alt_sys_init( void )
     DAC2904_INIT ( DAC2904_2, dac2904_2);
     DAC2904_INIT ( DAC2904_3, dac2904_3);
     DAC2904_INIT ( DAC2904_4, dac2904_4);
+    OC_I2C_MASTER_INIT ( OC_I2C_MASTER_0, oc_i2c_master_0);
 }

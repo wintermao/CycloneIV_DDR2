@@ -2,7 +2,7 @@ set_global_assignment -entity "nios2" -library "nios2" -name IP_TOOL_NAME "Qsys"
 set_global_assignment -entity "nios2" -library "nios2" -name IP_TOOL_VERSION "13.0"
 set_global_assignment -entity "nios2" -library "nios2" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "nios2" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../nios2.sopcinfo"]
-set_instance_assignment -entity "nios2" -library "nios2" -name SLD_INFO "QSYS_NAME nios2 HAS_SOPCINFO 1 GENERATION_ID 1520174523"
+set_instance_assignment -entity "nios2" -library "nios2" -name SLD_INFO "QSYS_NAME nios2 HAS_SOPCINFO 1 GENERATION_ID 1520506370"
 set_global_assignment -library "nios2" -name MISC_FILE [file join $::quartus(qip_path) "../../nios2.cmp"]
 set_global_assignment -name SYNTHESIS_ONLY_QIP ON
 set_global_assignment -library "nios2" -name MISC_FILE [file join $::quartus(qip_path) "../../nios2.qsys"]
@@ -50,6 +50,10 @@ set_global_assignment -library "nios2" -name SYSTEMVERILOG_FILE [file join $::qu
 set_global_assignment -library "nios2" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_agent.sv"]
 set_global_assignment -library "nios2" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_translator.sv"]
 set_global_assignment -library "nios2" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_translator.sv"]
+set_global_assignment -library "nios2" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/i2c_master_bit_ctrl.vhd"]
+set_global_assignment -library "nios2" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/i2c_master_byte_ctrl.vhd"]
+set_global_assignment -library "nios2" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/i2c_master_top.vhd"]
+set_global_assignment -library "nios2" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/oc_i2c_master.vhd"]
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/clk_gen.v"]
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/dac2904.v"]
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/ad9245.v"]
