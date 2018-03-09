@@ -45,7 +45,7 @@
   input miso;               // Master in slave out
   output mosi;              // Master out slave in
   output sclk;              // SPI clock
-  output [numberOfSlaves:0] ss; 					// numberOfSlaves slave select lines
+  output [numberOfSlaves-1:0] ss; 					// numberOfSlaves slave select lines
   
   reg [31:0] readdata;
   reg interrupt;
@@ -53,7 +53,7 @@
   reg [7:0] txdata;               // Transmit buffer
   reg [7:0] rxdata;               // Receive buffer
   reg [16:0] control;     				// Control Register COntrols things like ss, CPOL, CPHA, interupt
-  reg [15:0] status;              // Status Register is a dummy register never used.
+  wire [15:0] status;              // Status Register is a dummy register never used.
   reg [7:0] divide_num;         	// Clock divide counter
   reg [3:0] count;                // SPI woread length counter
   reg status_clear;								// status register update signal
@@ -61,14 +61,15 @@
   reg slave_chipselect;           // Slave chipselect flag
   reg mosi;                  			// Master out slave in
   reg spi_woread_send;            // Will send a new spi woread.
-  reg [numberOfSlaves:0]ss_reg;
+  reg [numberOfSlaves-1:0]ss_reg;
   reg [7:0] divide_pre;
   reg spi_clk_gen;
-  reg status_toe,status_roe,status_tmt,status_trdy,status_rrdy,status_e;
+  reg status_toe,status_roe,status_tmt,status_trdy,status_rrdy;
+  wire status_e;
   reg read_rx;
   reg CPOL;          
   reg CPHA;
-  wire [numberOfSlaves:0]ss; 
+  wire [numberOfSlaves-1:0]ss; 
 
 	//initial default register
   initial 
@@ -100,10 +101,9 @@
       end else if(chipselect & write) begin
       	case (address) 
         	`addr_tx 			: txdata <= writedata[7:0];								//write tansmister register
-          `addr_status 	: status <= writedata[15:0];							//write status register
           `addr_control	: control <= writedata[15:0];							//write control register
         	`addr_divide	: divide_pre <= writedata[7:0];						//write divede register
-        	`addr_chipsel	:	ss_reg <= writedata[numberOfSlaves:0];	//write chip selelt register     
+        	`addr_chipsel	:	ss_reg <= writedata[numberOfSlaves-1:0];	//write chip selelt register     
         endcase 	
       end
     end
@@ -241,10 +241,11 @@
   	end
   end
   
+  
   // Counting SPI woread length
-  always @ (posedge sclk or posedge slave_chipselector or negedge reset_n) begin
+  always @ (posedge sclk or posedge slave_chipselect or negedge reset_n) begin
   	if (!reset_n) begin
-  		count <= 0;
+  		count = 0;
   	end else begin
       if (slave_chipselect) begin
           count <= 0;
