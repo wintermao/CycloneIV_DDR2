@@ -5,7 +5,9 @@
 #include "spi_test.h"
 #include "ad5142_spi.h"
 #include "ad5781_spi.h"
-
+#include "clk_gen.h"
+#include "oc_i2c_master.h"
+#include "spi_master.h"
 
 volatile int edge_capture=0;
 int triger=0;

@@ -51,8 +51,16 @@ extern "C"
  * be the base address of your SPI peripheral, while 'slave' indicates which
  * bit in the slave select register should be set.
  */
+typedef struct spi_master_dev_s
+{
+	alt_u32 base;
+}spi_master_dev;
 
-void spi_master_init(alt_u32 base,alt_32 slave,alt_u8 freq,alt_u8 cpol,alt_u8 cpha);
+void spi_master_init(spi_master_dev *dev,alt_u32 base,alt_8 slave,alt_u32 freq,alt_u8 cpol,alt_u8 cpha);
+void spi_master_set_freq(spi_master_dev *dev,alt_u32 freq);
+alt_u8 spi_master_get_freq(spi_master_dev *dev);
+void spi_master_set_ss(spi_master_dev *dev,alt_u8 ss);
+void spi_master_set_cpol_cpha(spi_master_dev *dev,alt_u8 cpol,alt_u8 cpha);
 int spi_master_command(alt_u32 base, alt_u32 slave,
                            alt_u32 write_length, const alt_u8 * write_data,
                            alt_u32 read_length, alt_u8 * read_data,

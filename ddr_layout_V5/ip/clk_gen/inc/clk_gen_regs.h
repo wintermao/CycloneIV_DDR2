@@ -3,7 +3,7 @@
 ******************************************************************************/
 
 #ifndef __CLK_GEN_REGS_H__
-#define ___CLK_GEN_REGS_H__
+#define __CLK_GEN_REGS_H__
 
 #include <io.h>
 

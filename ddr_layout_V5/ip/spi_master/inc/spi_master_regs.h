@@ -43,7 +43,6 @@
 #define IORD_SPI_MASTER_CONTROL(base)           IORD(base, SPI_MASTER_CONTROL_REG) 
 #define IOWR_SPI_MASTER_CONTROL(base, data)     IOWR(base, SPI_MASTER_CONTROL_REG, data)
 
-*
 #define SPI_MASTER_CONTROL_CPOL_MSK            (0x1)
 #define SPI_MASTER_CONTROL_CPOL_OFST           (0)
 #define SPI_MASTER_CONTROL_CPHA_MSK            (0x2)

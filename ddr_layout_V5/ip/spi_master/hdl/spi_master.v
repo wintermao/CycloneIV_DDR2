@@ -52,7 +52,7 @@
   reg [7:0] shift_register;       // Shift register
   reg [7:0] txdata;               // Transmit buffer
   reg [7:0] rxdata;               // Receive buffer
-  reg [16:0] control;     				// Control Register COntrols things like ss, CPOL, CPHA, interupt
+  reg [15:0] control;     				// Control Register COntrols things like ss, CPOL, CPHA, interupt
   wire [15:0] status;              // Status Register is a dummy register never used.
   reg [7:0] divide_num;         	// Clock divide counter
   reg [3:0] count;                // SPI woread length counter
@@ -71,18 +71,6 @@
   reg CPHA;
   wire [numberOfSlaves-1:0]ss; 
 
-	//initial default register
-  initial 
-  begin
-      mosi = 0;
-      control = 0;
-      count = 0;
-      slave_chipselect = 1;
-      txdata = 0;
-      rxdata = 0;
-      divide_num = 0;
-  end
-  
   // Reading, writeiting SPI registers
   always @ (posedge clk or negedge reset_n) begin
   	if (!reset_n) begin
@@ -129,8 +117,8 @@
   // write control register ,the update CPOL & CPHA
   always @ (posedge clk or negedge reset_n) begin
   	if (!reset_n) begin
-  		CPOL <= clk_pol;
-  		CPHA <= clk_pha;
+  		CPOL <= clk_pol[0];
+  		CPHA <= clk_pha[0];
   	end else begin
       if (chipselect & write & (address == `addr_control)) begin
           CPOL <= control[0];	
@@ -183,10 +171,10 @@
   	if (!reset_n) begin
   		divide_num <= 0;
   	end else begin
-      divide_num = divide_num + 1; 
+      divide_num <= divide_num + 8'h1; 
       if( divide_num>= divide_pre) begin
-      	divide_num = 0 ;  
-      	spi_clk_gen = ~spi_clk_gen;
+      	divide_num <= 0 ;  
+      	spi_clk_gen <= ~spi_clk_gen;
       end
     end
   end
@@ -194,11 +182,11 @@
   // Generating the SPI clock
   always @ (posedge spi_clk_gen) begin
       if (~slave_chipselect) begin			//slave_chipselect is low active
-          sclk = ~sclk;
+          sclk <= ~sclk;
       end else if (~CPOL) begin
-          sclk = 0; 										//CPOL=0,sclk=0
+          sclk <= 0; 										//CPOL=0,sclk=0
       end else begin
-          sclk = 1;											//CPOL=1,sclk=1
+          sclk <= 1;											//CPOL=1,sclk=1
       end
   end
   
@@ -221,26 +209,43 @@
       end
   end
 
-  //status register tmt trdy rrdy bit update
-  always @ (posedge sclk or posedge slave_chipselect or posedge read_rx or negedge reset_n) begin
+  //status register tmt trdy bit update
+  always @ (posedge slave_chipselect or negedge reset_n) begin
   	if (!reset_n) begin
   		status_tmt <= 1;
   		status_trdy <= 1;
-  		status_rrdy <= 0;
   	end else if(slave_chipselect) begin
   		rxdata <= shift_register;         // updating read buffer
   		status_tmt <= 1;
   		status_trdy <= 1;
-  		status_rrdy <= 1;
-  	end else if (read_rx) begin
-  		status_rrdy <= 0;
   	end else begin
   		status_tmt <= 0;
   		status_trdy <= 0;
-  		status_rrdy <= 0;		//???
   	end
   end
+//  always @ (posedge slave_chipselect or negedge reset_n) begin
+//  	if (!reset_n) begin
+//  		rxdata <= 0;
+//  	end else if(slave_chipselect) begin
+//  		rxdata <= shift_register;         // updating read buffer
+//  	end else begin
+//  		rxdata <= rxdata;
+//	 	end
+//  end  
   
+ //status register rrdy bit update
+  always @ (posedge sclk or posedge slave_chipselect or posedge read_rx or negedge reset_n) begin
+  	if (!reset_n) begin
+  		status_rrdy <= 0;
+  	end else if(slave_chipselect==1) begin
+  		if(read_rx==0) status_rrdy <= 1;
+  		else status_rrdy <= 0;
+  	end else if (read_rx) begin
+  		status_rrdy <= 0;
+  	end else begin
+  		status_rrdy <= status_rrdy;	
+  	end
+  end 
   
   // Counting SPI woread length
   always @ (posedge sclk or posedge slave_chipselect or negedge reset_n) begin
@@ -250,27 +255,29 @@
       if (slave_chipselect) begin
           count <= 0;
       end else begin   
-          count <= count + 1;
+          count <= count + 4'h1;
       end
     end
   end
   
   //generate interrupt signal
-  always @ (posedge status_rrdy or posedge status_trdy or posedge status_toe or posedge status_roe or posedge  status_clear or negedge reset_n) begin
-  	if (!reset_n) begin
-  		interrupt <=0;
-  	end else if(status_clear) begin
-  		interrupt <=0;
-  	end else begin
-      if((control & status & 16'hd8) && (control & 16'h100)) 
-      	 interrupt <= 1;
-      else interrupt <= 0;
-    end
-  end
+//  always @ (posedge status_rrdy or posedge status_trdy or posedge status_toe or posedge status_roe or posedge  status_clear or negedge reset_n) begin
+//  	if (!reset_n) begin
+//  		interrupt <=0;
+//  	end else begin
+//  		if(status_clear) interrupt <=0;
+//  		else begin
+//	      if(control  & 16'hd8)
+//	      	if(control & 16'h100) interrupt <= 1;
+//	      	else interrupt <= 0;
+//	      else interrupt <= 0;
+//    	end
+//    end
+//  end
   
 
   assign status_e = status_toe | status_roe;
-  assign ss = ((control & 16'h400) | (~slave_chipselect)) ?  ~ss_reg : -1; 
+  assign ss = ((control & 16'h400) | (~slave_chipselect)) ?  ~ss_reg : {numberOfSlaves{1'b1}}; 
   assign status = {7'h0,status_e,status_rrdy,status_trdy,status_tmt,status_toe,status_roe,3'h0}; 
   endmodule
   
