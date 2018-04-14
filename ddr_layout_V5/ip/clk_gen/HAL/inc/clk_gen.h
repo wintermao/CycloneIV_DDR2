@@ -31,7 +31,7 @@ typedef struct clk_gen_dev_s
 
 void clk_gen_init(clk_gen_dev *dev,alt_u32 base);
 alt_u32 clk_gen_read(clk_gen_dev *dev,alt_u8 addr);
-void clk_gen_write_ad1(clk_gen_dev *dev,alt_u8 addr,alt_u32 data);
+void clk_gen_write(clk_gen_dev *dev,alt_u8 addr,alt_u32 data);
 
 #ifdef __cplusplus
 }

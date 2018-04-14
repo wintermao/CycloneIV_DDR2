@@ -20,7 +20,7 @@ alt_u32 clk_gen_read(clk_gen_dev *dev,alt_u8 addr)
 	return result;
 }
 
-void clk_gen_write_ad1(clk_gen_dev *dev,alt_u8 addr,alt_u32 data)
+void clk_gen_write(clk_gen_dev *dev,alt_u8 addr,alt_u32 data)
 {
 	IOWR_CLK_GEN(dev->base,addr,data);
 }
