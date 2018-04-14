@@ -1,7 +1,7 @@
 /*
  * clk_gen.h
  *
- *  Created on: 2018-3-4
+ *  Created on: 2018-4-14
  *      Author: mmh
  */
 
@@ -30,20 +30,8 @@ typedef struct clk_gen_dev_s
 }clk_gen_dev;
 
 void clk_gen_init(clk_gen_dev *dev,alt_u32 base);
-alt_u32 clk_gen_read_ad1(clk_gen_dev *dev);
-alt_u32 clk_gen_read_ad2(clk_gen_dev *dev);
-alt_u32 clk_gen_read_dac1(clk_gen_dev *dev);
-alt_u32 clk_gen_read_dac2(clk_gen_dev *dev);
-alt_u32 clk_gen_read_dac3(clk_gen_dev *dev);
-alt_u32 clk_gen_read_dac4(clk_gen_dev *dev);
-alt_u32 clk_gen_read_light(clk_gen_dev *dev);
-void clk_gen_write_ad1(clk_gen_dev *dev,alt_u32 data);
-void clk_gen_write_ad2(clk_gen_dev *dev,alt_u32 data);
-void clk_gen_write_dac1(clk_gen_dev *dev,alt_u32 data);
-void clk_gen_write_dac2(clk_gen_dev *dev,alt_u32 data);
-void clk_gen_write_dac3(clk_gen_dev *dev,alt_u32 data);
-void clk_gen_write_dac4(clk_gen_dev *dev,alt_u32 data);
-void clk_gen_write_light(clk_gen_dev *dev,alt_u32 data);
+alt_u32 clk_gen_read(clk_gen_dev *dev,alt_u8 addr);
+void clk_gen_write_ad1(clk_gen_dev *dev,alt_u8 addr,alt_u32 data);
 
 #ifdef __cplusplus
 }
