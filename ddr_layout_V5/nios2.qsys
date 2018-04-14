@@ -11,6 +11,11 @@
 {
    element $${FILENAME}
    {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
    }
    element ad9245_1
    {
@@ -48,7 +53,7 @@
    {
       datum baseAddress
       {
-         value = "368";
+         value = "464";
          type = "String";
       }
    }
@@ -72,7 +77,7 @@
    {
       datum baseAddress
       {
-         value = "192";
+         value = "288";
          type = "String";
       }
    }
@@ -80,7 +85,7 @@
    {
       datum baseAddress
       {
-         value = "376";
+         value = "472";
          type = "String";
       }
    }
@@ -234,7 +239,7 @@
    {
       datum baseAddress
       {
-         value = "352";
+         value = "448";
          type = "String";
       }
    }
@@ -259,6 +264,22 @@
          type = "String";
       }
    }
+   element ad9245_1.s1
+   {
+      datum baseAddress
+      {
+         value = "500";
+         type = "String";
+      }
+   }
+   element pio_led.s1
+   {
+      datum baseAddress
+      {
+         value = "416";
+         type = "String";
+      }
+   }
    element ddr2.s1
    {
       datum _lockedAddress
@@ -272,6 +293,86 @@
          type = "String";
       }
    }
+   element ad9245_2.s1
+   {
+      datum baseAddress
+      {
+         value = "496";
+         type = "String";
+      }
+   }
+   element dac2904_4.s1
+   {
+      datum baseAddress
+      {
+         value = "480";
+         type = "String";
+      }
+   }
+   element pio_key.s1
+   {
+      datum baseAddress
+      {
+         value = "432";
+         type = "String";
+      }
+   }
+   element clk_gen.s1
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element dac2904_1.s1
+   {
+      datum baseAddress
+      {
+         value = "492";
+         type = "String";
+      }
+   }
+   element spi_master_0.s1
+   {
+      datum baseAddress
+      {
+         value = "160";
+         type = "String";
+      }
+   }
+   element uart_0.s1
+   {
+      datum baseAddress
+      {
+         value = "320";
+         type = "String";
+      }
+   }
+   element systimer.s1
+   {
+      datum baseAddress
+      {
+         value = "384";
+         type = "String";
+      }
+   }
+   element dac2904_3.s1
+   {
+      datum baseAddress
+      {
+         value = "484";
+         type = "String";
+      }
+   }
+   element oc_i2c_master_0.s1
+   {
+      datum baseAddress
+      {
+         value = "192";
+         type = "String";
+      }
+   }
    element onchip_ram.s1
    {
       datum baseAddress
@@ -280,59 +381,11 @@
          type = "String";
       }
    }
-   element uart_0.s1
-   {
-      datum baseAddress
-      {
-         value = "224";
-         type = "String";
-      }
-   }
-   element dac2904_4.s1
-   {
-      datum baseAddress
-      {
-         value = "384";
-         type = "String";
-      }
-   }
-   element systimer.s1
-   {
-      datum baseAddress
-      {
-         value = "288";
-         type = "String";
-      }
-   }
    element timestamp.s1
    {
       datum baseAddress
       {
-         value = "160";
-         type = "String";
-      }
-   }
-   element pio_key.s1
-   {
-      datum baseAddress
-      {
-         value = "336";
-         type = "String";
-      }
-   }
-   element dac2904_3.s1
-   {
-      datum baseAddress
-      {
-         value = "388";
-         type = "String";
-      }
-   }
-   element clk_gen.s1
-   {
-      datum baseAddress
-      {
-         value = "96";
+         value = "256";
          type = "String";
       }
    }
@@ -340,55 +393,7 @@
    {
       datum baseAddress
       {
-         value = "392";
-         type = "String";
-      }
-   }
-   element ad9245_2.s1
-   {
-      datum baseAddress
-      {
-         value = "400";
-         type = "String";
-      }
-   }
-   element pio_led.s1
-   {
-      datum baseAddress
-      {
-         value = "320";
-         type = "String";
-      }
-   }
-   element oc_i2c_master_0.s1
-   {
-      datum baseAddress
-      {
-         value = "64";
-         type = "String";
-      }
-   }
-   element ad9245_1.s1
-   {
-      datum baseAddress
-      {
-         value = "404";
-         type = "String";
-      }
-   }
-   element dac2904_1.s1
-   {
-      datum baseAddress
-      {
-         value = "396";
-         type = "String";
-      }
-   }
-   element spi_master_0.s1
-   {
-      datum baseAddress
-      {
-         value = "32";
+         value = "488";
          type = "String";
       }
    }
@@ -416,23 +421,23 @@
          type = "int";
       }
    }
-   element ad9266.spi_control_port
-   {
-      datum baseAddress
-      {
-         value = "0";
-         type = "String";
-      }
-   }
    element spi_0.spi_control_port
    {
       datum baseAddress
       {
-         value = "256";
+         value = "352";
          type = "String";
       }
    }
    element spi_ad5781.spi_control_port
+   {
+      datum baseAddress
+      {
+         value = "224";
+         type = "String";
+      }
+   }
+   element ad9266.spi_control_port
    {
       datum baseAddress
       {
@@ -495,7 +500,7 @@
  <parameter name="projectName" value="ddr_layout.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1521697354385" />
+ <parameter name="timeStamp" value="1523690278665" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
@@ -558,42 +563,14 @@
    internal="ad9245_1.ad_data"
    type="conduit"
    dir="end" />
- <interface
-   name="clk_gen_ad1_clk"
-   internal="clk_gen.ad1_clk"
-   type="conduit"
-   dir="end" />
- <interface
-   name="clk_gen_ad2_clk"
-   internal="clk_gen.ad2_clk"
-   type="conduit"
-   dir="end" />
- <interface
-   name="clk_gen_dac1_clk"
-   internal="clk_gen.dac1_clk"
-   type="conduit"
-   dir="end" />
- <interface
-   name="clk_gen_dac2_clk"
-   internal="clk_gen.dac2_clk"
-   type="conduit"
-   dir="end" />
- <interface
-   name="clk_gen_dac3_clk"
-   internal="clk_gen.dac3_clk"
-   type="conduit"
-   dir="end" />
- <interface
-   name="clk_gen_dac4_clk"
-   internal="clk_gen.dac4_clk"
-   type="conduit"
-   dir="end" />
+ <interface name="clk_gen_ad1_clk" internal="clk_gen.ad1_clk" />
+ <interface name="clk_gen_ad2_clk" internal="clk_gen.ad2_clk" />
+ <interface name="clk_gen_dac1_clk" internal="clk_gen.dac1_clk" />
+ <interface name="clk_gen_dac2_clk" internal="clk_gen.dac2_clk" />
+ <interface name="clk_gen_dac3_clk" internal="clk_gen.dac3_clk" />
+ <interface name="clk_gen_dac4_clk" internal="clk_gen.dac4_clk" />
  <interface name="clk_gen_flash_light" internal="clk_gen.flash_light" />
- <interface
-   name="clk_gen_light_clk"
-   internal="clk_gen.light_clk"
-   type="conduit"
-   dir="end" />
+ <interface name="clk_gen_light_clk" internal="clk_gen.light_clk" />
  <interface
    name="oc_i2c_master"
    internal="oc_i2c_master_0.global"
@@ -605,6 +582,11 @@
    type="conduit"
    dir="end" />
  <interface name="ad9266" internal="ad9266.external" type="conduit" dir="end" />
+ <interface
+   name="clk_gen_clk_out"
+   internal="clk_gen.clk_out"
+   type="conduit"
+   dir="end" />
  <module kind="clock_source" version="13.0" enabled="1" name="clk">
   <parameter name="clockFrequency" value="27000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -713,7 +695,7 @@
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='ad9266.spi_control_port' start='0x0' end='0x20' /><slave name='spi_master_0.s1' start='0x20' end='0x40' /><slave name='oc_i2c_master_0.s1' start='0x40' end='0x60' /><slave name='clk_gen.s1' start='0x60' end='0x80' /><slave name='spi_ad5781.spi_control_port' start='0x80' end='0xA0' /><slave name='timestamp.s1' start='0xA0' end='0xC0' /><slave name='dma_0.control_port_slave' start='0xC0' end='0xE0' /><slave name='uart_0.s1' start='0xE0' end='0x100' /><slave name='spi_0.spi_control_port' start='0x100' end='0x120' /><slave name='systimer.s1' start='0x120' end='0x140' /><slave name='pio_led.s1' start='0x140' end='0x150' /><slave name='pio_key.s1' start='0x150' end='0x160' /><slave name='altpll_0.pll_slave' start='0x160' end='0x170' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x170' end='0x178' /><slave name='sysid.control_slave' start='0x178' end='0x180' /><slave name='dac2904_4.s1' start='0x180' end='0x184' /><slave name='dac2904_3.s1' start='0x184' end='0x188' /><slave name='dac2904_2.s1' start='0x188' end='0x18C' /><slave name='dac2904_1.s1' start='0x18C' end='0x190' /><slave name='ad9245_2.s1' start='0x190' end='0x194' /><slave name='ad9245_1.s1' start='0x194' end='0x198' /><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='clk_gen.s1' start='0x0' end='0x80' /><slave name='ad9266.spi_control_port' start='0x80' end='0xA0' /><slave name='spi_master_0.s1' start='0xA0' end='0xC0' /><slave name='oc_i2c_master_0.s1' start='0xC0' end='0xE0' /><slave name='spi_ad5781.spi_control_port' start='0xE0' end='0x100' /><slave name='timestamp.s1' start='0x100' end='0x120' /><slave name='dma_0.control_port_slave' start='0x120' end='0x140' /><slave name='uart_0.s1' start='0x140' end='0x160' /><slave name='spi_0.spi_control_port' start='0x160' end='0x180' /><slave name='systimer.s1' start='0x180' end='0x1A0' /><slave name='pio_led.s1' start='0x1A0' end='0x1B0' /><slave name='pio_key.s1' start='0x1B0' end='0x1C0' /><slave name='altpll_0.pll_slave' start='0x1C0' end='0x1D0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x1D0' end='0x1D8' /><slave name='sysid.control_slave' start='0x1D8' end='0x1E0' /><slave name='dac2904_4.s1' start='0x1E0' end='0x1E4' /><slave name='dac2904_3.s1' start='0x1E4' end='0x1E8' /><slave name='dac2904_2.s1' start='0x1E8' end='0x1EC' /><slave name='dac2904_1.s1' start='0x1EC' end='0x1F0' /><slave name='ad9245_2.s1' start='0x1F0' end='0x1F4' /><slave name='ad9245_1.s1' start='0x1F4' end='0x1F8' /><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="108000000" />
   <parameter name="deviceFamilyName" value="Cyclone IV E" />
   <parameter name="internalIrqMaskSystemInfo" value="4095" />
@@ -1342,8 +1324,8 @@
  <module kind="dac2904" version="1.0" enabled="1" name="dac2904_3">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
  </module>
- <module kind="clk_gen" version="1.0" enabled="1" name="clk_gen">
-  <parameter name="OSC_CLOCK" value="108000000" />
+ <module kind="clk_gen" version="2.0" enabled="1" name="clk_gen">
+  <parameter name="clk_num" value="8" />
   <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
   <parameter name="AUTO_CLK_SOURCE_CLOCK_RATE" value="108000000" />
  </module>
@@ -1589,7 +1571,7 @@
    start="slow_peripheral_bridge.m0"
    end="altpll_0.pll_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0160" />
+  <parameter name="baseAddress" value="0x01c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1630,7 +1612,7 @@
    start="slow_peripheral_bridge.m0"
    end="sysid.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0178" />
+  <parameter name="baseAddress" value="0x01d8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1639,7 +1621,7 @@
    start="slow_peripheral_bridge.m0"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0170" />
+  <parameter name="baseAddress" value="0x01d0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1648,7 +1630,7 @@
    start="slow_peripheral_bridge.m0"
    end="systimer.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0120" />
+  <parameter name="baseAddress" value="0x0180" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1657,7 +1639,7 @@
    start="slow_peripheral_bridge.m0"
    end="pio_key.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0150" />
+  <parameter name="baseAddress" value="0x01b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1666,7 +1648,7 @@
    start="slow_peripheral_bridge.m0"
    end="spi_0.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0100" />
+  <parameter name="baseAddress" value="0x0160" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1675,7 +1657,7 @@
    start="slow_peripheral_bridge.m0"
    end="uart_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00e0" />
+  <parameter name="baseAddress" value="0x0140" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1816,7 +1798,7 @@
    start="slow_peripheral_bridge.m0"
    end="pio_led.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0140" />
+  <parameter name="baseAddress" value="0x01a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1831,7 +1813,7 @@
    start="slow_peripheral_bridge.m0"
    end="dma_0.control_port_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00c0" />
+  <parameter name="baseAddress" value="0x0120" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="reset" version="13.0" start="clk.clk_reset" end="dma_0.reset" />
@@ -1855,7 +1837,7 @@
    start="slow_peripheral_bridge.m0"
    end="timestamp.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00a0" />
+  <parameter name="baseAddress" value="0x0100" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1931,7 +1913,7 @@
    start="slow_peripheral_bridge.m0"
    end="spi_ad5781.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0080" />
+  <parameter name="baseAddress" value="0x00e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1948,7 +1930,7 @@
    start="slow_peripheral_bridge.m0"
    end="ad9245_1.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0194" />
+  <parameter name="baseAddress" value="0x01f4" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1957,7 +1939,7 @@
    start="slow_peripheral_bridge.m0"
    end="ad9245_2.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0190" />
+  <parameter name="baseAddress" value="0x01f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1966,7 +1948,7 @@
    start="slow_peripheral_bridge.m0"
    end="dac2904_1.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x018c" />
+  <parameter name="baseAddress" value="0x01ec" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1975,7 +1957,7 @@
    start="slow_peripheral_bridge.m0"
    end="dac2904_2.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0188" />
+  <parameter name="baseAddress" value="0x01e8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1984,7 +1966,7 @@
    start="slow_peripheral_bridge.m0"
    end="dac2904_3.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0184" />
+  <parameter name="baseAddress" value="0x01e4" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1993,7 +1975,7 @@
    start="slow_peripheral_bridge.m0"
    end="dac2904_4.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0180" />
+  <parameter name="baseAddress" value="0x01e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="13.0" start="altpll_0.c0" end="ad9245_1.clk" />
@@ -2109,7 +2091,7 @@
    start="slow_peripheral_bridge.m0"
    end="clk_gen.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0060" />
+  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="13.0" start="altpll_0.c0" end="clk_gen.clk" />
@@ -2144,7 +2126,7 @@
    start="slow_peripheral_bridge.m0"
    end="oc_i2c_master_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="baseAddress" value="0x00c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2180,7 +2162,7 @@
    start="slow_peripheral_bridge.m0"
    end="spi_master_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0020" />
+  <parameter name="baseAddress" value="0x00a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2208,7 +2190,7 @@
    start="slow_peripheral_bridge.m0"
    end="ad9266.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="baseAddress" value="0x0080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="interrupt" version="13.0" start="nios2.d_irq" end="ad9266.irq">
