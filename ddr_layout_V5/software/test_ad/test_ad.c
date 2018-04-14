@@ -7,6 +7,7 @@
 #include "dac2904.h"
 #include "ad9245.h"
 #include "clk_gen.h"
+#include "clk_device.h"
 
 #define PIO_KEY_SW0	0x02
 #define PIO_KEY_SW1	0x01
@@ -109,11 +110,11 @@ int main()
 	/* Initialize the Buttons/Switches (SW0-SW3) */
 	init_button_pio();
 	clk_gen_init(&dev_clk,CLK_GEN_BASE);
-	clk_gen_write_light(&dev_clk,ALT_CPU_CPU_FREQ/4);
+	clk_gen_write(&dev_clk,LIGHT,ALT_CPU_CPU_FREQ);
 	dac2904_init(&dev_dac2904,DAC2904_1_BASE);
-	clk_gen_write_dac1(&dev_dac2904,54);	//set DA freq to 1M
+	clk_gen_write(&dev_clk,DAC1,54);	//set DA freq to 1M
 	ad9245_init(&dev_ad9245,AD9245_1_BASE);
-	clk_gen_write_ad1(&dev_ad9245,54); 	//set samble freq to 1M
+	clk_gen_write(&dev_clk,AD1,54); 	//set samble freq to 1M
 	while(1)
 	{
 		ButtonsHandle();
