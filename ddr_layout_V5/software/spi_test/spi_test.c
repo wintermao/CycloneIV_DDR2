@@ -173,12 +173,15 @@ int main()
 {
 	ad5142_dev dev;
 	ad5781_dev dev_5781;
+	clk_gen_dev dev_clk;
 	printf("Begin spi_test from Nios II!\n");
 	/* Initialize the Buttons/Switches (SW0-SW3) */
 	init_button_pio();
 	ad5142_init(&dev,SPI_0_BASE,0);
 	ad5142_protect(&dev,false);
 	ad5781_init(&dev_5781,SPI_AD5781_BASE,0);
+	clk_gen_init(&dev_clk,CLK_GEN_BASE);
+	clk_gen_write_light(&dev_clk,ALT_CPU_CPU_FREQ/4);
 	while(1)
 	{
 		ButtonsHandle();
