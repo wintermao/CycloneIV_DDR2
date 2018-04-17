@@ -11,11 +11,6 @@
 {
    element $${FILENAME}
    {
-      datum _sortIndex
-      {
-         value = "0";
-         type = "int";
-      }
    }
    element ad9245_1
    {
@@ -264,11 +259,11 @@
          type = "String";
       }
    }
-   element ad9245_1.s1
+   element uart_0.s1
    {
       datum baseAddress
       {
-         value = "500";
+         value = "320";
          type = "String";
       }
    }
@@ -280,56 +275,11 @@
          type = "String";
       }
    }
-   element ddr2.s1
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "0";
-         type = "String";
-      }
-   }
-   element ad9245_2.s1
+   element ad9245_1.s1
    {
       datum baseAddress
       {
-         value = "496";
-         type = "String";
-      }
-   }
-   element dac2904_4.s1
-   {
-      datum baseAddress
-      {
-         value = "480";
-         type = "String";
-      }
-   }
-   element pio_key.s1
-   {
-      datum baseAddress
-      {
-         value = "432";
-         type = "String";
-      }
-   }
-   element clk_gen.s1
-   {
-      datum baseAddress
-      {
-         value = "0";
-         type = "String";
-      }
-   }
-   element dac2904_1.s1
-   {
-      datum baseAddress
-      {
-         value = "492";
+         value = "500";
          type = "String";
       }
    }
@@ -341,11 +291,59 @@
          type = "String";
       }
    }
-   element uart_0.s1
+   element pio_key.s1
    {
       datum baseAddress
       {
-         value = "320";
+         value = "432";
+         type = "String";
+      }
+   }
+   element ad9245_2.s1
+   {
+      datum baseAddress
+      {
+         value = "496";
+         type = "String";
+      }
+   }
+   element dac2904_1.s1
+   {
+      datum baseAddress
+      {
+         value = "492";
+         type = "String";
+      }
+   }
+   element oc_i2c_master_0.s1
+   {
+      datum baseAddress
+      {
+         value = "192";
+         type = "String";
+      }
+   }
+   element dac2904_4.s1
+   {
+      datum baseAddress
+      {
+         value = "480";
+         type = "String";
+      }
+   }
+   element clk_gen.s1
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element timestamp.s1
+   {
+      datum baseAddress
+      {
+         value = "256";
          type = "String";
       }
    }
@@ -365,11 +363,16 @@
          type = "String";
       }
    }
-   element oc_i2c_master_0.s1
+   element ddr2.s1
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "192";
+         value = "0";
          type = "String";
       }
    }
@@ -378,14 +381,6 @@
       datum baseAddress
       {
          value = "16781312";
-         type = "String";
-      }
-   }
-   element timestamp.s1
-   {
-      datum baseAddress
-      {
-         value = "256";
          type = "String";
       }
    }
@@ -421,6 +416,14 @@
          type = "int";
       }
    }
+   element ad9266.spi_control_port
+   {
+      datum baseAddress
+      {
+         value = "128";
+         type = "String";
+      }
+   }
    element spi_0.spi_control_port
    {
       datum baseAddress
@@ -434,14 +437,6 @@
       datum baseAddress
       {
          value = "224";
-         type = "String";
-      }
-   }
-   element ad9266.spi_control_port
-   {
-      datum baseAddress
-      {
-         value = "128";
          type = "String";
       }
    }
@@ -500,7 +495,7 @@
  <parameter name="projectName" value="ddr_layout.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1523690278665" />
+ <parameter name="timeStamp" value="1523877734343" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
@@ -1256,14 +1251,14 @@
   <parameter name="burstEnable" value="false" />
   <parameter name="fifoDepth" value="1024" />
   <parameter name="maxBurstSize" value="128" />
-  <parameter name="minimumDmaTransactionRegisterWidth" value="13" />
+  <parameter name="minimumDmaTransactionRegisterWidth" value="25" />
   <parameter name="useRegistersForFIFO" value="false" />
   <parameter name="avalonSpec" value="2.0" />
-  <parameter name="readAddressMap"><![CDATA[<address-map><slave name='ddr2.s1' start='0x0' end='0x4000000' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
+  <parameter name="readAddressMap"><![CDATA[<address-map><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
   <parameter name="readSlaveAddressWidthMax" value="27" />
   <parameter name="readSlaveDataWidthMax" value="32" />
-  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='ddr2.s1' start='0x0' end='0x4000000' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
-  <parameter name="writeSlaveAddressWidthMax" value="27" />
+  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='dac2904_1.s1' start='0x1EC' end='0x1F0' /></address-map>]]></parameter>
+  <parameter name="writeSlaveAddressWidthMax" value="9" />
   <parameter name="writeSlaveDataWidthMax" value="32" />
  </module>
  <module
@@ -1866,29 +1861,10 @@
  <connection
    kind="avalon"
    version="13.0"
-   start="dma_0.write_master"
-   end="cpu_ddr2_clock_bridge.s0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x04000000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="13.0"
    start="dma_0.read_master"
    end="cpu_ddr2_clock_bridge.s0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x04000000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection kind="avalon" version="13.0" start="dma_0.read_master" end="ddr2.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection kind="avalon" version="13.0" start="dma_0.write_master" end="ddr2.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="13.0" start="altpll_0.c0" end="spi_ad5781.clk" />
@@ -2195,6 +2171,15 @@
  </connection>
  <connection kind="interrupt" version="13.0" start="nios2.d_irq" end="ad9266.irq">
   <parameter name="irqNumber" value="11" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="13.0"
+   start="dma_0.write_master"
+   end="dac2904_1.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01ec" />
+  <parameter name="defaultConnection" value="false" />
  </connection>
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />

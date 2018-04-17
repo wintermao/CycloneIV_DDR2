@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?>
+
+<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<buildSystem id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.49320909">
+			<storageModule id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.49320909" moduleId="org.eclipse.cdt.core.settings"/>
+		</buildSystem>
+		<cconfiguration id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.49320909">
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration buildProperties="" description="" id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.49320909" name="Nios II" parent="org.eclipse.cdt.build.core.prefbase.cfg">
+					<folderInfo id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.49320909." name="/" resourcePath="">
+						<toolChain id="altera.nios2.mingw.gcc4.1231482660" name="MinGW Nios II GCC4" superClass="altera.nios2.mingw.gcc4">
+							<targetPlatform id="altera.nios2.mingw.gcc4.1453022615" name="Nios II" superClass="altera.nios2.mingw.gcc4"/>
+							<builder buildPath="${workspace_loc://dma_ddr_to_dac}" id="cdt.managedbuild.target.gnu.builder.cygwin.base.900407933" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.cygwin.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.cygwin.base.731714228" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.cygwin.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1721716740" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.cygwin.base.779817578" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.cygwin.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base.653634538" name="Cygwin C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base">
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.cygwin.868427425" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input.cygwin"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.cygwin.base.2134503980" name="Cygwin C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.cygwin.base">
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.333306144" superClass="cdt.managedbuild.tool.gnu.c.compiler.input.cygwin"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.cygwin.base.290929175" name="Cygwin C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.cygwin.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.cygwin.base.192225340" name="Cygwin C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.cygwin.base">
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1620618371" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.49320909" moduleId="org.eclipse.cdt.core.settings" name="Nios II">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="dma_ddr_to_dac.null.1908496227" name="dma_ddr_to_dac"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.49320909;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.49320909.;cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base.653634538;cdt.managedbuild.tool.gnu.cpp.compiler.input.cygwin.868427425">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.49320909;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.49320909.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.base.2134503980;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.333306144">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
+		<buildTargets>
+			<target name="mem_init_install" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>make</buildCommand>
+				<buildArguments/>
+				<buildTarget>mem_init_install</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>false</runAllBuilders>
+			</target>
+			<target name="mem_init_generate" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>make</buildCommand>
+				<buildArguments/>
+				<buildTarget>mem_init_generate</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>false</runAllBuilders>
+			</target>
+			<target name="help" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>make</buildCommand>
+				<buildArguments/>
+				<buildTarget>help</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>false</runAllBuilders>
+			</target>
+		</buildTargets>
+	</storageModule>
+</cproject>
