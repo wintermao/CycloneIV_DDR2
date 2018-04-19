@@ -16,7 +16,7 @@
    {
       datum _sortIndex
       {
-         value = "19";
+         value = "20";
          type = "int";
       }
    }
@@ -24,7 +24,7 @@
    {
       datum _sortIndex
       {
-         value = "20";
+         value = "21";
          type = "int";
       }
    }
@@ -40,7 +40,7 @@
    {
       datum _sortIndex
       {
-         value = "2";
+         value = "3";
          type = "int";
       }
    }
@@ -48,7 +48,7 @@
    {
       datum baseAddress
       {
-         value = "464";
+         value = "432";
          type = "String";
       }
    }
@@ -56,7 +56,7 @@
    {
       datum _sortIndex
       {
-         value = "1";
+         value = "2";
          type = "int";
       }
    }
@@ -72,7 +72,7 @@
    {
       datum baseAddress
       {
-         value = "288";
+         value = "16793600";
          type = "String";
       }
    }
@@ -80,7 +80,7 @@
    {
       datum baseAddress
       {
-         value = "472";
+         value = "440";
          type = "String";
       }
    }
@@ -88,7 +88,7 @@
    {
       datum _sortIndex
       {
-         value = "8";
+         value = "9";
          type = "int";
       }
    }
@@ -96,7 +96,7 @@
    {
       datum _sortIndex
       {
-         value = "21";
+         value = "0";
          type = "int";
       }
    }
@@ -115,6 +115,11 @@
          value = "23";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
+      }
    }
    element dac2904_4
    {
@@ -123,12 +128,17 @@
          value = "24";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
+      }
    }
    element ddr2
    {
       datum _sortIndex
       {
-         value = "7";
+         value = "8";
          type = "int";
       }
       datum megawizard_uipreferences
@@ -141,7 +151,7 @@
    {
       datum _sortIndex
       {
-         value = "15";
+         value = "16";
          type = "int";
       }
    }
@@ -157,7 +167,7 @@
    {
       datum _sortIndex
       {
-         value = "14";
+         value = "15";
          type = "int";
       }
    }
@@ -173,7 +183,7 @@
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "7";
          type = "int";
       }
    }
@@ -181,7 +191,7 @@
    {
       datum _sortIndex
       {
-         value = "0";
+         value = "1";
          type = "int";
       }
    }
@@ -189,7 +199,7 @@
    {
       datum _sortIndex
       {
-         value = "18";
+         value = "19";
          type = "int";
       }
    }
@@ -205,7 +215,7 @@
    {
       datum _sortIndex
       {
-         value = "4";
+         value = "5";
          type = "int";
       }
       datum sopceditor_expanded
@@ -218,7 +228,7 @@
    {
       datum _sortIndex
       {
-         value = "11";
+         value = "12";
          type = "int";
       }
    }
@@ -226,7 +236,7 @@
    {
       datum _sortIndex
       {
-         value = "10";
+         value = "11";
          type = "int";
       }
    }
@@ -234,7 +244,7 @@
    {
       datum baseAddress
       {
-         value = "448";
+         value = "416";
          type = "String";
       }
    }
@@ -243,6 +253,14 @@
       datum baseAddress
       {
          value = "0";
+         type = "String";
+      }
+   }
+   element dac2904_1.s0
+   {
+      datum baseAddress
+      {
+         value = "460";
          type = "String";
       }
    }
@@ -259,35 +277,35 @@
          type = "String";
       }
    }
-   element uart_0.s1
+   element dac2904_4.s0
    {
       datum baseAddress
       {
-         value = "320";
+         value = "448";
          type = "String";
       }
    }
-   element pio_led.s1
+   element dac2904_3.s0
    {
       datum baseAddress
       {
-         value = "416";
+         value = "452";
          type = "String";
       }
    }
-   element ad9245_1.s1
+   element dac2904_2.s0
    {
       datum baseAddress
       {
-         value = "500";
+         value = "456";
          type = "String";
       }
    }
-   element spi_master_0.s1
+   element systimer.s1
    {
       datum baseAddress
       {
-         value = "160";
+         value = "352";
          type = "String";
       }
    }
@@ -295,39 +313,7 @@
    {
       datum baseAddress
       {
-         value = "432";
-         type = "String";
-      }
-   }
-   element ad9245_2.s1
-   {
-      datum baseAddress
-      {
-         value = "496";
-         type = "String";
-      }
-   }
-   element dac2904_1.s1
-   {
-      datum baseAddress
-      {
-         value = "492";
-         type = "String";
-      }
-   }
-   element oc_i2c_master_0.s1
-   {
-      datum baseAddress
-      {
-         value = "192";
-         type = "String";
-      }
-   }
-   element dac2904_4.s1
-   {
-      datum baseAddress
-      {
-         value = "480";
+         value = "400";
          type = "String";
       }
    }
@@ -339,15 +325,23 @@
          type = "String";
       }
    }
-   element timestamp.s1
+   element ad9245_1.s1
    {
       datum baseAddress
       {
-         value = "256";
+         value = "464";
          type = "String";
       }
    }
-   element systimer.s1
+   element oc_i2c_master_0.s1
+   {
+      datum baseAddress
+      {
+         value = "192";
+         type = "String";
+      }
+   }
+   element pio_led.s1
    {
       datum baseAddress
       {
@@ -355,11 +349,43 @@
          type = "String";
       }
    }
-   element dac2904_3.s1
+   element spi_master_0.s1
    {
       datum baseAddress
       {
-         value = "484";
+         value = "160";
+         type = "String";
+      }
+   }
+   element uart_0.s1
+   {
+      datum baseAddress
+      {
+         value = "288";
+         type = "String";
+      }
+   }
+   element onchip_ram.s1
+   {
+      datum baseAddress
+      {
+         value = "16781312";
+         type = "String";
+      }
+   }
+   element ad9245_2.s1
+   {
+      datum baseAddress
+      {
+         value = "468";
+         type = "String";
+      }
+   }
+   element timestamp.s1
+   {
+      datum baseAddress
+      {
+         value = "256";
          type = "String";
       }
    }
@@ -376,27 +402,11 @@
          type = "String";
       }
    }
-   element onchip_ram.s1
-   {
-      datum baseAddress
-      {
-         value = "16781312";
-         type = "String";
-      }
-   }
-   element dac2904_2.s1
-   {
-      datum baseAddress
-      {
-         value = "488";
-         type = "String";
-      }
-   }
    element slow_peripheral_bridge
    {
       datum _sortIndex
       {
-         value = "3";
+         value = "4";
          type = "int";
       }
    }
@@ -404,7 +414,7 @@
    {
       datum _sortIndex
       {
-         value = "13";
+         value = "14";
          type = "int";
       }
    }
@@ -412,7 +422,7 @@
    {
       datum _sortIndex
       {
-         value = "17";
+         value = "18";
          type = "int";
       }
    }
@@ -428,7 +438,7 @@
    {
       datum baseAddress
       {
-         value = "352";
+         value = "320";
          type = "String";
       }
    }
@@ -452,7 +462,7 @@
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "6";
          type = "int";
       }
    }
@@ -460,7 +470,7 @@
    {
       datum _sortIndex
       {
-         value = "9";
+         value = "10";
          type = "int";
       }
    }
@@ -468,7 +478,7 @@
    {
       datum _sortIndex
       {
-         value = "16";
+         value = "17";
          type = "int";
       }
    }
@@ -476,7 +486,7 @@
    {
       datum _sortIndex
       {
-         value = "12";
+         value = "13";
          type = "int";
       }
    }
@@ -495,7 +505,7 @@
  <parameter name="projectName" value="ddr_layout.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1523877734343" />
+ <parameter name="timeStamp" value="1524027427586" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
@@ -529,26 +539,6 @@
    dir="end" />
  <interface name="nios_clk" internal="nios_clk.out_clk" type="clock" dir="start" />
  <interface
-   name="dac2904_4_dac_data"
-   internal="dac2904_4.dac_data"
-   type="conduit"
-   dir="end" />
- <interface
-   name="dac2904_3_dac_data"
-   internal="dac2904_3.dac_data"
-   type="conduit"
-   dir="end" />
- <interface
-   name="dac2904_2_dac_data"
-   internal="dac2904_2.dac_data"
-   type="conduit"
-   dir="end" />
- <interface
-   name="dac2904_1_dac_data"
-   internal="dac2904_1.dac_data"
-   type="conduit"
-   dir="end" />
- <interface
    name="ad9245_2_ad_data"
    internal="ad9245_2.ad_data"
    type="conduit"
@@ -581,6 +571,46 @@
    name="clk_gen_clk_out"
    internal="clk_gen.clk_out"
    type="conduit"
+   dir="end" />
+ <interface
+   name="dac2904_1_dac_data"
+   internal="dac2904_1.dac_data"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="dac2904_1_sample_clk"
+   internal="dac2904_1.sample_clk"
+   type="clock"
+   dir="end" />
+ <interface
+   name="dac2904_2_dac_data"
+   internal="dac2904_2.dac_data"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="dac2904_2_sample_clk"
+   internal="dac2904_2.sample_clk"
+   type="clock"
+   dir="end" />
+ <interface
+   name="dac2904_3_dac_data"
+   internal="dac2904_3.dac_data"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="dac2904_3_sample_clk"
+   internal="dac2904_3.sample_clk"
+   type="clock"
+   dir="end" />
+ <interface
+   name="dac2904_4_dac_data"
+   internal="dac2904_4.dac_data"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="dac2904_4_sample_clk"
+   internal="dac2904_4.sample_clk"
+   type="clock"
    dir="end" />
  <module kind="clock_source" version="13.0" enabled="1" name="clk">
   <parameter name="clockFrequency" value="27000000" />
@@ -690,7 +720,7 @@
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='clk_gen.s1' start='0x0' end='0x80' /><slave name='ad9266.spi_control_port' start='0x80' end='0xA0' /><slave name='spi_master_0.s1' start='0xA0' end='0xC0' /><slave name='oc_i2c_master_0.s1' start='0xC0' end='0xE0' /><slave name='spi_ad5781.spi_control_port' start='0xE0' end='0x100' /><slave name='timestamp.s1' start='0x100' end='0x120' /><slave name='dma_0.control_port_slave' start='0x120' end='0x140' /><slave name='uart_0.s1' start='0x140' end='0x160' /><slave name='spi_0.spi_control_port' start='0x160' end='0x180' /><slave name='systimer.s1' start='0x180' end='0x1A0' /><slave name='pio_led.s1' start='0x1A0' end='0x1B0' /><slave name='pio_key.s1' start='0x1B0' end='0x1C0' /><slave name='altpll_0.pll_slave' start='0x1C0' end='0x1D0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x1D0' end='0x1D8' /><slave name='sysid.control_slave' start='0x1D8' end='0x1E0' /><slave name='dac2904_4.s1' start='0x1E0' end='0x1E4' /><slave name='dac2904_3.s1' start='0x1E4' end='0x1E8' /><slave name='dac2904_2.s1' start='0x1E8' end='0x1EC' /><slave name='dac2904_1.s1' start='0x1EC' end='0x1F0' /><slave name='ad9245_2.s1' start='0x1F0' end='0x1F4' /><slave name='ad9245_1.s1' start='0x1F4' end='0x1F8' /><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='clk_gen.s1' start='0x0' end='0x80' /><slave name='ad9266.spi_control_port' start='0x80' end='0xA0' /><slave name='spi_master_0.s1' start='0xA0' end='0xC0' /><slave name='oc_i2c_master_0.s1' start='0xC0' end='0xE0' /><slave name='spi_ad5781.spi_control_port' start='0xE0' end='0x100' /><slave name='timestamp.s1' start='0x100' end='0x120' /><slave name='uart_0.s1' start='0x120' end='0x140' /><slave name='spi_0.spi_control_port' start='0x140' end='0x160' /><slave name='systimer.s1' start='0x160' end='0x180' /><slave name='pio_led.s1' start='0x180' end='0x190' /><slave name='pio_key.s1' start='0x190' end='0x1A0' /><slave name='altpll_0.pll_slave' start='0x1A0' end='0x1B0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x1B0' end='0x1B8' /><slave name='sysid.control_slave' start='0x1B8' end='0x1C0' /><slave name='dac2904_4.s0' start='0x1C0' end='0x1C4' /><slave name='dac2904_3.s0' start='0x1C4' end='0x1C8' /><slave name='dac2904_2.s0' start='0x1C8' end='0x1CC' /><slave name='dac2904_1.s0' start='0x1CC' end='0x1D0' /><slave name='ad9245_1.s1' start='0x1D0' end='0x1D4' /><slave name='ad9245_2.s1' start='0x1D4' end='0x1D8' /><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='dma_0.control_port_slave' start='0x1004000' end='0x1004020' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="108000000" />
   <parameter name="deviceFamilyName" value="Cyclone IV E" />
   <parameter name="internalIrqMaskSystemInfo" value="4095" />
@@ -1257,7 +1287,7 @@
   <parameter name="readAddressMap"><![CDATA[<address-map><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
   <parameter name="readSlaveAddressWidthMax" value="27" />
   <parameter name="readSlaveDataWidthMax" value="32" />
-  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='dac2904_1.s1' start='0x1EC' end='0x1F0' /></address-map>]]></parameter>
+  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='dac2904_1.s0' start='0x1CC' end='0x1D0' /></address-map>]]></parameter>
   <parameter name="writeSlaveAddressWidthMax" value="9" />
   <parameter name="writeSlaveDataWidthMax" value="32" />
  </module>
@@ -1307,18 +1337,6 @@
  <module kind="ad9245" version="1.0" enabled="1" name="ad9245_1">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
  </module>
- <module kind="dac2904" version="1.0" enabled="1" name="dac2904_4">
-  <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
- </module>
- <module kind="dac2904" version="1.0" enabled="1" name="dac2904_1">
-  <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
- </module>
- <module kind="dac2904" version="1.0" enabled="1" name="dac2904_2">
-  <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
- </module>
- <module kind="dac2904" version="1.0" enabled="1" name="dac2904_3">
-  <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
- </module>
  <module kind="clk_gen" version="2.0" enabled="1" name="clk_gen">
   <parameter name="clk_num" value="8" />
   <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
@@ -1352,6 +1370,22 @@
   <parameter name="targetSlaveSelectToSClkDelay" value="0.0" />
   <parameter name="avalonSpec" value="2.0" />
   <parameter name="inputClockRate" value="54000000" />
+ </module>
+ <module kind="dac2904" version="2.0" enabled="1" name="dac2904_1">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
+  <parameter name="AUTO_SAMPLE_CLK_CLOCK_RATE" value="0" />
+ </module>
+ <module kind="dac2904" version="2.0" enabled="1" name="dac2904_2">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
+  <parameter name="AUTO_SAMPLE_CLK_CLOCK_RATE" value="0" />
+ </module>
+ <module kind="dac2904" version="2.0" enabled="1" name="dac2904_3">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
+  <parameter name="AUTO_SAMPLE_CLK_CLOCK_RATE" value="0" />
+ </module>
+ <module kind="dac2904" version="2.0" enabled="1" name="dac2904_4">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
+  <parameter name="AUTO_SAMPLE_CLK_CLOCK_RATE" value="0" />
  </module>
  <connection
    kind="avalon"
@@ -1566,7 +1600,7 @@
    start="slow_peripheral_bridge.m0"
    end="altpll_0.pll_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01c0" />
+  <parameter name="baseAddress" value="0x01a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1607,7 +1641,7 @@
    start="slow_peripheral_bridge.m0"
    end="sysid.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01d8" />
+  <parameter name="baseAddress" value="0x01b8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1616,7 +1650,7 @@
    start="slow_peripheral_bridge.m0"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01d0" />
+  <parameter name="baseAddress" value="0x01b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1625,7 +1659,7 @@
    start="slow_peripheral_bridge.m0"
    end="systimer.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0180" />
+  <parameter name="baseAddress" value="0x0160" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1634,7 +1668,7 @@
    start="slow_peripheral_bridge.m0"
    end="pio_key.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01b0" />
+  <parameter name="baseAddress" value="0x0190" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1643,7 +1677,7 @@
    start="slow_peripheral_bridge.m0"
    end="spi_0.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0160" />
+  <parameter name="baseAddress" value="0x0140" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1652,7 +1686,7 @@
    start="slow_peripheral_bridge.m0"
    end="uart_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0140" />
+  <parameter name="baseAddress" value="0x0120" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1793,7 +1827,7 @@
    start="slow_peripheral_bridge.m0"
    end="pio_led.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01a0" />
+  <parameter name="baseAddress" value="0x0180" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1801,16 +1835,6 @@
    version="13.0"
    start="ddr2.sysclk"
    end="cpu_ddr2_clock_bridge.m0_clk" />
- <connection kind="clock" version="13.0" start="altpll_0.c0" end="dma_0.clk" />
- <connection
-   kind="avalon"
-   version="13.0"
-   start="slow_peripheral_bridge.m0"
-   end="dma_0.control_port_slave">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0120" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
  <connection kind="reset" version="13.0" start="clk.clk_reset" end="dma_0.reset" />
  <connection
    kind="reset"
@@ -1904,62 +1928,13 @@
    kind="avalon"
    version="13.0"
    start="slow_peripheral_bridge.m0"
-   end="ad9245_1.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01f4" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="13.0"
-   start="slow_peripheral_bridge.m0"
    end="ad9245_2.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01f0" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="13.0"
-   start="slow_peripheral_bridge.m0"
-   end="dac2904_1.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01ec" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="13.0"
-   start="slow_peripheral_bridge.m0"
-   end="dac2904_2.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01e8" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="13.0"
-   start="slow_peripheral_bridge.m0"
-   end="dac2904_3.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01e4" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="13.0"
-   start="slow_peripheral_bridge.m0"
-   end="dac2904_4.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01e0" />
+  <parameter name="baseAddress" value="0x01d4" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="13.0" start="altpll_0.c0" end="ad9245_1.clk" />
  <connection kind="clock" version="13.0" start="altpll_0.c0" end="ad9245_2.clk" />
- <connection kind="clock" version="13.0" start="altpll_0.c0" end="dac2904_1.clk" />
- <connection kind="clock" version="13.0" start="altpll_0.c0" end="dac2904_2.clk" />
- <connection kind="clock" version="13.0" start="altpll_0.c0" end="dac2904_3.clk" />
- <connection kind="clock" version="13.0" start="altpll_0.c0" end="dac2904_4.clk" />
  <connection
    kind="reset"
    version="13.0"
@@ -1990,66 +1965,6 @@
    version="13.0"
    start="ddr2.reset_request_n"
    end="ad9245_1.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="clk.clk_reset"
-   end="dac2904_4.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="nios2.jtag_debug_module_reset"
-   end="dac2904_4.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="ddr2.reset_request_n"
-   end="dac2904_4.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="clk.clk_reset"
-   end="dac2904_1.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="nios2.jtag_debug_module_reset"
-   end="dac2904_1.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="ddr2.reset_request_n"
-   end="dac2904_1.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="clk.clk_reset"
-   end="dac2904_2.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="nios2.jtag_debug_module_reset"
-   end="dac2904_2.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="ddr2.reset_request_n"
-   end="dac2904_2.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="clk.clk_reset"
-   end="dac2904_3.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="nios2.jtag_debug_module_reset"
-   end="dac2904_3.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="ddr2.reset_request_n"
-   end="dac2904_3.reset" />
  <connection
    kind="reset"
    version="13.0"
@@ -2175,10 +2090,129 @@
  <connection
    kind="avalon"
    version="13.0"
-   start="dma_0.write_master"
-   end="dac2904_1.s1">
+   start="slow_peripheral_bridge.m0"
+   end="ad9245_1.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01ec" />
+  <parameter name="baseAddress" value="0x01d0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="reset"
+   version="13.0"
+   start="ddr2.reset_request_n"
+   end="dac2904_1.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="clk.clk_reset"
+   end="dac2904_1.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="nios2.jtag_debug_module_reset"
+   end="dac2904_1.reset" />
+ <connection kind="clock" version="13.0" start="altpll_0.c0" end="dac2904_1.clk" />
+ <connection
+   kind="avalon"
+   version="13.0"
+   start="slow_peripheral_bridge.m0"
+   end="dac2904_1.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01cc" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="13.0"
+   start="dma_0.write_master"
+   end="dac2904_1.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01cc" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="reset"
+   version="13.0"
+   start="ddr2.reset_request_n"
+   end="dac2904_2.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="clk.clk_reset"
+   end="dac2904_2.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="nios2.jtag_debug_module_reset"
+   end="dac2904_2.reset" />
+ <connection kind="clock" version="13.0" start="altpll_0.c0" end="dac2904_2.clk" />
+ <connection
+   kind="avalon"
+   version="13.0"
+   start="slow_peripheral_bridge.m0"
+   end="dac2904_2.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01c8" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="reset"
+   version="13.0"
+   start="clk.clk_reset"
+   end="dac2904_3.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="nios2.jtag_debug_module_reset"
+   end="dac2904_3.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="ddr2.reset_request_n"
+   end="dac2904_3.reset" />
+ <connection kind="clock" version="13.0" start="altpll_0.c0" end="dac2904_3.clk" />
+ <connection
+   kind="avalon"
+   version="13.0"
+   start="slow_peripheral_bridge.m0"
+   end="dac2904_3.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01c4" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="reset"
+   version="13.0"
+   start="ddr2.reset_request_n"
+   end="dac2904_4.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="clk.clk_reset"
+   end="dac2904_4.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="nios2.jtag_debug_module_reset"
+   end="dac2904_4.reset" />
+ <connection kind="clock" version="13.0" start="altpll_0.c0" end="dac2904_4.clk" />
+ <connection
+   kind="avalon"
+   version="13.0"
+   start="slow_peripheral_bridge.m0"
+   end="dac2904_4.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01c0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection kind="clock" version="13.0" start="altpll_0.c2" end="dma_0.clk" />
+ <connection
+   kind="avalon"
+   version="13.0"
+   start="nios2.data_master"
+   end="dma_0.control_port_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01004000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
