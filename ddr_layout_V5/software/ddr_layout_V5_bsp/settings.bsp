@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2018-4-17 12:59:04</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1523941145297</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>2018-4-23 19:33:10</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1524483190432</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>D:\altera\project\CycloneIV_DDR2\ddr_layout_V5\software\ddr_layout_V5_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>D:\altera\project\CycloneIV_DDR2\ddr_layout_V5\nios2.sopcinfo</SopcDesignFile>
@@ -983,92 +983,86 @@
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>dma_0</slaveDescriptor>
-                <addressRange>0x00000120 - 0x0000013F</addressRange>
-                <addressSpan>32</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
                 <slaveDescriptor>uart_0</slaveDescriptor>
-                <addressRange>0x00000140 - 0x0000015F</addressRange>
+                <addressRange>0x00000120 - 0x0000013F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>spi_0</slaveDescriptor>
-                <addressRange>0x00000160 - 0x0000017F</addressRange>
+                <addressRange>0x00000140 - 0x0000015F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>systimer</slaveDescriptor>
-                <addressRange>0x00000180 - 0x0000019F</addressRange>
+                <addressRange>0x00000160 - 0x0000017F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>pio_led</slaveDescriptor>
-                <addressRange>0x000001A0 - 0x000001AF</addressRange>
+                <addressRange>0x00000180 - 0x0000018F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>pio_key</slaveDescriptor>
-                <addressRange>0x000001B0 - 0x000001BF</addressRange>
+                <addressRange>0x00000190 - 0x0000019F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>altpll_0</slaveDescriptor>
-                <addressRange>0x000001C0 - 0x000001CF</addressRange>
+                <addressRange>0x000001A0 - 0x000001AF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x000001D0 - 0x000001D7</addressRange>
+                <addressRange>0x000001B0 - 0x000001B7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sysid</slaveDescriptor>
-                <addressRange>0x000001D8 - 0x000001DF</addressRange>
+                <addressRange>0x000001B8 - 0x000001BF</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>dac2904_4</slaveDescriptor>
-                <addressRange>0x000001E0 - 0x000001E3</addressRange>
+                <addressRange>0x000001C0 - 0x000001C3</addressRange>
                 <addressSpan>4</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>dac2904_3</slaveDescriptor>
-                <addressRange>0x000001E4 - 0x000001E7</addressRange>
+                <addressRange>0x000001C4 - 0x000001C7</addressRange>
                 <addressSpan>4</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>dac2904_2</slaveDescriptor>
-                <addressRange>0x000001E8 - 0x000001EB</addressRange>
+                <addressRange>0x000001C8 - 0x000001CB</addressRange>
                 <addressSpan>4</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>dac2904_1</slaveDescriptor>
-                <addressRange>0x000001EC - 0x000001EF</addressRange>
+                <addressRange>0x000001CC - 0x000001CF</addressRange>
                 <addressSpan>4</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>ad9245_1</slaveDescriptor>
-                <addressRange>0x000001F0 - 0x000001F3</addressRange>
+                <addressRange>0x000001D0 - 0x000001D3</addressRange>
                 <addressSpan>4</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>ad9245_2</slaveDescriptor>
-                <addressRange>0x000001F4 - 0x000001F7</addressRange>
+                <addressRange>0x000001D4 - 0x000001D7</addressRange>
                 <addressSpan>4</addressSpan>
                 <attributes/>
         </MemoryMap>
@@ -1083,6 +1077,12 @@
                 <addressRange>0x01003000 - 0x010037FF</addressRange>
                 <addressSpan>2048</addressSpan>
                 <attributes>flash, memory, non-volatile</attributes>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>dma_0</slaveDescriptor>
+                <addressRange>0x01004000 - 0x0100401F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>ddr2</slaveDescriptor>

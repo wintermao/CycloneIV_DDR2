@@ -15,11 +15,12 @@
 #include "sys/alt_dma.h"
 #include "clk_gen.h"
 #include "clk_device.h"
-#include "math.h"
+//#include "math.h"
 #define PI 3.14159265359
 
 static volatile int tx_done = 0;
 alt_u32 *ddr_dword1,*ddr_dword2;
+alt_u16 *ddr_u16;
 alt_u32 offset_source,offset_dest,base_source,base_dest,size_byte;
 alt_dma_txchan txchan;
 //callback funtion
@@ -45,7 +46,7 @@ int main()
   alt_u32 divide;
   float a,b,step;
 
-  divide=8;
+  divide=6;
   clk_gen_init(&dev_clk,CLK_GEN_BASE);
   clk_gen_write(&dev_clk,LIGHT,ALT_CPU_CPU_FREQ);
   clk_gen_write(&dev_clk,DAC1,divide);	//set DA freq to 1M
@@ -55,15 +56,16 @@ int main()
   base_dest=DAC2904_1_BASE;
   offset_source=0x1000000;
   offset_dest=0x000000;
-  size_byte=0x10000;
+  size_byte=0x20000;
 
   ddr_dword1=base_source+offset_source;
   ddr_dword2=base_dest+offset_dest;
-  step=PI*2/size_byte*4*256;
-	for(i=0;i<size_byte/4;i++)		//generate data,size is 1M byte
+  step=PI*2/size_byte*2*256;
+  ddr_u16=ddr_dword1;
+	for(i=0;i<size_byte/2;i++)		//generate data,size is 1M byte
 	{
-	  *ddr_dword1=(int)((sin(step*i)+1)*0x2000);
-	  ddr_dword1++;
+	  *ddr_u16=(int)((sin(step*i)+1)*0x2000);
+	  ddr_u16++;
 	}
   timestamp_freq=alt_timestamp_freq();
   printf("system freq= %ld Hz\n", timestamp_freq);

@@ -16,7 +16,7 @@
    {
       datum _sortIndex
       {
-         value = "20";
+         value = "19";
          type = "int";
       }
    }
@@ -24,7 +24,7 @@
    {
       datum _sortIndex
       {
-         value = "21";
+         value = "20";
          type = "int";
       }
    }
@@ -32,7 +32,7 @@
    {
       datum _sortIndex
       {
-         value = "28";
+         value = "24";
          type = "int";
       }
    }
@@ -40,7 +40,7 @@
    {
       datum _sortIndex
       {
-         value = "3";
+         value = "2";
          type = "int";
       }
    }
@@ -56,7 +56,7 @@
    {
       datum _sortIndex
       {
-         value = "2";
+         value = "1";
          type = "int";
       }
    }
@@ -64,7 +64,7 @@
    {
       datum _sortIndex
       {
-         value = "25";
+         value = "21";
          type = "int";
       }
    }
@@ -88,7 +88,7 @@
    {
       datum _sortIndex
       {
-         value = "9";
+         value = "8";
          type = "int";
       }
    }
@@ -96,7 +96,7 @@
    {
       datum _sortIndex
       {
-         value = "0";
+         value = "25";
          type = "int";
       }
    }
@@ -104,7 +104,7 @@
    {
       datum _sortIndex
       {
-         value = "22";
+         value = "26";
          type = "int";
       }
    }
@@ -112,33 +112,23 @@
    {
       datum _sortIndex
       {
-         value = "23";
+         value = "27";
          type = "int";
-      }
-      datum sopceditor_expanded
-      {
-         value = "1";
-         type = "boolean";
       }
    }
    element dac2904_4
    {
       datum _sortIndex
       {
-         value = "24";
+         value = "28";
          type = "int";
-      }
-      datum sopceditor_expanded
-      {
-         value = "1";
-         type = "boolean";
       }
    }
    element ddr2
    {
       datum _sortIndex
       {
-         value = "8";
+         value = "7";
          type = "int";
       }
       datum megawizard_uipreferences
@@ -151,7 +141,7 @@
    {
       datum _sortIndex
       {
-         value = "16";
+         value = "15";
          type = "int";
       }
    }
@@ -167,7 +157,7 @@
    {
       datum _sortIndex
       {
-         value = "15";
+         value = "14";
          type = "int";
       }
    }
@@ -183,7 +173,7 @@
    {
       datum _sortIndex
       {
-         value = "7";
+         value = "6";
          type = "int";
       }
    }
@@ -191,7 +181,7 @@
    {
       datum _sortIndex
       {
-         value = "1";
+         value = "0";
          type = "int";
       }
    }
@@ -199,7 +189,7 @@
    {
       datum _sortIndex
       {
-         value = "19";
+         value = "18";
          type = "int";
       }
    }
@@ -207,7 +197,7 @@
    {
       datum _sortIndex
       {
-         value = "26";
+         value = "22";
          type = "int";
       }
    }
@@ -215,7 +205,7 @@
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "4";
          type = "int";
       }
       datum sopceditor_expanded
@@ -228,7 +218,7 @@
    {
       datum _sortIndex
       {
-         value = "12";
+         value = "11";
          type = "int";
       }
    }
@@ -236,7 +226,7 @@
    {
       datum _sortIndex
       {
-         value = "11";
+         value = "10";
          type = "int";
       }
    }
@@ -245,22 +235,6 @@
       datum baseAddress
       {
          value = "416";
-         type = "String";
-      }
-   }
-   element slow_peripheral_bridge.s0
-   {
-      datum baseAddress
-      {
-         value = "0";
-         type = "String";
-      }
-   }
-   element dac2904_1.s0
-   {
-      datum baseAddress
-      {
-         value = "460";
          type = "String";
       }
    }
@@ -277,19 +251,19 @@
          type = "String";
       }
    }
-   element dac2904_4.s0
-   {
-      datum baseAddress
-      {
-         value = "448";
-         type = "String";
-      }
-   }
    element dac2904_3.s0
    {
       datum baseAddress
       {
          value = "452";
+         type = "String";
+      }
+   }
+   element dac2904_1.s0
+   {
+      datum baseAddress
+      {
+         value = "460";
          type = "String";
       }
    }
@@ -301,43 +275,19 @@
          type = "String";
       }
    }
-   element systimer.s1
+   element dac2904_4.s0
    {
       datum baseAddress
       {
-         value = "352";
+         value = "448";
          type = "String";
       }
    }
-   element pio_key.s1
-   {
-      datum baseAddress
-      {
-         value = "400";
-         type = "String";
-      }
-   }
-   element clk_gen.s1
+   element slow_peripheral_bridge.s0
    {
       datum baseAddress
       {
          value = "0";
-         type = "String";
-      }
-   }
-   element ad9245_1.s1
-   {
-      datum baseAddress
-      {
-         value = "464";
-         type = "String";
-      }
-   }
-   element oc_i2c_master_0.s1
-   {
-      datum baseAddress
-      {
-         value = "192";
          type = "String";
       }
    }
@@ -346,6 +296,30 @@
       datum baseAddress
       {
          value = "384";
+         type = "String";
+      }
+   }
+   element systimer.s1
+   {
+      datum baseAddress
+      {
+         value = "352";
+         type = "String";
+      }
+   }
+   element ad9245_2.s1
+   {
+      datum baseAddress
+      {
+         value = "468";
+         type = "String";
+      }
+   }
+   element oc_i2c_master_0.s1
+   {
+      datum baseAddress
+      {
+         value = "192";
          type = "String";
       }
    }
@@ -365,19 +339,19 @@
          type = "String";
       }
    }
-   element onchip_ram.s1
+   element pio_key.s1
    {
       datum baseAddress
       {
-         value = "16781312";
+         value = "400";
          type = "String";
       }
    }
-   element ad9245_2.s1
+   element clk_gen.s1
    {
       datum baseAddress
       {
-         value = "468";
+         value = "0";
          type = "String";
       }
    }
@@ -386,6 +360,14 @@
       datum baseAddress
       {
          value = "256";
+         type = "String";
+      }
+   }
+   element ad9245_1.s1
+   {
+      datum baseAddress
+      {
+         value = "464";
          type = "String";
       }
    }
@@ -402,11 +384,19 @@
          type = "String";
       }
    }
+   element onchip_ram.s1
+   {
+      datum baseAddress
+      {
+         value = "16781312";
+         type = "String";
+      }
+   }
    element slow_peripheral_bridge
    {
       datum _sortIndex
       {
-         value = "4";
+         value = "3";
          type = "int";
       }
    }
@@ -414,7 +404,7 @@
    {
       datum _sortIndex
       {
-         value = "14";
+         value = "13";
          type = "int";
       }
    }
@@ -422,7 +412,7 @@
    {
       datum _sortIndex
       {
-         value = "18";
+         value = "17";
          type = "int";
       }
    }
@@ -434,14 +424,6 @@
          type = "String";
       }
    }
-   element spi_0.spi_control_port
-   {
-      datum baseAddress
-      {
-         value = "320";
-         type = "String";
-      }
-   }
    element spi_ad5781.spi_control_port
    {
       datum baseAddress
@@ -450,11 +432,19 @@
          type = "String";
       }
    }
+   element spi_0.spi_control_port
+   {
+      datum baseAddress
+      {
+         value = "320";
+         type = "String";
+      }
+   }
    element spi_master_0
    {
       datum _sortIndex
       {
-         value = "27";
+         value = "23";
          type = "int";
       }
    }
@@ -462,7 +452,7 @@
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "5";
          type = "int";
       }
    }
@@ -470,7 +460,7 @@
    {
       datum _sortIndex
       {
-         value = "10";
+         value = "9";
          type = "int";
       }
    }
@@ -478,7 +468,7 @@
    {
       datum _sortIndex
       {
-         value = "17";
+         value = "16";
          type = "int";
       }
    }
@@ -486,7 +476,7 @@
    {
       datum _sortIndex
       {
-         value = "13";
+         value = "12";
          type = "int";
       }
    }
@@ -505,7 +495,7 @@
  <parameter name="projectName" value="ddr_layout.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1524027427586" />
+ <parameter name="timeStamp" value="1524463412959" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
@@ -1287,7 +1277,7 @@
   <parameter name="readAddressMap"><![CDATA[<address-map><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
   <parameter name="readSlaveAddressWidthMax" value="27" />
   <parameter name="readSlaveDataWidthMax" value="32" />
-  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='dac2904_1.s0' start='0x1CC' end='0x1D0' /></address-map>]]></parameter>
+  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='dac2904_1.s0' start='0x1CC' end='0x1D0' /><slave name='ad9245_1.s1' start='0x1D0' end='0x1D4' /></address-map>]]></parameter>
   <parameter name="writeSlaveAddressWidthMax" value="9" />
   <parameter name="writeSlaveDataWidthMax" value="32" />
  </module>
@@ -1371,22 +1361,10 @@
   <parameter name="avalonSpec" value="2.0" />
   <parameter name="inputClockRate" value="54000000" />
  </module>
- <module kind="dac2904" version="2.0" enabled="1" name="dac2904_1">
-  <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
-  <parameter name="AUTO_SAMPLE_CLK_CLOCK_RATE" value="0" />
- </module>
- <module kind="dac2904" version="2.0" enabled="1" name="dac2904_2">
-  <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
-  <parameter name="AUTO_SAMPLE_CLK_CLOCK_RATE" value="0" />
- </module>
- <module kind="dac2904" version="2.0" enabled="1" name="dac2904_3">
-  <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
-  <parameter name="AUTO_SAMPLE_CLK_CLOCK_RATE" value="0" />
- </module>
- <module kind="dac2904" version="2.0" enabled="1" name="dac2904_4">
-  <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
-  <parameter name="AUTO_SAMPLE_CLK_CLOCK_RATE" value="0" />
- </module>
+ <module kind="dac2904" version="3.0" enabled="1" name="dac2904_1" />
+ <module kind="dac2904" version="3.0" enabled="1" name="dac2904_2" />
+ <module kind="dac2904" version="3.0" enabled="1" name="dac2904_3" />
+ <module kind="dac2904" version="3.0" enabled="1" name="dac2904_4" />
  <connection
    kind="avalon"
    version="13.0"
@@ -2096,10 +2074,29 @@
   <parameter name="baseAddress" value="0x01d0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection kind="clock" version="13.0" start="altpll_0.c2" end="dma_0.clk" />
+ <connection
+   kind="avalon"
+   version="13.0"
+   start="nios2.data_master"
+   end="dma_0.control_port_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01004000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="13.0"
+   start="dma_0.write_master"
+   end="ad9245_1.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01d0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
  <connection
    kind="reset"
    version="13.0"
-   start="ddr2.reset_request_n"
+   start="nios2.jtag_debug_module_reset"
    end="dac2904_1.reset" />
  <connection
    kind="reset"
@@ -2109,9 +2106,57 @@
  <connection
    kind="reset"
    version="13.0"
-   start="nios2.jtag_debug_module_reset"
+   start="ddr2.reset_request_n"
    end="dac2904_1.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="nios2.jtag_debug_module_reset"
+   end="dac2904_2.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="clk.clk_reset"
+   end="dac2904_2.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="ddr2.reset_request_n"
+   end="dac2904_2.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="nios2.jtag_debug_module_reset"
+   end="dac2904_3.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="clk.clk_reset"
+   end="dac2904_3.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="nios2.jtag_debug_module_reset"
+   end="dac2904_4.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="ddr2.reset_request_n"
+   end="dac2904_4.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="ddr2.reset_request_n"
+   end="dac2904_3.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="clk.clk_reset"
+   end="dac2904_4.reset" />
  <connection kind="clock" version="13.0" start="altpll_0.c0" end="dac2904_1.clk" />
+ <connection kind="clock" version="13.0" start="altpll_0.c0" end="dac2904_2.clk" />
+ <connection kind="clock" version="13.0" start="altpll_0.c0" end="dac2904_3.clk" />
+ <connection kind="clock" version="13.0" start="altpll_0.c0" end="dac2904_4.clk" />
  <connection
    kind="avalon"
    version="13.0"
@@ -2121,31 +2166,6 @@
   <parameter name="baseAddress" value="0x01cc" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection
-   kind="avalon"
-   version="13.0"
-   start="dma_0.write_master"
-   end="dac2904_1.s0">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01cc" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="reset"
-   version="13.0"
-   start="ddr2.reset_request_n"
-   end="dac2904_2.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="clk.clk_reset"
-   end="dac2904_2.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="nios2.jtag_debug_module_reset"
-   end="dac2904_2.reset" />
- <connection kind="clock" version="13.0" start="altpll_0.c0" end="dac2904_2.clk" />
  <connection
    kind="avalon"
    version="13.0"
@@ -2156,22 +2176,6 @@
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
-   kind="reset"
-   version="13.0"
-   start="clk.clk_reset"
-   end="dac2904_3.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="nios2.jtag_debug_module_reset"
-   end="dac2904_3.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="ddr2.reset_request_n"
-   end="dac2904_3.reset" />
- <connection kind="clock" version="13.0" start="altpll_0.c0" end="dac2904_3.clk" />
- <connection
    kind="avalon"
    version="13.0"
    start="slow_peripheral_bridge.m0"
@@ -2181,22 +2185,6 @@
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
-   kind="reset"
-   version="13.0"
-   start="ddr2.reset_request_n"
-   end="dac2904_4.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="clk.clk_reset"
-   end="dac2904_4.reset" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="nios2.jtag_debug_module_reset"
-   end="dac2904_4.reset" />
- <connection kind="clock" version="13.0" start="altpll_0.c0" end="dac2904_4.clk" />
- <connection
    kind="avalon"
    version="13.0"
    start="slow_peripheral_bridge.m0"
@@ -2205,14 +2193,13 @@
   <parameter name="baseAddress" value="0x01c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection kind="clock" version="13.0" start="altpll_0.c2" end="dma_0.clk" />
  <connection
    kind="avalon"
    version="13.0"
-   start="nios2.data_master"
-   end="dma_0.control_port_slave">
+   start="dma_0.write_master"
+   end="dac2904_1.s0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01004000" />
+  <parameter name="baseAddress" value="0x01cc" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />

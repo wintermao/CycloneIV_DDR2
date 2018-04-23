@@ -1412,6 +1412,145 @@ applicable agreement for further details.
 	)
 )
 (symbol
+	(rect 8 1160 216 1304)
+	(text "SPI_Out_EN" (rect 5 0 67 12)(font "Arial" ))
+	(text "inst1" (rect 8 128 31 140)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "SPI_SYNC" (rect 0 0 55 12)(font "Arial" ))
+		(text "SPI_SYNC" (rect 21 27 76 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "SPI_CLK" (rect 0 0 44 12)(font "Arial" ))
+		(text "SPI_CLK" (rect 21 43 65 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "nReset" (rect 0 0 35 12)(font "Arial" ))
+		(text "nReset" (rect 21 59 56 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "SPI_MOSI" (rect 0 0 50 12)(font "Arial" ))
+		(text "SPI_MOSI" (rect 21 75 71 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "Clock_108M" (rect 0 0 60 12)(font "Arial" ))
+		(text "Clock_108M" (rect 21 91 81 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 208 32)
+		(output)
+		(text "SPI_Out_EN" (rect 0 0 62 12)(font "Arial" ))
+		(text "SPI_Out_EN" (rect 135 27 197 39)(font "Arial" ))
+		(line (pt 208 32)(pt 192 32))
+	)
+	(port
+		(pt 208 48)
+		(output)
+		(text "SPI_Out_EN2" (rect 0 0 68 12)(font "Arial" ))
+		(text "SPI_Out_EN2" (rect 130 43 198 55)(font "Arial" ))
+		(line (pt 208 48)(pt 192 48))
+	)
+	(parameter
+		"SPI_Command_Len"
+		"16"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"Output_Delay_Clock"
+		"27"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 192 128))
+	)
+	(annotation_block (parameter)(rect -24 1304 216 1352))
+)
+(symbol
+	(rect 200 1040 248 1088)
+	(text "ALT_IOBUF" (rect -2 38 47 48)(font "Arial" (font_size 6)))
+	(text "inst5" (rect 22 0 45 12)(font "Arial" ))
+	(port
+		(pt 48 32)
+		(input)
+		(text "i" (rect 6 7 11 19)(font "Courier New" (bold))(invisible))
+		(text "i" (rect 37 29 42 41)(font "Courier New" (bold))(invisible))
+		(line (pt 48 32)(pt 34 32))
+	)
+	(port
+		(pt 24 48)
+		(input)
+		(text "oe" (rect 29 1 40 13)(font "Courier New" (bold))(invisible))
+		(text "oe" (rect 8 35 19 47)(font "Courier New" (bold))(invisible))
+		(line (pt 24 36)(pt 24 48))
+	)
+	(port
+		(pt 48 16)
+		(output)
+		(text "o" (rect 20 23 28 37)(font "Courier New" (font_size 8))(invisible))
+		(text "o" (rect 20 11 28 25)(font "Courier New" (font_size 8))(invisible))
+		(line (pt 48 16)(pt 34 16))
+	)
+	(port
+		(pt 0 32)
+		(bidir)
+		(text "io" (rect 38 7 49 19)(font "Courier New" (bold))(invisible))
+		(text "io" (rect -1 29 10 41)(font "Courier New" (bold))(invisible))
+		(line (pt 8 32)(pt 0 32))
+	)
+	(drawing
+		(line (pt 16 16)(pt 8 16))
+		(line (pt 34 23)(pt 34 41))
+		(line (pt 16 7)(pt 16 25))
+		(line (pt 8 16)(pt 8 31))
+		(line (pt 34 41)(pt 16 32))
+		(line (pt 34 23)(pt 16 32))
+		(line (pt 34 16)(pt 16 25))
+		(line (pt 34 16)(pt 16 7))
+		(line (pt 16 32)(pt 8 32))
+	)
+	(rotate180)
+)
+(symbol
+	(rect 376 1136 424 1168)
+	(text "NOT" (rect 27 0 47 10)(font "Arial" (font_size 6)))
+	(text "inst6" (rect 22 21 45 33)(font "Arial" ))
+	(port
+		(pt 48 16)
+		(input)
+		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
+		(text "IN" (rect 35 7 46 19)(font "Courier New" (bold))(invisible))
+		(line (pt 48 16)(pt 35 16))
+	)
+	(port
+		(pt 0 16)
+		(output)
+		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect -1 7 16 19)(font "Courier New" (bold))(invisible))
+		(line (pt 9 16)(pt 0 16))
+	)
+	(drawing
+		(line (pt 35 25)(pt 35 7))
+		(line (pt 35 7)(pt 17 16))
+		(line (pt 35 25)(pt 17 16))
+		(circle (rect 9 12 17 20))
+	)
+	(flipy)
+)
+(symbol
 	(rect 568 48 1032 1496)
 	(text "nios2" (rect 217 -1 253 15)(font "Arial" (font_size 10)))
 	(text "inst" (rect 8 1432 25 1444)(font "Arial" ))
@@ -1922,145 +2061,6 @@ applicable agreement for further details.
 		(line (pt 0 1448)(pt 464 1448))
 		(line (pt 0 0)(pt 0 1448))
 	)
-)
-(symbol
-	(rect 8 1160 216 1304)
-	(text "SPI_Out_EN" (rect 5 0 67 12)(font "Arial" ))
-	(text "inst1" (rect 8 128 31 140)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "SPI_SYNC" (rect 0 0 55 12)(font "Arial" ))
-		(text "SPI_SYNC" (rect 21 27 76 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "SPI_CLK" (rect 0 0 44 12)(font "Arial" ))
-		(text "SPI_CLK" (rect 21 43 65 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "nReset" (rect 0 0 35 12)(font "Arial" ))
-		(text "nReset" (rect 21 59 56 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "SPI_MOSI" (rect 0 0 50 12)(font "Arial" ))
-		(text "SPI_MOSI" (rect 21 75 71 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "Clock_108M" (rect 0 0 60 12)(font "Arial" ))
-		(text "Clock_108M" (rect 21 91 81 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96))
-	)
-	(port
-		(pt 208 32)
-		(output)
-		(text "SPI_Out_EN" (rect 0 0 62 12)(font "Arial" ))
-		(text "SPI_Out_EN" (rect 135 27 197 39)(font "Arial" ))
-		(line (pt 208 32)(pt 192 32))
-	)
-	(port
-		(pt 208 48)
-		(output)
-		(text "SPI_Out_EN2" (rect 0 0 68 12)(font "Arial" ))
-		(text "SPI_Out_EN2" (rect 130 43 198 55)(font "Arial" ))
-		(line (pt 208 48)(pt 192 48))
-	)
-	(parameter
-		"SPI_Command_Len"
-		"16"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"Output_Delay_Clock"
-		"27"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 192 128))
-	)
-	(annotation_block (parameter)(rect -24 1304 216 1352))
-)
-(symbol
-	(rect 200 1040 248 1088)
-	(text "ALT_IOBUF" (rect -2 38 47 48)(font "Arial" (font_size 6)))
-	(text "inst5" (rect 22 0 45 12)(font "Arial" ))
-	(port
-		(pt 48 32)
-		(input)
-		(text "i" (rect 6 7 11 19)(font "Courier New" (bold))(invisible))
-		(text "i" (rect 37 29 42 41)(font "Courier New" (bold))(invisible))
-		(line (pt 48 32)(pt 34 32))
-	)
-	(port
-		(pt 24 48)
-		(input)
-		(text "oe" (rect 29 1 40 13)(font "Courier New" (bold))(invisible))
-		(text "oe" (rect 8 35 19 47)(font "Courier New" (bold))(invisible))
-		(line (pt 24 36)(pt 24 48))
-	)
-	(port
-		(pt 48 16)
-		(output)
-		(text "o" (rect 20 23 28 37)(font "Courier New" (font_size 8))(invisible))
-		(text "o" (rect 20 11 28 25)(font "Courier New" (font_size 8))(invisible))
-		(line (pt 48 16)(pt 34 16))
-	)
-	(port
-		(pt 0 32)
-		(bidir)
-		(text "io" (rect 38 7 49 19)(font "Courier New" (bold))(invisible))
-		(text "io" (rect -1 29 10 41)(font "Courier New" (bold))(invisible))
-		(line (pt 8 32)(pt 0 32))
-	)
-	(drawing
-		(line (pt 16 16)(pt 8 16))
-		(line (pt 34 23)(pt 34 41))
-		(line (pt 16 7)(pt 16 25))
-		(line (pt 8 16)(pt 8 31))
-		(line (pt 34 41)(pt 16 32))
-		(line (pt 34 23)(pt 16 32))
-		(line (pt 34 16)(pt 16 25))
-		(line (pt 34 16)(pt 16 7))
-		(line (pt 16 32)(pt 8 32))
-	)
-	(rotate180)
-)
-(symbol
-	(rect 376 1136 424 1168)
-	(text "NOT" (rect 27 0 47 10)(font "Arial" (font_size 6)))
-	(text "inst6" (rect 22 21 45 33)(font "Arial" ))
-	(port
-		(pt 48 16)
-		(input)
-		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
-		(text "IN" (rect 35 7 46 19)(font "Courier New" (bold))(invisible))
-		(line (pt 48 16)(pt 35 16))
-	)
-	(port
-		(pt 0 16)
-		(output)
-		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect -1 7 16 19)(font "Courier New" (bold))(invisible))
-		(line (pt 9 16)(pt 0 16))
-	)
-	(drawing
-		(line (pt 35 25)(pt 35 7))
-		(line (pt 35 7)(pt 17 16))
-		(line (pt 35 25)(pt 17 16))
-		(circle (rect 9 12 17 20))
-	)
-	(flipy)
 )
 (connector
 	(pt 504 360)
