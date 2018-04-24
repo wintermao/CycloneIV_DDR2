@@ -15,7 +15,7 @@
 #include "sys/alt_dma.h"
 #include "clk_gen.h"
 #include "clk_device.h"
-//#include "math.h"
+#include "math.h"
 #define PI 3.14159265359
 
 static volatile int tx_done = 0;
@@ -23,10 +23,11 @@ alt_u32 *ddr_dword1,*ddr_dword2;
 alt_u16 *ddr_u16;
 alt_u32 offset_source,offset_dest,base_source,base_dest,size_byte;
 alt_dma_txchan txchan;
+extern int time_1s;
 //callback funtion
 static void done (void* handle)
 {
-    tx_done=1;
+    tx_done++;
     dma_init(txchan,ddr_dword1,ddr_dword2,size_byte);
 }
 void dma_init(alt_dma_txchan txchan,alt_u32 *s_addr,alt_u32 *d_addr,alt_u32 t_size)
@@ -45,8 +46,10 @@ int main()
   //blink led
   alt_u32 divide;
   float a,b,step;
+  int tx_done_last;
 
-  divide=6;
+  tx_done_last=tx_done;
+  divide=8;
   clk_gen_init(&dev_clk,CLK_GEN_BASE);
   clk_gen_write(&dev_clk,LIGHT,ALT_CPU_CPU_FREQ);
   clk_gen_write(&dev_clk,DAC1,divide);	//set DA freq to 1M
@@ -56,11 +59,11 @@ int main()
   base_dest=DAC2904_1_BASE;
   offset_source=0x1000000;
   offset_dest=0x000000;
-  size_byte=0x20000;
+  size_byte=0x2000;
 
   ddr_dword1=base_source+offset_source;
   ddr_dword2=base_dest+offset_dest;
-  step=PI*2/size_byte*2*256;
+  step=PI*2/size_byte*2*16;
   ddr_u16=ddr_dword1;
 	for(i=0;i<size_byte/2;i++)		//generate data,size is 1M byte
 	{
@@ -68,7 +71,7 @@ int main()
 	  ddr_u16++;
 	}
   timestamp_freq=alt_timestamp_freq();
-  printf("system freq= %ld Hz\n", timestamp_freq);
+  printf("time stamp system freq= %ld Hz\n", timestamp_freq);
   alt_timestamp_start();
 
 	 //-----------------------------------------------------------
@@ -86,6 +89,7 @@ int main()
 	alt_dma_txchan_ioctl(txchan,  ALT_DMA_SET_MODE_32, NULL);
 	alt_dma_txchan_ioctl(txchan,  ALT_DMA_TX_ONLY_ON, ddr_dword2);
 	dma_init(txchan,ddr_dword1,ddr_dword2,size_byte);
+	Timer_Initial();
 	/*
 	if (alt_dma_txchan_send(    txchan,
 							 ddr_dword1,
@@ -132,8 +136,15 @@ int main()
 		}
 	}
 	*/
+
 	while(1)
 	{
+		if(time_1s==1)
+		{
+			time_1s=0;
+			printf("transtims is %4d\n",tx_done-tx_done_last);
+			tx_done_last=tx_done;
+		}
 
 	}
      alt_dma_txchan_close(txchan);

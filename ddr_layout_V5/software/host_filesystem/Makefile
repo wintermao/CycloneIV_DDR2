@@ -139,11 +139,10 @@ ACDS_VERSION := 13.0
 # Define path to the application ELF. 
 # It may be used by the makefile fragments so is defined before including them. 
 # 
-ELF := dma_ddr_to_dac.elf
+ELF := host_filesystem.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS += dma_ddr_to_dac.c
-C_SRCS += mytime.c
+C_SRCS := host_filesystem.c
 CXX_SRCS :=
 ASM_SRCS :=
 
