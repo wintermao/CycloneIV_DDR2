@@ -46,7 +46,7 @@ module wave_gen (
 	reg [13:0] step;
 	reg [15:0] counter;
 	reg [31:0] clk_count;
-	reg clk_out;
+	wire clk_out;
 	reg clk_out_ge2;
 	reg [24:0] sin_step,sin_in;
 	reg [31:0] cordic_in;
