@@ -51,13 +51,16 @@ module clk_gen
 		else
 		begin
 			for(i=0;i<clk_num;i=i+1) begin
-				if(clk_count[i]==clk_pre[i]-1) clk_count[i]<=0;
-				else clk_count[i]<=clk_count[i]+1;
-				//if(clk_count[i]==clk_pre[i]-1) clk_out[i] <= ~clk_out[i];
-				//else if(clk_count[i]==clk_pre[i]>>1) clk_out[i] <= ~clk_out[i];
-				if(clk_count[i]==0) clk_out[i] <= 0;
-				else if(clk_count[i]==clk_pre[i]>>1) clk_out[i] <= 1;
-				else clk_out[i] <= clk_out[i];
+				if(clk_count[i]>=clk_pre[i]-1) begin
+					clk_count[i]<=0;
+					clk_out[i] <= 0;
+				end else if(clk_count[i]==clk_pre[i]>>1) begin
+					clk_count[i]<=clk_count[i]+1;
+					clk_out[i] <= 1;
+				end else begin
+					clk_count[i]<=clk_count[i]+1;
+					clk_out[i] <= clk_out[i];
+				end
 			end
 		end
 	end
