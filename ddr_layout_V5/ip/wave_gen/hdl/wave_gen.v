@@ -47,6 +47,7 @@ module wave_gen (
 	reg [15:0] counter;
 	reg [31:0] clk_count;
 	reg clk_out;
+	reg clk_out_ge2;
 	reg [24:0] sin_step,sin_in;
 	reg [31:0] cordic_in;
 	wire [31:0] sin;
@@ -93,20 +94,22 @@ module wave_gen (
 	begin
 		if (!reset_n) begin
 			clk_count <= 0;
-			clk_out <= 0;
+			clk_out_ge2 <= 0;
 		end	else begin
 			if(clk_count>=(freq_div-1)) begin
 				clk_count<=0;
-				clk_out <= 0;
+				clk_out_ge2 <= 0;
 			end else if(clk_count==(freq_div>>1)) begin
 				clk_count<=clk_count+1;
-				clk_out <= 1;
+				clk_out_ge2 <= 1;
 			end else begin 
 				clk_count<=clk_count+1;
-				clk_out <= clk_out;
+				clk_out_ge2 <= clk_out_ge2;
 			end
 		end
 	end
+	
+	assign clk_out = (freq_div==1)? clk_source : clk_out_ge2;
 		
 	always @(posedge clk_out or negedge reset_n)
 	begin
