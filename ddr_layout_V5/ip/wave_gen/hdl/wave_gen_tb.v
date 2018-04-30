@@ -10,9 +10,10 @@
  
 `define ADDR_AMP_MAX	3'h0
 `define ADDR_AMP_MIN	3'h1
-`define ADDR_FREQ			3'h2
+`define ADDR_FREQ_DIV	3'h2
 `define ADDR_POINT		3'h3
 `define ADDR_CONTROL	3'h4 
+`define ADDR_DAC			3'h5
 
  module wave_gen_tb;
 
@@ -27,7 +28,7 @@
  
   defparam tb.AmpMax=14'h3fff;
 	defparam tb.AmpMin=14'h0;
-	defparam tb.Frequency=32'd20;
+	defparam tb.FreqDiv=32'd20;
 	defparam tb.SamplePonint=16'd256;
 	
 	// Generates serial clock of time period 10
@@ -66,7 +67,7 @@ endtask
      
      avalon_write(`ADDR_AMP_MAX,14'h3fff);
      avalon_write(`ADDR_AMP_MIN,14'h0); 
-     avalon_write(`ADDR_FREQ,32'd3); 
+     avalon_write(`ADDR_FREQ_DIV,32'd3); 
      avalon_write(`ADDR_POINT,16'd256); 
      avalon_write(`ADDR_CONTROL,8'h1); 
      #30000
@@ -75,6 +76,23 @@ endtask
       avalon_write(`ADDR_CONTROL,8'h3);
      #50000
       avalon_write(`ADDR_CONTROL,8'h5);
+     #50000
+      avalon_write(`ADDR_AMP_MAX,14'h1fff);
+     #50000
+      avalon_write(`ADDR_AMP_MIN,14'h1000);
+     #50000
+      avalon_write(`ADDR_FREQ_DIV,32'h5);
+     #50000
+      avalon_write(`ADDR_CONTROL,8'h7);
+      avalon_write(`ADDR_DAC,14'h3fff);
+     #1000 
+      avalon_write(`ADDR_DAC,14'h2fff); 
+     #1000 
+      avalon_write(`ADDR_DAC,14'h1fff);
+     #1000 
+      avalon_write(`ADDR_DAC,14'h0);            
+      #1000 $stop;
+     
    end
 
  endmodule

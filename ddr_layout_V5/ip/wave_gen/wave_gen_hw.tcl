@@ -60,13 +60,13 @@ set_parameter_property AmpMin TYPE STD_LOGIC_VECTOR
 set_parameter_property AmpMin UNITS None
 set_parameter_property AmpMin ALLOWED_RANGES {0:16383}
 set_parameter_property AmpMin HDL_PARAMETER true
-add_parameter Frequency STD_LOGIC_VECTOR 20
-set_parameter_property Frequency DEFAULT_VALUE 20
-set_parameter_property Frequency DISPLAY_NAME {Frequency division}
-set_parameter_property Frequency TYPE STD_LOGIC_VECTOR
-set_parameter_property Frequency UNITS None
-set_parameter_property Frequency ALLOWED_RANGES {2:17179869183}
-set_parameter_property Frequency HDL_PARAMETER true
+add_parameter FreqDiv STD_LOGIC_VECTOR 20
+set_parameter_property FreqDiv DEFAULT_VALUE 20
+set_parameter_property FreqDiv DISPLAY_NAME {Frequency division}
+set_parameter_property FreqDiv TYPE STD_LOGIC_VECTOR
+set_parameter_property FreqDiv UNITS None
+set_parameter_property FreqDiv ALLOWED_RANGES {2:17179869183}
+set_parameter_property FreqDiv HDL_PARAMETER true
 add_parameter SamplePonint STD_LOGIC_VECTOR 256
 set_parameter_property SamplePonint DEFAULT_VALUE 256
 set_parameter_property SamplePonint DISPLAY_NAME {Sampling point number}

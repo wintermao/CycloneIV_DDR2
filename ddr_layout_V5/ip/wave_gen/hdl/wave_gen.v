@@ -9,11 +9,13 @@
 // to your version control system if you want to keep it.
 `timescale 1 ns / 1 ns
 
+
 `define ADDR_AMP_MAX	3'h0
 `define ADDR_AMP_MIN	3'h1
-`define ADDR_FREQ			3'h2
+`define ADDR_FREQ_DIV	3'h2
 `define ADDR_POINT		3'h3
 `define ADDR_CONTROL	3'h4
+`define ADDR_DAC			3'h5
 
 module wave_gen (
 		//avalon interface
@@ -31,11 +33,12 @@ module wave_gen (
 	);
 	parameter AmpMax=14'h3fff;
 	parameter AmpMin=14'h0;
-	parameter Frequency=32'd20;
+	parameter FreqDiv=32'd20;
 	parameter SamplePonint=16'd256;
 	
 	reg [7:0] control;
-	reg [31:0] freq;
+	reg [13:0] dac_test;
+	reg [31:0] freq_div;
 	reg [13:0] amp_max;
 	reg [13:0] amp_min;	
 	reg [15:0] sample_num;
@@ -47,7 +50,9 @@ module wave_gen (
 	reg [24:0] sin_step,sin_in;
 	reg [31:0] cordic_in;
 	wire [31:0] sin;
-	wire [13:0] sin_out;
+	reg [16:0] sin_out;
+	reg [31:0] sin_out1;
+	reg [31:0] sin_scale;
 	
 	always @(posedge clk or negedge reset_n)
 	begin
@@ -56,8 +61,9 @@ module wave_gen (
 			control <= 8'h1;
 			amp_max <= AmpMax;
 			amp_min <= AmpMin;
-			freq <= Frequency;
+			freq_div <= FreqDiv;
 			sample_num <= SamplePonint;
+			dac_test <= 14'h0;
 		end
 		else
 		begin
@@ -65,17 +71,19 @@ module wave_gen (
 				case (avs_s0_address) 
         	`ADDR_AMP_MAX	: amp_max <= avs_s0_writedata[13:0];	
           `ADDR_AMP_MIN : amp_min <= avs_s0_writedata[13:0];	
-          `ADDR_FREQ	: freq <= avs_s0_writedata;
+          `ADDR_FREQ_DIV: freq_div <= avs_s0_writedata;
           `ADDR_POINT	: sample_num <= avs_s0_writedata[15:0];	
           `ADDR_CONTROL	: control <= avs_s0_writedata[7:0];
+					`ADDR_DAC			: dac_test <= avs_s0_writedata[13:0];
         endcase
 			end	if(avs_s0_chipselect & avs_s0_read) begin
 				case (avs_s0_address) 
         	`ADDR_AMP_MAX	: avs_s0_readdata <= {18'h0,amp_max};	
           `ADDR_AMP_MIN : avs_s0_readdata <= {18'h0,amp_min};	
-          `ADDR_FREQ	: avs_s0_readdata <= freq;
+          `ADDR_FREQ_DIV: avs_s0_readdata <= freq_div;
           `ADDR_POINT	: avs_s0_readdata <= {16'h0,sample_num};	
           `ADDR_CONTROL	: avs_s0_readdata <= {24'h0,control};
+					`ADDR_DAC			: avs_s0_readdata <= {18'h0,dac_test};
         endcase
 			end
 		end
@@ -87,10 +95,10 @@ module wave_gen (
 			clk_count <= 0;
 			clk_out <= 0;
 		end	else begin
-			if(clk_count>=(freq-1)) begin
+			if(clk_count>=(freq_div-1)) begin
 				clk_count<=0;
 				clk_out <= 0;
-			end else if(clk_count==(freq>>1)) begin
+			end else if(clk_count==(freq_div>>1)) begin
 				clk_count<=clk_count+1;
 				clk_out <= 1;
 			end else begin 
@@ -144,6 +152,13 @@ module wave_gen (
         	sin_in <= 1'h0;
         	counter <= 1'h0 ;
         end
+        
+        sin_scale <=(( 18'h20000)<<8)/(amp_max-amp_min);
+        sin_out <= (sin[16:0]+17'h10000);
+        sin_out1 <= (sin_out<<8)/sin_scale;
+        dac_reg <= amp_min+sin_out1[13:0];
+			end else if(control[2:1]==3) begin
+				dac_reg <= dac_test;
 			end
 		end
 	end
@@ -156,8 +171,7 @@ Cordic_Test Cordic_dest(
     .Cos                    ( ),
     .Error                  ( )
 );
-		
-assign sin_out = control[0]? (sin[16] ?(sin[16:3]+14'h2000) :(sin[15:3]+14'h2000)) : 14'h0;
-assign dac =  control[2]? sin_out : (control[0]? dac_reg : 14'h0);	
+
+assign dac = control[0]? dac_reg : 14'h0;	
 
 endmodule
