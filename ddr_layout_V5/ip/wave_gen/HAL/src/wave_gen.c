@@ -21,7 +21,7 @@ void wave_gen_set_freq(wave_gen_dev *dev,alt_u32 freq)
 {
 	float divide;
 	divide=dev->freq_in/freq;
-	IOWR_WAVE_GEN_FREQ(dev->base,divide);
+	IOWR_WAVE_GEN_FREQ(dev->base,(int)divide);
 }
 void wave_gen_set_sample_num(wave_gen_dev *dev,alt_u16 sample_num)
 {
