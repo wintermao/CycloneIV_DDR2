@@ -238,11 +238,11 @@
          type = "String";
       }
    }
-   element slow_peripheral_bridge.s0
+   element dac2904_1.s0
    {
       datum baseAddress
       {
-         value = "0";
+         value = "492";
          type = "String";
       }
    }
@@ -254,11 +254,35 @@
          type = "String";
       }
    }
+   element dac2904_3.s0
+   {
+      datum baseAddress
+      {
+         value = "484";
+         type = "String";
+      }
+   }
    element dac2904_4.s0
    {
       datum baseAddress
       {
          value = "480";
+         type = "String";
+      }
+   }
+   element slow_peripheral_bridge.s0
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element wave_gen_0.s0
+   {
+      datum baseAddress
+      {
+         value = "128";
          type = "String";
       }
    }
@@ -275,51 +299,27 @@
          type = "String";
       }
    }
-   element dac2904_3.s0
+   element timestamp.s1
    {
       datum baseAddress
       {
-         value = "484";
+         value = "288";
          type = "String";
       }
    }
-   element wave_gen_0.s0
+   element ad9245_2.s1
    {
       datum baseAddress
       {
-         value = "128";
+         value = "500";
          type = "String";
       }
    }
-   element dac2904_1.s0
+   element systimer.s1
    {
       datum baseAddress
       {
-         value = "492";
-         type = "String";
-      }
-   }
-   element spi_master_0.s1
-   {
-      datum baseAddress
-      {
-         value = "192";
-         type = "String";
-      }
-   }
-   element pio_led.s1
-   {
-      datum baseAddress
-      {
-         value = "416";
-         type = "String";
-      }
-   }
-   element clk_gen.s1
-   {
-      datum baseAddress
-      {
-         value = "0";
+         value = "384";
          type = "String";
       }
    }
@@ -331,19 +331,27 @@
          type = "String";
       }
    }
-   element timestamp.s1
+   element uart_0.s1
    {
       datum baseAddress
       {
-         value = "288";
+         value = "320";
          type = "String";
       }
    }
-   element oc_i2c_master_0.s1
+   element onchip_ram.s1
    {
       datum baseAddress
       {
-         value = "224";
+         value = "16781312";
+         type = "String";
+      }
+   }
+   element pio_led.s1
+   {
+      datum baseAddress
+      {
+         value = "416";
          type = "String";
       }
    }
@@ -360,19 +368,27 @@
          type = "String";
       }
    }
-   element ad9245_2.s1
+   element oc_i2c_master_0.s1
    {
       datum baseAddress
       {
-         value = "500";
+         value = "224";
          type = "String";
       }
    }
-   element onchip_ram.s1
+   element clk_gen.s1
    {
       datum baseAddress
       {
-         value = "16781312";
+         value = "0";
+         type = "String";
+      }
+   }
+   element spi_master_0.s1
+   {
+      datum baseAddress
+      {
+         value = "192";
          type = "String";
       }
    }
@@ -381,22 +397,6 @@
       datum baseAddress
       {
          value = "496";
-         type = "String";
-      }
-   }
-   element systimer.s1
-   {
-      datum baseAddress
-      {
-         value = "384";
-         type = "String";
-      }
-   }
-   element uart_0.s1
-   {
-      datum baseAddress
-      {
-         value = "320";
          type = "String";
       }
    }
@@ -432,19 +432,19 @@
          type = "String";
       }
    }
-   element ad9266.spi_control_port
-   {
-      datum baseAddress
-      {
-         value = "160";
-         type = "String";
-      }
-   }
    element spi_ad5781.spi_control_port
    {
       datum baseAddress
       {
          value = "256";
+         type = "String";
+      }
+   }
+   element ad9266.spi_control_port
+   {
+      datum baseAddress
+      {
+         value = "160";
          type = "String";
       }
    }
@@ -511,7 +511,7 @@
  <parameter name="projectName" value="ddr_layout.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1524911343086" />
+ <parameter name="timeStamp" value="1525231427732" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
@@ -1401,8 +1401,10 @@
  <module kind="wave_gen" version="1.0" enabled="1" name="wave_gen_0">
   <parameter name="AmpMax" value="16383" />
   <parameter name="AmpMin" value="0" />
-  <parameter name="Frequency" value="20" />
+  <parameter name="FreqDiv" value="20" />
   <parameter name="SamplePonint" value="256" />
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="54000000" />
+  <parameter name="AUTO_CLK_SOURCE_CLOCK_RATE" value="108000000" />
  </module>
  <connection
    kind="avalon"
