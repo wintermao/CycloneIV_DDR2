@@ -138,6 +138,6 @@ module demodulation (
 		end
 	end
 
-	assign dac = ave_left - ave_right;	
+	assign dac = ave_left - ave_right + 14'h2000;	
 
 endmodule
