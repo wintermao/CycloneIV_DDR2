@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2018-5-2 20:10:09</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1525263009945</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>2018-5-3 19:50:32</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1525348232641</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>D:\altera\project\CycloneIV_DDR2\ddr_layout_V5\software\ddr_layout_V5_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>D:\altera\project\CycloneIV_DDR2\ddr_layout_V5\nios2.sopcinfo</SopcDesignFile>
@@ -922,30 +922,6 @@
                 <Enabled>false</Enabled>
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
-        <Setting>
-                <SettingName>dac2904_driver.enable_small_driver</SettingName>
-                <Identifier>DAC2904_SMALL</Identifier>
-                <Type>BooleanDefineOnly</Type>
-                <Value>false</Value>
-                <DefaultValue>false</DefaultValue>
-                <DestinationFile>public_mk_define</DestinationFile>
-                <Description>Small-footprint (polled mode) driver</Description>
-                <Restrictions>none</Restrictions>
-                <Enabled>false</Enabled>
-                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-        </Setting>
-        <Setting>
-                <SettingName>ad9245_driver.enable_small_driver</SettingName>
-                <Identifier>AD9245_SMALL</Identifier>
-                <Type>BooleanDefineOnly</Type>
-                <Value>false</Value>
-                <DefaultValue>false</DefaultValue>
-                <DestinationFile>public_mk_define</DestinationFile>
-                <Description>Small-footprint (polled mode) driver</Description>
-                <Restrictions>none</Restrictions>
-                <Enabled>false</Enabled>
-                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-        </Setting>
         <MemoryMap>
                 <slaveDescriptor>clk_gen</slaveDescriptor>
                 <addressRange>0x00000000 - 0x0000007F</addressRange>
@@ -953,141 +929,99 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>wave_gen_2</slaveDescriptor>
-                <addressRange>0x00000080 - 0x0000009F</addressRange>
-                <addressSpan>32</addressSpan>
+                <slaveDescriptor>triangle_demodu_1</slaveDescriptor>
+                <addressRange>0x00000080 - 0x000000BF</addressRange>
+                <addressSpan>64</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>wave_gen_1</slaveDescriptor>
-                <addressRange>0x000000A0 - 0x000000BF</addressRange>
-                <addressSpan>32</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>demodulation_0</slaveDescriptor>
-                <addressRange>0x000000C0 - 0x000000DF</addressRange>
-                <addressSpan>32</addressSpan>
+                <slaveDescriptor>triangle_demodu_0</slaveDescriptor>
+                <addressRange>0x000000C0 - 0x000000FF</addressRange>
+                <addressSpan>64</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>wave_gen_0</slaveDescriptor>
-                <addressRange>0x000000E0 - 0x000000FF</addressRange>
-                <addressSpan>32</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>ad9266</slaveDescriptor>
                 <addressRange>0x00000100 - 0x0000011F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>spi_master_0</slaveDescriptor>
+                <slaveDescriptor>ad9266</slaveDescriptor>
                 <addressRange>0x00000120 - 0x0000013F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>oc_i2c_master_0</slaveDescriptor>
+                <slaveDescriptor>spi_master_0</slaveDescriptor>
                 <addressRange>0x00000140 - 0x0000015F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>spi_ad5781</slaveDescriptor>
+                <slaveDescriptor>oc_i2c_master_0</slaveDescriptor>
                 <addressRange>0x00000160 - 0x0000017F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>timestamp</slaveDescriptor>
+                <slaveDescriptor>spi_ad5781</slaveDescriptor>
                 <addressRange>0x00000180 - 0x0000019F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>timestamp</slaveDescriptor>
+                <addressRange>0x000001A0 - 0x000001BF</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>uart_0</slaveDescriptor>
-                <addressRange>0x000001A0 - 0x000001BF</addressRange>
+                <addressRange>0x000001C0 - 0x000001DF</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>spi_0</slaveDescriptor>
-                <addressRange>0x000001C0 - 0x000001DF</addressRange>
+                <addressRange>0x000001E0 - 0x000001FF</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>systimer</slaveDescriptor>
-                <addressRange>0x000001E0 - 0x000001FF</addressRange>
+                <addressRange>0x00000200 - 0x0000021F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>pio_led</slaveDescriptor>
-                <addressRange>0x00000200 - 0x0000020F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>pio_key</slaveDescriptor>
-                <addressRange>0x00000210 - 0x0000021F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>altpll_0</slaveDescriptor>
                 <addressRange>0x00000220 - 0x0000022F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>pio_key</slaveDescriptor>
+                <addressRange>0x00000230 - 0x0000023F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>altpll_0</slaveDescriptor>
+                <addressRange>0x00000240 - 0x0000024F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x00000230 - 0x00000237</addressRange>
+                <addressRange>0x00000250 - 0x00000257</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sysid</slaveDescriptor>
-                <addressRange>0x00000238 - 0x0000023F</addressRange>
+                <addressRange>0x00000258 - 0x0000025F</addressRange>
                 <addressSpan>8</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>dac2904_4</slaveDescriptor>
-                <addressRange>0x00000240 - 0x00000243</addressRange>
-                <addressSpan>4</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>dac2904_3</slaveDescriptor>
-                <addressRange>0x00000244 - 0x00000247</addressRange>
-                <addressSpan>4</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>dac2904_2</slaveDescriptor>
-                <addressRange>0x00000248 - 0x0000024B</addressRange>
-                <addressSpan>4</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>dac2904_1</slaveDescriptor>
-                <addressRange>0x0000024C - 0x0000024F</addressRange>
-                <addressSpan>4</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>ad9245_1</slaveDescriptor>
-                <addressRange>0x00000250 - 0x00000253</addressRange>
-                <addressSpan>4</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>ad9245_2</slaveDescriptor>
-                <addressRange>0x00000254 - 0x00000257</addressRange>
-                <addressSpan>4</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
