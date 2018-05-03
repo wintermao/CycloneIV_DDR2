@@ -11,6 +11,7 @@
 void set_wave_freq(wave_gen_dev *dev,alt_u32 freq,alt_u16 sample_num)
 {
 	wave_gen_set_freq(dev,freq*sample_num);
+	printf("wave_gen_set_freq=%d\n",ALT_CPU_CPU_FREQ/(freq*sample_num));
 }
 void set_demodu_freq(demodulation_dev *dev,alt_u32 freq,alt_u16 sample_num)
 {
@@ -23,7 +24,9 @@ int main()
 	alt_u16 left_start,left_num,right_start,right_num;
 	alt_u32 delay;
 	alt_u32 freq;
-	wave_gen_dev dev_wave_gen;
+	wave_gen_dev dev_wave_gen_dac1;
+	wave_gen_dev dev_wave_gen_dac3;
+	wave_gen_dev dev_wave_gen_dac4;
 	clk_gen_dev dev_clk;
 	demodulation_dev dev_demodulation;
 
@@ -39,20 +42,34 @@ int main()
 	right_start=128+32;
 	right_num=128;
 	clk_gen_write(&dev_clk,DAC1,8);	//set DA freq to 1M
-	clk_gen_write(&dev_clk,AD1,8); 	//set samble freq to 1M
+	clk_gen_write(&dev_clk,DAC3,8); 	//set samble freq to 1M
+	clk_gen_write(&dev_clk,DAC4,8);
+	clk_gen_write(&dev_clk,AD1,8);
 
-	wave_gen_init(&dev_wave_gen,WAVE_GEN_0_BASE,ALT_CPU_CPU_FREQ);
-	wave_gen_set_amp(&dev_wave_gen,amp_min,amp_max);
-	wave_gen_set_sample_num(&dev_wave_gen,sample_num);
-	set_wave_freq(&dev_wave_gen,freq,sample_num);
-	//wave_gen_set_freq(&dev_wave_gen,freq);
-	wave_gen_set_mode(&dev_wave_gen,WAVE_GEN_CONTROL_DAC,1);
+	wave_gen_init(&dev_wave_gen_dac1,WAVE_GEN_0_BASE,ALT_CPU_CPU_FREQ);
+	wave_gen_set_amp(&dev_wave_gen_dac1,0,0x3fff);
+	wave_gen_set_sample_num(&dev_wave_gen_dac1,1024);
+	set_wave_freq(&dev_wave_gen_dac1,1,1024);
+	wave_gen_set_mode(&dev_wave_gen_dac1,WAVE_GEN_CONTROL_SAWTOOTH,1);
 
+	wave_gen_init(&dev_wave_gen_dac3,WAVE_GEN_1_BASE,ALT_CPU_CPU_FREQ);
+	wave_gen_set_amp(&dev_wave_gen_dac3,0,12888);
+	wave_gen_set_sample_num(&dev_wave_gen_dac3,250);
+	set_wave_freq(&dev_wave_gen_dac3,60000,256);
+	wave_gen_set_mode(&dev_wave_gen_dac3,WAVE_GEN_CONTROL_SIN,1);
+
+	wave_gen_init(&dev_wave_gen_dac4,WAVE_GEN_2_BASE,ALT_CPU_CPU_FREQ);
+	wave_gen_set_amp(&dev_wave_gen_dac4,0,12888);
+	wave_gen_set_sample_num(&dev_wave_gen_dac4,256);
+	set_wave_freq(&dev_wave_gen_dac4,60000,256);
+	wave_gen_set_mode(&dev_wave_gen_dac4,WAVE_GEN_CONTROL_SIN,1);
+
+/*
 	demodulation_init(&dev_demodulation,DEMODULATION_0_BASE,ALT_CPU_CPU_FREQ);
 	demodulation_set_left(&dev_demodulation,left_start,left_num);
 	demodulation_set_right(&dev_demodulation,right_start,right_num);
 	set_demodu_freq(&dev_demodulation,freq,sample_num);
-
+*/
 	printf("Hello from Nios II!\n");
 	while(1)
 	{

@@ -48,7 +48,7 @@
    {
       datum baseAddress
       {
-         value = "496";
+         value = "560";
          type = "String";
       }
    }
@@ -80,7 +80,7 @@
    {
       datum baseAddress
       {
-         value = "504";
+         value = "568";
          type = "String";
       }
    }
@@ -242,23 +242,7 @@
    {
       datum baseAddress
       {
-         value = "480";
-         type = "String";
-      }
-   }
-   element wave_gen_0.s0
-   {
-      datum baseAddress
-      {
-         value = "160";
-         type = "String";
-      }
-   }
-   element slow_peripheral_bridge.s0
-   {
-      datum baseAddress
-      {
-         value = "0";
+         value = "544";
          type = "String";
       }
    }
@@ -266,39 +250,7 @@
    {
       datum baseAddress
       {
-         value = "524";
-         type = "String";
-      }
-   }
-   element demodulation_0.s0
-   {
-      datum baseAddress
-      {
-         value = "128";
-         type = "String";
-      }
-   }
-   element dac2904_3.s0
-   {
-      datum baseAddress
-      {
-         value = "516";
-         type = "String";
-      }
-   }
-   element dac2904_4.s0
-   {
-      datum baseAddress
-      {
-         value = "512";
-         type = "String";
-      }
-   }
-   element dac2904_2.s0
-   {
-      datum baseAddress
-      {
-         value = "520";
+         value = "588";
          type = "String";
       }
    }
@@ -315,39 +267,31 @@
          type = "String";
       }
    }
-   element uart_0.s1
+   element dac2904_3.s0
    {
       datum baseAddress
       {
-         value = "352";
+         value = "580";
          type = "String";
       }
    }
-   element onchip_ram.s1
+   element wave_gen_1.s0
    {
       datum baseAddress
       {
-         value = "16781312";
+         value = "160";
          type = "String";
       }
    }
-   element pio_led.s1
+   element dac2904_4.s0
    {
       datum baseAddress
       {
-         value = "448";
+         value = "576";
          type = "String";
       }
    }
-   element oc_i2c_master_0.s1
-   {
-      datum baseAddress
-      {
-         value = "256";
-         type = "String";
-      }
-   }
-   element spi_master_0.s1
+   element wave_gen_0.s0
    {
       datum baseAddress
       {
@@ -355,27 +299,35 @@
          type = "String";
       }
    }
-   element ad9245_1.s1
+   element demodulation_0.s0
    {
       datum baseAddress
       {
-         value = "528";
+         value = "192";
          type = "String";
       }
    }
-   element systimer.s1
+   element slow_peripheral_bridge.s0
    {
       datum baseAddress
       {
-         value = "416";
+         value = "0";
          type = "String";
       }
    }
-   element ad9245_2.s1
+   element wave_gen_2.s0
    {
       datum baseAddress
       {
-         value = "532";
+         value = "128";
+         type = "String";
+      }
+   }
+   element dac2904_2.s0
+   {
+      datum baseAddress
+      {
+         value = "584";
          type = "String";
       }
    }
@@ -392,7 +344,15 @@
          type = "String";
       }
    }
-   element timestamp.s1
+   element ad9245_1.s1
+   {
+      datum baseAddress
+      {
+         value = "592";
+         type = "String";
+      }
+   }
+   element oc_i2c_master_0.s1
    {
       datum baseAddress
       {
@@ -408,11 +368,67 @@
          type = "String";
       }
    }
+   element timestamp.s1
+   {
+      datum baseAddress
+      {
+         value = "384";
+         type = "String";
+      }
+   }
+   element spi_master_0.s1
+   {
+      datum baseAddress
+      {
+         value = "288";
+         type = "String";
+      }
+   }
+   element uart_0.s1
+   {
+      datum baseAddress
+      {
+         value = "416";
+         type = "String";
+      }
+   }
+   element systimer.s1
+   {
+      datum baseAddress
+      {
+         value = "480";
+         type = "String";
+      }
+   }
+   element pio_led.s1
+   {
+      datum baseAddress
+      {
+         value = "512";
+         type = "String";
+      }
+   }
    element pio_key.s1
    {
       datum baseAddress
       {
-         value = "464";
+         value = "528";
+         type = "String";
+      }
+   }
+   element onchip_ram.s1
+   {
+      datum baseAddress
+      {
+         value = "16781312";
+         type = "String";
+      }
+   }
+   element ad9245_2.s1
+   {
+      datum baseAddress
+      {
+         value = "596";
          type = "String";
       }
    }
@@ -440,19 +456,11 @@
          type = "int";
       }
    }
-   element ad9266.spi_control_port
-   {
-      datum baseAddress
-      {
-         value = "192";
-         type = "String";
-      }
-   }
    element spi_ad5781.spi_control_port
    {
       datum baseAddress
       {
-         value = "288";
+         value = "352";
          type = "String";
       }
    }
@@ -460,7 +468,15 @@
    {
       datum baseAddress
       {
-         value = "384";
+         value = "448";
+         type = "String";
+      }
+   }
+   element ad9266.spi_control_port
+   {
+      datum baseAddress
+      {
+         value = "256";
          type = "String";
       }
    }
@@ -512,6 +528,22 @@
          type = "int";
       }
    }
+   element wave_gen_1
+   {
+      datum _sortIndex
+      {
+         value = "31";
+         type = "int";
+      }
+   }
+   element wave_gen_2
+   {
+      datum _sortIndex
+      {
+         value = "32";
+         type = "int";
+      }
+   }
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
@@ -527,7 +559,7 @@
  <parameter name="projectName" value="ddr_layout.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1525241111133" />
+ <parameter name="timeStamp" value="1525261417042" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
@@ -644,6 +676,16 @@
    internal="demodulation_0.ad_da"
    type="conduit"
    dir="end" />
+ <interface
+   name="wave_gen_1_dac"
+   internal="wave_gen_1.dac"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="wave_gen_2_dac"
+   internal="wave_gen_2.dac"
+   type="conduit"
+   dir="end" />
  <module kind="clock_source" version="13.0" enabled="1" name="clk">
   <parameter name="clockFrequency" value="27000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -752,7 +794,7 @@
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='clk_gen.s1' start='0x0' end='0x80' /><slave name='demodulation_0.s0' start='0x80' end='0xA0' /><slave name='wave_gen_0.s0' start='0xA0' end='0xC0' /><slave name='ad9266.spi_control_port' start='0xC0' end='0xE0' /><slave name='spi_master_0.s1' start='0xE0' end='0x100' /><slave name='oc_i2c_master_0.s1' start='0x100' end='0x120' /><slave name='spi_ad5781.spi_control_port' start='0x120' end='0x140' /><slave name='timestamp.s1' start='0x140' end='0x160' /><slave name='uart_0.s1' start='0x160' end='0x180' /><slave name='spi_0.spi_control_port' start='0x180' end='0x1A0' /><slave name='systimer.s1' start='0x1A0' end='0x1C0' /><slave name='pio_led.s1' start='0x1C0' end='0x1D0' /><slave name='pio_key.s1' start='0x1D0' end='0x1E0' /><slave name='altpll_0.pll_slave' start='0x1E0' end='0x1F0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x1F0' end='0x1F8' /><slave name='sysid.control_slave' start='0x1F8' end='0x200' /><slave name='dac2904_4.s0' start='0x200' end='0x204' /><slave name='dac2904_3.s0' start='0x204' end='0x208' /><slave name='dac2904_2.s0' start='0x208' end='0x20C' /><slave name='dac2904_1.s0' start='0x20C' end='0x210' /><slave name='ad9245_1.s1' start='0x210' end='0x214' /><slave name='ad9245_2.s1' start='0x214' end='0x218' /><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='dma_0.control_port_slave' start='0x1004000' end='0x1004020' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='clk_gen.s1' start='0x0' end='0x80' /><slave name='wave_gen_2.s0' start='0x80' end='0xA0' /><slave name='wave_gen_1.s0' start='0xA0' end='0xC0' /><slave name='demodulation_0.s0' start='0xC0' end='0xE0' /><slave name='wave_gen_0.s0' start='0xE0' end='0x100' /><slave name='ad9266.spi_control_port' start='0x100' end='0x120' /><slave name='spi_master_0.s1' start='0x120' end='0x140' /><slave name='oc_i2c_master_0.s1' start='0x140' end='0x160' /><slave name='spi_ad5781.spi_control_port' start='0x160' end='0x180' /><slave name='timestamp.s1' start='0x180' end='0x1A0' /><slave name='uart_0.s1' start='0x1A0' end='0x1C0' /><slave name='spi_0.spi_control_port' start='0x1C0' end='0x1E0' /><slave name='systimer.s1' start='0x1E0' end='0x200' /><slave name='pio_led.s1' start='0x200' end='0x210' /><slave name='pio_key.s1' start='0x210' end='0x220' /><slave name='altpll_0.pll_slave' start='0x220' end='0x230' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x230' end='0x238' /><slave name='sysid.control_slave' start='0x238' end='0x240' /><slave name='dac2904_4.s0' start='0x240' end='0x244' /><slave name='dac2904_3.s0' start='0x244' end='0x248' /><slave name='dac2904_2.s0' start='0x248' end='0x24C' /><slave name='dac2904_1.s0' start='0x24C' end='0x250' /><slave name='ad9245_1.s1' start='0x250' end='0x254' /><slave name='ad9245_2.s1' start='0x254' end='0x258' /><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='dma_0.control_port_slave' start='0x1004000' end='0x1004020' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="108000000" />
   <parameter name="deviceFamilyName" value="Cyclone IV E" />
   <parameter name="internalIrqMaskSystemInfo" value="4095" />
@@ -1319,7 +1361,7 @@
   <parameter name="readAddressMap"><![CDATA[<address-map><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
   <parameter name="readSlaveAddressWidthMax" value="27" />
   <parameter name="readSlaveDataWidthMax" value="32" />
-  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='dac2904_1.s0' start='0x20C' end='0x210' /><slave name='ad9245_1.s1' start='0x210' end='0x214' /></address-map>]]></parameter>
+  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='dac2904_1.s0' start='0x24C' end='0x250' /><slave name='ad9245_1.s1' start='0x250' end='0x254' /></address-map>]]></parameter>
   <parameter name="writeSlaveAddressWidthMax" value="10" />
   <parameter name="writeSlaveDataWidthMax" value="32" />
  </module>
@@ -1433,6 +1475,22 @@
   <parameter name="Sample1Num" value="32" />
   <parameter name="Sample2Num" value="32" />
   <parameter name="FreqDiv" value="1" />
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="54000000" />
+  <parameter name="AUTO_CLK_SOURCE_CLOCK_RATE" value="108000000" />
+ </module>
+ <module kind="wave_gen" version="1.0" enabled="1" name="wave_gen_1">
+  <parameter name="AmpMax" value="16383" />
+  <parameter name="AmpMin" value="0" />
+  <parameter name="FreqDiv" value="20" />
+  <parameter name="SamplePonint" value="256" />
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="54000000" />
+  <parameter name="AUTO_CLK_SOURCE_CLOCK_RATE" value="108000000" />
+ </module>
+ <module kind="wave_gen" version="1.0" enabled="1" name="wave_gen_2">
+  <parameter name="AmpMax" value="16383" />
+  <parameter name="AmpMin" value="0" />
+  <parameter name="FreqDiv" value="20" />
+  <parameter name="SamplePonint" value="256" />
   <parameter name="AUTO_CLOCK_CLOCK_RATE" value="54000000" />
   <parameter name="AUTO_CLK_SOURCE_CLOCK_RATE" value="108000000" />
  </module>
@@ -1649,7 +1707,7 @@
    start="slow_peripheral_bridge.m0"
    end="altpll_0.pll_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01e0" />
+  <parameter name="baseAddress" value="0x0220" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1690,7 +1748,7 @@
    start="slow_peripheral_bridge.m0"
    end="sysid.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01f8" />
+  <parameter name="baseAddress" value="0x0238" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1699,7 +1757,7 @@
    start="slow_peripheral_bridge.m0"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01f0" />
+  <parameter name="baseAddress" value="0x0230" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1708,7 +1766,7 @@
    start="slow_peripheral_bridge.m0"
    end="systimer.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01a0" />
+  <parameter name="baseAddress" value="0x01e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1717,7 +1775,7 @@
    start="slow_peripheral_bridge.m0"
    end="pio_key.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01d0" />
+  <parameter name="baseAddress" value="0x0210" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1726,7 +1784,7 @@
    start="slow_peripheral_bridge.m0"
    end="spi_0.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0180" />
+  <parameter name="baseAddress" value="0x01c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1735,7 +1793,7 @@
    start="slow_peripheral_bridge.m0"
    end="uart_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0160" />
+  <parameter name="baseAddress" value="0x01a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1876,7 +1934,7 @@
    start="slow_peripheral_bridge.m0"
    end="pio_led.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01c0" />
+  <parameter name="baseAddress" value="0x0200" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1905,7 +1963,7 @@
    start="slow_peripheral_bridge.m0"
    end="timestamp.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0140" />
+  <parameter name="baseAddress" value="0x0180" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1962,7 +2020,7 @@
    start="slow_peripheral_bridge.m0"
    end="spi_ad5781.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0120" />
+  <parameter name="baseAddress" value="0x0160" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1979,7 +2037,7 @@
    start="slow_peripheral_bridge.m0"
    end="ad9245_2.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0214" />
+  <parameter name="baseAddress" value="0x0254" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="13.0" start="altpll_0.c0" end="ad9245_1.clk" />
@@ -2066,7 +2124,7 @@
    start="slow_peripheral_bridge.m0"
    end="oc_i2c_master_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0100" />
+  <parameter name="baseAddress" value="0x0140" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2102,7 +2160,7 @@
    start="slow_peripheral_bridge.m0"
    end="spi_master_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00e0" />
+  <parameter name="baseAddress" value="0x0120" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2130,7 +2188,7 @@
    start="slow_peripheral_bridge.m0"
    end="ad9266.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00c0" />
+  <parameter name="baseAddress" value="0x0100" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="interrupt" version="13.0" start="nios2.d_irq" end="ad9266.irq">
@@ -2142,7 +2200,7 @@
    start="slow_peripheral_bridge.m0"
    end="ad9245_1.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0210" />
+  <parameter name="baseAddress" value="0x0250" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="13.0" start="altpll_0.c2" end="dma_0.clk" />
@@ -2161,7 +2219,7 @@
    start="dma_0.write_master"
    end="ad9245_1.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0210" />
+  <parameter name="baseAddress" value="0x0250" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2234,7 +2292,7 @@
    start="slow_peripheral_bridge.m0"
    end="dac2904_1.s0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x020c" />
+  <parameter name="baseAddress" value="0x024c" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2243,7 +2301,7 @@
    start="slow_peripheral_bridge.m0"
    end="dac2904_2.s0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0208" />
+  <parameter name="baseAddress" value="0x0248" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2252,7 +2310,7 @@
    start="slow_peripheral_bridge.m0"
    end="dac2904_3.s0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0204" />
+  <parameter name="baseAddress" value="0x0244" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2261,7 +2319,7 @@
    start="slow_peripheral_bridge.m0"
    end="dac2904_4.s0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0200" />
+  <parameter name="baseAddress" value="0x0240" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2270,7 +2328,7 @@
    start="dma_0.write_master"
    end="dac2904_1.s0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x020c" />
+  <parameter name="baseAddress" value="0x024c" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2289,7 +2347,7 @@
    start="slow_peripheral_bridge.m0"
    end="wave_gen_0.s0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00a0" />
+  <parameter name="baseAddress" value="0x00e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2333,7 +2391,7 @@
    start="slow_peripheral_bridge.m0"
    end="demodulation_0.s0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0080" />
+  <parameter name="baseAddress" value="0x00c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -2341,6 +2399,74 @@
    version="13.0"
    start="altpll_0.c2"
    end="demodulation_0.clk_source" />
+ <connection
+   kind="clock"
+   version="13.0"
+   start="altpll_0.c0"
+   end="wave_gen_1.clock" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="ddr2.reset_request_n"
+   end="wave_gen_1.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="clk.clk_reset"
+   end="wave_gen_1.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="nios2.jtag_debug_module_reset"
+   end="wave_gen_1.reset" />
+ <connection
+   kind="avalon"
+   version="13.0"
+   start="slow_peripheral_bridge.m0"
+   end="wave_gen_1.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00a0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="clock"
+   version="13.0"
+   start="altpll_0.c2"
+   end="wave_gen_1.clk_source" />
+ <connection
+   kind="clock"
+   version="13.0"
+   start="altpll_0.c0"
+   end="wave_gen_2.clock" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="ddr2.reset_request_n"
+   end="wave_gen_2.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="clk.clk_reset"
+   end="wave_gen_2.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="nios2.jtag_debug_module_reset"
+   end="wave_gen_2.reset" />
+ <connection
+   kind="avalon"
+   version="13.0"
+   start="slow_peripheral_bridge.m0"
+   end="wave_gen_2.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0080" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="clock"
+   version="13.0"
+   start="altpll_0.c2"
+   end="wave_gen_2.clk_source" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>
