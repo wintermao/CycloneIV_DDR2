@@ -53,7 +53,7 @@ endtask
      avalon_write(5'h0,32'h2);
      avalon_write(5'h1,32'h3); 
      avalon_write(5'h2,32'h4); 
-     avalon_write(5'h3,32'h5); 
+     avalon_write(5'h3,32'h1); 
      
    end
 
