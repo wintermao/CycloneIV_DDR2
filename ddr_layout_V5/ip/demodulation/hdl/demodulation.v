@@ -99,10 +99,10 @@ module demodulation (
 		end	else begin
 			if(clk_count>=(freq_div-1)) begin
 				clk_count<=0;
-				clk_out_ge2 <= 0;
-			end else if(clk_count==(freq_div>>1)) begin
+				clk_out_ge2 <= ~clk_out_ge2;
+			end else if(clk_count==(freq_div>>1)-1) begin
 				clk_count<=clk_count+1;
-				clk_out_ge2 <= 1;
+				clk_out_ge2 <= ~clk_out_ge2;
 			end else begin 
 				clk_count<=clk_count+1;
 				clk_out_ge2 <= clk_out_ge2;
