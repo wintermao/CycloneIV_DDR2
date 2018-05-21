@@ -105,10 +105,10 @@ module triangle_demodu (
 		end	else begin
 			if(clk_count>=(freq_div-1)) begin
 				clk_count<=0;
-				clk_out <= 0;
-			end else if(clk_count==(freq_div>>1)) begin
+				clk_out <= ~clk_out;
+			end else if(clk_count==(freq_div>>1)-1) begin
 				clk_count<=clk_count+1;
-				clk_out <= 1;
+				clk_out <= ~clk_out;
 			end else begin 
 				clk_count<=clk_count+1;
 				clk_out <= clk_out;
