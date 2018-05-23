@@ -76,6 +76,14 @@
          type = "int";
       }
    }
+   element dac2904_0
+   {
+      datum _sortIndex
+      {
+         value = "26";
+         type = "int";
+      }
+   }
    element ddr2
    {
       datum _sortIndex
@@ -190,19 +198,6 @@
          type = "String";
       }
    }
-   element cpu_ddr2_clock_bridge.s0
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "67108864";
-         type = "String";
-      }
-   }
    element triangle_demodu_1.s0
    {
       datum baseAddress
@@ -216,6 +211,14 @@
       datum baseAddress
       {
          value = "256";
+         type = "String";
+      }
+   }
+   element dac2904_0.s0
+   {
+      datum baseAddress
+      {
+         value = "608";
          type = "String";
       }
    }
@@ -235,67 +238,16 @@
          type = "String";
       }
    }
-   element uart_0.s1
+   element cpu_ddr2_clock_bridge.s0
    {
-      datum baseAddress
+      datum _lockedAddress
       {
-         value = "448";
-         type = "String";
+         value = "1";
+         type = "boolean";
       }
-   }
-   element onchip_ram.s1
-   {
       datum baseAddress
       {
-         value = "16781312";
-         type = "String";
-      }
-   }
-   element pio_key.s1
-   {
-      datum baseAddress
-      {
-         value = "560";
-         type = "String";
-      }
-   }
-   element clk_gen.s1
-   {
-      datum baseAddress
-      {
-         value = "0";
-         type = "String";
-      }
-   }
-   element pio_led.s1
-   {
-      datum baseAddress
-      {
-         value = "544";
-         type = "String";
-      }
-   }
-   element oc_i2c_master_0.s1
-   {
-      datum baseAddress
-      {
-         value = "352";
-         type = "String";
-      }
-   }
-   element systimer.s1
-   {
-      datum baseAddress
-      {
-         value = "512";
-         type = "String";
-      }
-   }
-   element spi_master_0.s1
-   {
-      datum baseAddress
-      {
-         value = "320";
+         value = "67108864";
          type = "String";
       }
    }
@@ -312,11 +264,75 @@
          type = "String";
       }
    }
+   element pio_key.s1
+   {
+      datum baseAddress
+      {
+         value = "560";
+         type = "String";
+      }
+   }
+   element pio_led.s1
+   {
+      datum baseAddress
+      {
+         value = "544";
+         type = "String";
+      }
+   }
+   element spi_master_0.s1
+   {
+      datum baseAddress
+      {
+         value = "320";
+         type = "String";
+      }
+   }
+   element uart_0.s1
+   {
+      datum baseAddress
+      {
+         value = "448";
+         type = "String";
+      }
+   }
+   element systimer.s1
+   {
+      datum baseAddress
+      {
+         value = "512";
+         type = "String";
+      }
+   }
+   element onchip_ram.s1
+   {
+      datum baseAddress
+      {
+         value = "16781312";
+         type = "String";
+      }
+   }
+   element clk_gen.s1
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
    element timestamp.s1
    {
       datum baseAddress
       {
          value = "416";
+         type = "String";
+      }
+   }
+   element oc_i2c_master_0.s1
+   {
+      datum baseAddress
+      {
+         value = "352";
          type = "String";
       }
    }
@@ -344,11 +360,11 @@
          type = "int";
       }
    }
-   element ad9266.spi_control_port
+   element spi_ad5781.spi_control_port
    {
       datum baseAddress
       {
-         value = "288";
+         value = "384";
          type = "String";
       }
    }
@@ -360,11 +376,11 @@
          type = "String";
       }
    }
-   element spi_ad5781.spi_control_port
+   element ad9266.spi_control_port
    {
       datum baseAddress
       {
-         value = "384";
+         value = "288";
          type = "String";
       }
    }
@@ -447,7 +463,7 @@
  <parameter name="projectName" value="ddr_layout.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1525339179443" />
+ <parameter name="timeStamp" value="1526867078952" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
@@ -528,6 +544,16 @@
    name="triangle_demodu_1_ad_dac"
    internal="triangle_demodu_1.AD_DAC"
    type="conduit"
+   dir="end" />
+ <interface
+   name="dac2904_0_dac_data"
+   internal="dac2904_0.dac_data"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="dac2904_0_sample_clk"
+   internal="dac2904_0.sample_clk"
+   type="clock"
    dir="end" />
  <module kind="clock_source" version="13.0" enabled="1" name="clk">
   <parameter name="clockFrequency" value="27000000" />
@@ -637,7 +663,7 @@
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='clk_gen.s1' start='0x0' end='0x80' /><slave name='triangle_demodu_1.s0' start='0x80' end='0xC0' /><slave name='triangle_demodu_0.s0' start='0xC0' end='0x100' /><slave name='wave_gen_0.s0' start='0x100' end='0x120' /><slave name='ad9266.spi_control_port' start='0x120' end='0x140' /><slave name='spi_master_0.s1' start='0x140' end='0x160' /><slave name='oc_i2c_master_0.s1' start='0x160' end='0x180' /><slave name='spi_ad5781.spi_control_port' start='0x180' end='0x1A0' /><slave name='timestamp.s1' start='0x1A0' end='0x1C0' /><slave name='uart_0.s1' start='0x1C0' end='0x1E0' /><slave name='spi_0.spi_control_port' start='0x1E0' end='0x200' /><slave name='systimer.s1' start='0x200' end='0x220' /><slave name='pio_led.s1' start='0x220' end='0x230' /><slave name='pio_key.s1' start='0x230' end='0x240' /><slave name='altpll_0.pll_slave' start='0x240' end='0x250' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x250' end='0x258' /><slave name='sysid.control_slave' start='0x258' end='0x260' /><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='dma_0.control_port_slave' start='0x1004000' end='0x1004020' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='clk_gen.s1' start='0x0' end='0x80' /><slave name='triangle_demodu_1.s0' start='0x80' end='0xC0' /><slave name='triangle_demodu_0.s0' start='0xC0' end='0x100' /><slave name='wave_gen_0.s0' start='0x100' end='0x120' /><slave name='ad9266.spi_control_port' start='0x120' end='0x140' /><slave name='spi_master_0.s1' start='0x140' end='0x160' /><slave name='oc_i2c_master_0.s1' start='0x160' end='0x180' /><slave name='spi_ad5781.spi_control_port' start='0x180' end='0x1A0' /><slave name='timestamp.s1' start='0x1A0' end='0x1C0' /><slave name='uart_0.s1' start='0x1C0' end='0x1E0' /><slave name='spi_0.spi_control_port' start='0x1E0' end='0x200' /><slave name='systimer.s1' start='0x200' end='0x220' /><slave name='pio_led.s1' start='0x220' end='0x230' /><slave name='pio_key.s1' start='0x230' end='0x240' /><slave name='altpll_0.pll_slave' start='0x240' end='0x250' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x250' end='0x258' /><slave name='sysid.control_slave' start='0x258' end='0x260' /><slave name='dac2904_0.s0' start='0x260' end='0x264' /><slave name='onchip_ram.s1' start='0x1001000' end='0x1002000' /><slave name='epcs_flash.epcs_control_port' start='0x1003000' end='0x1003800' /><slave name='nios2.jtag_debug_module' start='0x1003800' end='0x1004000' /><slave name='dma_0.control_port_slave' start='0x1004000' end='0x1004020' /><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="108000000" />
   <parameter name="deviceFamilyName" value="Cyclone IV E" />
   <parameter name="internalIrqMaskSystemInfo" value="4095" />
@@ -1198,14 +1224,14 @@
   <parameter name="burstEnable" value="false" />
   <parameter name="fifoDepth" value="1024" />
   <parameter name="maxBurstSize" value="128" />
-  <parameter name="minimumDmaTransactionRegisterWidth" value="25" />
+  <parameter name="minimumDmaTransactionRegisterWidth" value="32" />
   <parameter name="useRegistersForFIFO" value="false" />
   <parameter name="avalonSpec" value="2.0" />
   <parameter name="readAddressMap"><![CDATA[<address-map><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
   <parameter name="readSlaveAddressWidthMax" value="27" />
   <parameter name="readSlaveDataWidthMax" value="32" />
-  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='ddr2.s1' start='0x4000000' end='0x8000000' /></address-map>]]></parameter>
-  <parameter name="writeSlaveAddressWidthMax" value="27" />
+  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='dac2904_0.s0' start='0x260' end='0x264' /></address-map>]]></parameter>
+  <parameter name="writeSlaveAddressWidthMax" value="10" />
   <parameter name="writeSlaveDataWidthMax" value="32" />
  </module>
  <module
@@ -1321,6 +1347,10 @@
   <parameter name="Sample2Num" value="32" />
   <parameter name="AUTO_CLOCK_CLOCK_RATE" value="54000000" />
   <parameter name="AUTO_CLK_SOURCE_CLOCK_RATE" value="108000000" />
+ </module>
+ <module kind="dac2904" version="3.0" enabled="1" name="dac2904_0">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="54000000" />
+  <parameter name="AUTO_SAMPLE_CLK_CLOCK_RATE" value="0" />
  </module>
  <connection
    kind="avalon"
@@ -2094,12 +2124,37 @@
    start="altpll_0.c2"
    end="triangle_demodu_1.clk_source" />
  <connection
+   kind="reset"
+   version="13.0"
+   start="nios2.jtag_debug_module_reset"
+   end="dac2904_0.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="clk.clk_reset"
+   end="dac2904_0.reset" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="ddr2.reset_request_n"
+   end="dac2904_0.reset" />
+ <connection kind="clock" version="13.0" start="altpll_0.c0" end="dac2904_0.clk" />
+ <connection
+   kind="avalon"
+   version="13.0"
+   start="slow_peripheral_bridge.m0"
+   end="dac2904_0.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0260" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
    kind="avalon"
    version="13.0"
    start="dma_0.write_master"
-   end="cpu_ddr2_clock_bridge.s0">
+   end="dac2904_0.s0">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x04000000" />
+  <parameter name="baseAddress" value="0x0260" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
