@@ -41,7 +41,7 @@ void epcs()
 	printf("numberOfBlock=%d\n",my_epcs->region_info[0].number_of_blocks);
 	printf("blockSize=%d\n",my_epcs->region_info[0].block_size);
 	//set read & write location is last block
-	offset=(my_epcs->region_info[0].number_of_blocks-1) * my_epcs->region_info[0].block_size;
+	offset=(my_epcs->region_info[0].number_of_blocks-10) * my_epcs->region_info[0].block_size;
 	//read epcs test_size byte
 	ret_code = alt_epcs_flash_read(my_epcs, my_epcs->region_info->offset+offset, epcsbuf, test_size);
 
