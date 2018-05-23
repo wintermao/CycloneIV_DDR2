@@ -70,8 +70,9 @@ module clk_gen
 	end
 	
 	generate
-		genvar j;
-    for(j=0;j<clk_num;j=j+1) begin
+  genvar j;
+    for(j=0;j<clk_num;j=j+1) 
+    begin:mux_clk
       assign clk_out[j] = (clk_pre[j]==1)? clk_source : clk_out2[j];
     end
   endgenerate
