@@ -198,27 +198,11 @@
          type = "String";
       }
    }
-   element triangle_demodu_1.s0
+   element triangle_demodu_0.s0
    {
       datum baseAddress
       {
-         value = "128";
-         type = "String";
-      }
-   }
-   element wave_gen_0.s0
-   {
-      datum baseAddress
-      {
-         value = "256";
-         type = "String";
-      }
-   }
-   element dac2904_0.s0
-   {
-      datum baseAddress
-      {
-         value = "608";
+         value = "192";
          type = "String";
       }
    }
@@ -230,11 +214,11 @@
          type = "String";
       }
    }
-   element triangle_demodu_0.s0
+   element dac2904_0.s0
    {
       datum baseAddress
       {
-         value = "192";
+         value = "608";
          type = "String";
       }
    }
@@ -251,6 +235,70 @@
          type = "String";
       }
    }
+   element wave_gen_0.s0
+   {
+      datum baseAddress
+      {
+         value = "256";
+         type = "String";
+      }
+   }
+   element triangle_demodu_1.s0
+   {
+      datum baseAddress
+      {
+         value = "128";
+         type = "String";
+      }
+   }
+   element timestamp.s1
+   {
+      datum baseAddress
+      {
+         value = "416";
+         type = "String";
+      }
+   }
+   element spi_master_0.s1
+   {
+      datum baseAddress
+      {
+         value = "320";
+         type = "String";
+      }
+   }
+   element oc_i2c_master_0.s1
+   {
+      datum baseAddress
+      {
+         value = "352";
+         type = "String";
+      }
+   }
+   element uart_0.s1
+   {
+      datum baseAddress
+      {
+         value = "448";
+         type = "String";
+      }
+   }
+   element onchip_ram.s1
+   {
+      datum baseAddress
+      {
+         value = "16781312";
+         type = "String";
+      }
+   }
+   element pio_key.s1
+   {
+      datum baseAddress
+      {
+         value = "560";
+         type = "String";
+      }
+   }
    element ddr2.s1
    {
       datum _lockedAddress
@@ -264,35 +312,11 @@
          type = "String";
       }
    }
-   element pio_key.s1
-   {
-      datum baseAddress
-      {
-         value = "560";
-         type = "String";
-      }
-   }
    element pio_led.s1
    {
       datum baseAddress
       {
          value = "544";
-         type = "String";
-      }
-   }
-   element spi_master_0.s1
-   {
-      datum baseAddress
-      {
-         value = "320";
-         type = "String";
-      }
-   }
-   element uart_0.s1
-   {
-      datum baseAddress
-      {
-         value = "448";
          type = "String";
       }
    }
@@ -304,35 +328,11 @@
          type = "String";
       }
    }
-   element onchip_ram.s1
-   {
-      datum baseAddress
-      {
-         value = "16781312";
-         type = "String";
-      }
-   }
    element clk_gen.s1
    {
       datum baseAddress
       {
          value = "0";
-         type = "String";
-      }
-   }
-   element timestamp.s1
-   {
-      datum baseAddress
-      {
-         value = "416";
-         type = "String";
-      }
-   }
-   element oc_i2c_master_0.s1
-   {
-      datum baseAddress
-      {
-         value = "352";
          type = "String";
       }
    }
@@ -360,6 +360,14 @@
          type = "int";
       }
    }
+   element ad9266.spi_control_port
+   {
+      datum baseAddress
+      {
+         value = "288";
+         type = "String";
+      }
+   }
    element spi_ad5781.spi_control_port
    {
       datum baseAddress
@@ -373,14 +381,6 @@
       datum baseAddress
       {
          value = "480";
-         type = "String";
-      }
-   }
-   element ad9266.spi_control_port
-   {
-      datum baseAddress
-      {
-         value = "288";
          type = "String";
       }
    }
@@ -463,7 +463,7 @@
  <parameter name="projectName" value="ddr_layout.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1526867078952" />
+ <parameter name="timeStamp" value="1527067899744" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
@@ -631,15 +631,15 @@
   <parameter name="mmu_tlbPtrSz" value="7" />
   <parameter name="mmu_tlbNumWays" value="16" />
   <parameter name="mmu_processIDNumBits" value="8" />
-  <parameter name="impl" value="Small" />
+  <parameter name="impl" value="Fast" />
   <parameter name="icache_size" value="4096" />
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="icache_ramBlockType" value="Automatic" />
   <parameter name="icache_numTCIM" value="0" />
-  <parameter name="icache_burstType" value="None" />
-  <parameter name="dcache_bursts" value="false" />
+  <parameter name="icache_burstType" value="Sequential" />
+  <parameter name="dcache_bursts" value="true" />
   <parameter name="dcache_victim_buf_impl" value="ram" />
-  <parameter name="debug_level" value="Level1" />
+  <parameter name="debug_level" value="Level2" />
   <parameter name="debug_OCIOnchipTrace" value="_128" />
   <parameter name="dcache_size" value="2048" />
   <parameter name="dcache_tagramBlockType" value="Automatic" />

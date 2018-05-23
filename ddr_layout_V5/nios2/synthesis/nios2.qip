@@ -2,7 +2,7 @@ set_global_assignment -entity "nios2" -library "nios2" -name IP_TOOL_NAME "Qsys"
 set_global_assignment -entity "nios2" -library "nios2" -name IP_TOOL_VERSION "13.0"
 set_global_assignment -entity "nios2" -library "nios2" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "nios2" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../nios2.sopcinfo"]
-set_instance_assignment -entity "nios2" -library "nios2" -name SLD_INFO "QSYS_NAME nios2 HAS_SOPCINFO 1 GENERATION_ID 1526956447"
+set_instance_assignment -entity "nios2" -library "nios2" -name SLD_INFO "QSYS_NAME nios2 HAS_SOPCINFO 1 GENERATION_ID 1527068020"
 set_global_assignment -library "nios2" -name MISC_FILE [file join $::quartus(qip_path) "../../nios2.cmp"]
 set_global_assignment -name SYNTHESIS_ONLY_QIP ON
 set_global_assignment -library "nios2" -name MISC_FILE [file join $::quartus(qip_path) "../../nios2.qsys"]
@@ -32,6 +32,8 @@ set_global_assignment -library "nios2" -name SYSTEMVERILOG_FILE [file join $::qu
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.v"]
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_synchronizer.v"]
 set_global_assignment -library "nios2" -name SDC_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.sdc"]
+set_global_assignment -library "nios2" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_burst_adapter.sv"]
+set_global_assignment -library "nios2" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_address_alignment.sv"]
 set_global_assignment -library "nios2" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_traffic_limiter.sv"]
 set_global_assignment -library "nios2" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/nios2_id_router_024.sv"]
 set_global_assignment -library "nios2" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/nios2_addr_router_005.sv"]
@@ -140,6 +142,8 @@ set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(
 set_global_assignment -library "nios2" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/nios2_nios2.ocp"]
 set_global_assignment -library "nios2" -name SDC_FILE [file join $::quartus(qip_path) "submodules/nios2_nios2.sdc"]
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/nios2_nios2.v"]
+set_global_assignment -library "nios2" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/nios2_nios2_bht_ram.mif"]
+set_global_assignment -library "nios2" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/nios2_nios2_dc_tag_ram.mif"]
 set_global_assignment -library "nios2" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/nios2_nios2_ic_tag_ram.mif"]
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/nios2_nios2_jtag_debug_module_sysclk.v"]
 set_global_assignment -library "nios2" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/nios2_nios2_jtag_debug_module_tck.v"]
@@ -208,6 +212,9 @@ set_global_assignment -entity "nios2_cmd_xbar_demux" -library "nios2" -name IP_T
 set_global_assignment -entity "altera_reset_controller" -library "nios2" -name IP_TOOL_NAME "altera_reset_controller"
 set_global_assignment -entity "altera_reset_controller" -library "nios2" -name IP_TOOL_VERSION "13.0"
 set_global_assignment -entity "altera_reset_controller" -library "nios2" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_burst_adapter" -library "nios2" -name IP_TOOL_NAME "altera_merlin_burst_adapter"
+set_global_assignment -entity "altera_merlin_burst_adapter" -library "nios2" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_burst_adapter" -library "nios2" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -entity "altera_merlin_traffic_limiter" -library "nios2" -name IP_TOOL_NAME "altera_merlin_traffic_limiter"
 set_global_assignment -entity "altera_merlin_traffic_limiter" -library "nios2" -name IP_TOOL_VERSION "13.0"
 set_global_assignment -entity "altera_merlin_traffic_limiter" -library "nios2" -name IP_TOOL_ENV "Qsys"

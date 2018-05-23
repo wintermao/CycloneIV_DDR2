@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2018-5-22 12:19:33</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1526962773547</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>2018-5-23 17:59:21</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1527069561595</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>D:\altera\project\CycloneIV_DDR2\ddr_layout_V5\software\ddr_layout_V5_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>D:\altera\project\CycloneIV_DDR2\ddr_layout_V5\nios2.sopcinfo</SopcDesignFile>
